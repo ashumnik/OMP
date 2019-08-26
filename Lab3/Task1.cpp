@@ -4,13 +4,29 @@
 #include <iomanip>
 #include <bitset>
 #include <chrono>
+#include <vector>
 
 #include <cstdlib>
 #include <ctime>
 #define OUTPUT
-#define PARALLEL
 #define N 40
 #define LF 20
+#define CHOOSE_VAR(X)(calculate(var_ ## X ## ## _op , var_ ## X ## ## _res))
+
+int max(int a, int b);
+int var_0_op(int a, int b);
+int var_1_op(int a, int b);
+int var_2_op(int a, int b);
+int var_3_op(int a, int b, int c);
+int var_4_op(int a, int b, int c);
+void var_0_res(long long* res, int b);
+void var_1_res(long long* res, int b);
+void var_2_res(long long* res, int b);
+void var_3_res(long long* res, int b);
+void var_4_res(long long* res, int b);
+
+void print_matrix(int matrix[N]);
+long long populate_C(int (*op)(int,int));
 
 int A[N] = {0};
 int B[N] = {0};
@@ -38,14 +54,32 @@ void print_matrix(int matrix[N]){
     #endif
     
 }
+
 void init(int matrix[N]){
     std::srand(unsigned(std::time(0)));
-#ifdef PARALLEL
+
     #pragma omp parallel for
-#endif
     for(int i = 0; i < N; i++){
         matrix[i] = std::rand()%N+1;
     }
+}
+
+
+long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
+
+    long long result;
+
+    #pragma omp parallel for
+    for(int i = 0; i < N; i++){
+        C[i] = op(A[i],B[i]);
+    }
+    
+    // Изменить операцию на свой вариант
+    #pragma omp parallel for private(result) reduction( + : result)
+    for(int i = 0; i < N; i++){
+        final_calc(&result, C[i]);
+    }
+    return result;
 }
 
 int main(){
@@ -65,11 +99,67 @@ int main(){
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
     start = std::chrono::high_resolution_clock::now();
 
+    CHOOSE_VAR(1);
 
     end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
     std::cout << elapsed << " microseconds" << std::endl;
 
-    
+}
 
+/*
+ * Операции над массивами
+ *
+ */
+
+int max(int a, int b){
+    return a < b ? b : a;
+}
+
+int var_0_op(int a, int b){
+    return max(a,b);
+}
+
+int var_1_op(int a, int b){
+    return a*b;
+}
+
+int var_2_op(int a, int b){
+    int res = max(a + b, 4*a - b);
+    return res > 1 ? res : 0;
+}
+
+int var_3_op(int a, int b, int c){
+    return a%2 == 0 ? b/c : b+a;
+}
+
+int var_4_op(int a, int b, int c){
+    int res = a%2 == 0 ? b/c : b+a;
+    return res != 1 ? res : 0 ;
+}
+
+
+/*
+ * Операции над результатом
+ * 
+ */
+
+void var_0_res(long long* res, int b){
+   *res += b;
+}
+
+void var_1_res(long long* res, int b){
+   *res *= b != 0 ? b : 1;
+}
+
+void var_2_res(long long* res, int b){
+   *res += b > 1 ? b : 0; 
+}
+
+void var_3_res(long long* res, int b){
+   *res *= b != 0 ? b : 1;
+}
+
+void var_4_res(long long* res, int b){
+   *res += b;
 }

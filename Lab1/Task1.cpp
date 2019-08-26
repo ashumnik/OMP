@@ -13,6 +13,15 @@
 #define N 10000
 #define N_h N/2
 
+int mul(int a, int b)
+int sum(int a, int b)
+long long bits(int a)
+long long compute(int (*op)(int,int), long long (*amount)(int))
+long long sevens(int a)
+void init()
+void print_matrix()
+
+
 int matrix[M][N];
 int matrix_computed[M][N/2] = {0};
 
@@ -66,13 +75,10 @@ void print_matrix(){
 void init(){
     std::srand(unsigned(std::time(0)));
     
-#ifdef PARALLEL
     #pragma omp parallel for
-#endif
     for(int i = 0; i < M; i++){
-#ifdef PARALLEL
+
     #pragma omp parallel for
-#endif
         for(int j = 0; j < N; j++){
              matrix[i][j] = std::rand()%M+1;
         }
@@ -81,14 +87,10 @@ void init(){
 
 long long compute(int (*op)(int,int), long long (*amount)(int)){
     long long result = 0;
-#ifdef PARALLEL
     #pragma omp parallel for
-#endif
     for(int i = 0; i < M; i++){
         // Без этой штуки будет быстрее
-#ifdef PARALLEL
     #pragma omp parallel for
-#endif
 
         for(int j = 0; j < N_h; j++){
              int j_m = j*2;
