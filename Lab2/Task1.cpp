@@ -20,8 +20,8 @@ void main (){
         for (j=0; j < NMAX; j++)
             a[i][j] = i+j;
 
-    std::chrono::time_point<std::chrono::high_resolution_clock> start;
-    start = std::chrono::high_resolution_clock.now()
+    std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
+    start = std::chrono::high_resolution_clock::now();
 
     #pragma omp parallel shared(a) if (NMAX>LIMIT)
     {
@@ -34,6 +34,7 @@ void main (){
         }
     } /* Завершение параллельного фрагмента */
 
-    auto elapsed = start.time_since_epoch();
-    std::cout << elapsed.count() << "nanoseconds" << std::endl;
+    end = std::chrono::high_resolution_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
+    std::cout << elapsed << " microseconds" << std::endl;
 }
