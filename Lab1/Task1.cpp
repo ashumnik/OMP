@@ -74,7 +74,7 @@ int main(){
     compute(mul,bits);
 
     auto elapsed = start.time_since_epoch();
-    std::cout << elapsed.count << "nanoseconds" << std::endl;
+    std::cout << elapsed.count() << "nanoseconds" << std::endl;
 
     
 
