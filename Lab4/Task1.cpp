@@ -65,6 +65,12 @@ void init(int matrix[N]){
 }
 
 
+/*
+ * Принимает операцию и функцию финального подсчета
+ * Сначала над i-ми элементами
+ * массивов A и B выполняется операция, потом финальный подсчет.
+ * Если вариант >2, то заменить первый аргумент и не трогать массив C
+ */
 long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
 
     long long result;
@@ -74,7 +80,6 @@ long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
         C[i] = op(A[i],B[i]);
     }
     
-    // Изменить операцию на свой вариант
     #pragma omp parallel for 
     for(int i = 0; i < N; i++){
         #pragma omp atomic

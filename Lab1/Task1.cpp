@@ -7,20 +7,18 @@
 
 #include <cstdlib>
 #include <ctime>
-#define OUTPUT
-#define PARALLEL
-#define M 10000
+#define OUTPUT          // Глушилка для вывода
+#define M 10000         
 #define N 10000
-#define N_h N/2
+#define N_h N/2         // N_h(alf), размер массива для пар 
 
 int mul(int a, int b)
 int sum(int a, int b)
+void init()
+void print_matrix()
 long long bits(int a)
 long long compute(int (*op)(int,int), long long (*amount)(int))
 long long sevens(int a)
-void init()
-void print_matrix()
-
 
 int matrix[M][N];
 int matrix_computed[M][N/2] = {0};
@@ -33,10 +31,18 @@ int sum(int a, int b){
     return a+b;
 }
 
+/*
+ * Нахождение количества выставленых битов в числе
+ *
+ */
 long long bits(int a){
     return std::bitset<sizeof(decltype(matrix[0][0]))*8>(a).count();
 }
 
+/*
+ * Нахождение количества семерок в числе
+ *
+ */
 long long sevens(int a){
     long long count = 0;
 
@@ -50,6 +56,10 @@ long long sevens(int a){
     return count;
 }
 
+/*
+ * Вывод матрицы
+ *
+ */
 void print_matrix(){
     #ifdef OUTPUT
     std::cout << std::setw(3) << "";
@@ -72,6 +82,10 @@ void print_matrix(){
 
 }
 
+/*
+ * Инициализация двумерного массива
+ *
+ */
 void init(){
     std::srand(unsigned(std::time(0)));
     
@@ -85,6 +99,11 @@ void init(){
     }
 }
 
+
+/*
+ * Подсчет результата по матрице
+ *
+ */
 long long compute(int (*op)(int,int), long long (*amount)(int)){
     long long result = 0;
     #pragma omp parallel for
@@ -93,7 +112,9 @@ long long compute(int (*op)(int,int), long long (*amount)(int)){
     #pragma omp parallel for
 
         for(int j = 0; j < N_h; j++){
+             /* индекс каждого второго элемента в строке*/
              int j_m = j*2;
+
              matrix_computed[i][j] = op(matrix[i][j_m], matrix[i][j_m+1]); 
              #pragma omp atomic
              result += amount(matrix_computed[i][j]);

@@ -11,6 +11,7 @@
 #define OUTPUT
 #define N 40
 #define LF 20
+/* Склейка функции под вариант */
 #define CHOOSE_VAR(X)(calculate(var_ ## X ## ## _op , var_ ## X ## ## _res))
 
 int max(int a, int b);
@@ -32,6 +33,10 @@ int A[N] = {0};
 int B[N] = {0};
 int C[N] = {0};
 
+/*
+ * Вывод массива
+ *
+ */
 void print_matrix(int matrix[N]){
     #ifdef OUTPUT
     for(int k = 0; k < N ; k+=LF){
@@ -55,6 +60,10 @@ void print_matrix(int matrix[N]){
     
 }
 
+/*
+ * Инициализация массива
+ *
+ */
 void init(int matrix[N]){
     std::srand(unsigned(std::time(0)));
 
@@ -65,6 +74,12 @@ void init(int matrix[N]){
 }
 
 
+/*
+ * Принимает операцию и функцию финального подсчета
+ * Сначала над i-ми элементами
+ * массивов A и B выполняется операция, потом финальный подсчет.
+ * Если вариант >2, то заменить первый аргумент и не трогать массив C
+ */
 long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
 
     long long result;
@@ -74,7 +89,7 @@ long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
         C[i] = op(A[i],B[i]);
     }
     
-    // Изменить операцию на свой вариант
+    // Изменить операцию в reduction на свой вариант
     #pragma omp parallel for private(result) reduction( + : result)
     for(int i = 0; i < N; i++){
         final_calc(&result, C[i]);
