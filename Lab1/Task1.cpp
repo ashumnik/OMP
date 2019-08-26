@@ -1,5 +1,5 @@
 //#include <omp.h>
-//
+
 #include <iostream>
 #include <iomanip>
 #include <bitset>
@@ -8,12 +8,13 @@
 #include <cstdlib>
 #include <ctime>
 #define OUTPUT
-#define M 10
-#define N 20
+#define PARALLEL
+#define M 10000
+#define N 10000
 #define N_h N/2
 
 int matrix[M][N];
-int matrix_computed[M/2][N/2] = 0;
+int matrix_computed[M][N/2] = {0};
 
 int mul(int a, int b){
     return a*b;
@@ -40,41 +41,78 @@ long long sevens(int a){
     return count;
 }
 
+void print_matrix(){
+    #ifdef OUTPUT
+    std::cout << std::setw(3) << "";
+
+    for(int i = 0; i < M; i++){
+        std::cout << std::setw(5) << std::setfill('_') << i;
+    }
+    std::cout << std::endl;
+
+    std::cout << std::setfill(' ');
+    
+    for(int i = 0; i < M; i++){
+        std::cout << std::setw(3) << i << "|";
+        for(int j = 0; j < N; j++){
+             std::cout << std::setw(5) << matrix[i][j];
+        }
+        std::cout << std::endl;
+    }
+    #endif
+
+}
+
 void init(){
     std::srand(unsigned(std::time(0)));
+    
+#ifdef PARALLEL
+    #pragma omp parallel for
+#endif
     for(int i = 0; i < M; i++){
+#ifdef PARALLEL
+    #pragma omp parallel for
+#endif
         for(int j = 0; j < N; j++){
              matrix[i][j] = std::rand()%M+1;
-             #ifdef OUTPUT
-             std::cout << std::setw(5) << matrix[i][j];
-             #endif
         }
-        #ifdef OUTPUT
-        std::cout << std::endl;
-        #endif
     }
 }
 
-long long compute(int (op*)(int,int), long long (amount)(int)){
+long long compute(int (*op)(int,int), long long (*amount)(int)){
     long long result = 0;
+#ifdef PARALLEL
+    #pragma omp parallel for
+#endif
     for(int i = 0; i < M; i++){
-        for(int j = 0, j_c = 0; j < N_h; j+=2, j_c++){
-             matrix_computed[i][j_c] = op(matrix[i][j], matrix[i][j+1]); 
-             // atomic
-             result += amount(matrix_computed[i][j_c]);
+        // Без этой штуки будет быстрее
+#ifdef PARALLEL
+    #pragma omp parallel for
+#endif
+
+        for(int j = 0; j < N_h; j++){
+             int j_m = j*2;
+             matrix_computed[i][j] = op(matrix[i][j_m], matrix[i][j_m+1]); 
+             #pragma omp atomic
+             result += amount(matrix_computed[i][j]);
         }
     }
+    return result;
 }
 
 int main(){
     init();
-    std::chrono::time_point<std::chrono::high_resolution_clock> start;
-    start = std::chrono::high_resolution_clock.now()
+    print_matrix();
+    long long result;
+    std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
+    start = std::chrono::high_resolution_clock::now();
 
-    compute(mul,bits);
+    result = compute(mul,bits);
 
-    auto elapsed = start.time_since_epoch();
-    std::cout << elapsed.count() << "nanoseconds" << std::endl;
+    end = std::chrono::high_resolution_clock::now();
+    auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
+    std::cout << elapsed << " microseconds" << std::endl;
+    std::cout << "result: " << result << std::endl;
 
     
 
