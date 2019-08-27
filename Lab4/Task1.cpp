@@ -10,7 +10,15 @@
 #include <ctime>
 #define OUTPUT
 #define N 40
-#define LF 20
+#define DESIRED_LF 20
+
+#if N < DESIRED_LF
+    #define LF N
+#else
+    #define LF DESIRED_LF
+#endif
+
+/* Склейка функции под вариант */
 #define CHOOSE_VAR(X)(calculate(var_ ## X ## ## _op , var_ ## X ## ## _res))
 
 int max(int a, int b);
@@ -73,17 +81,21 @@ void init(int matrix[N]){
  */
 long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
 
-    long long result;
+    // Инициализировать в 1, если умножение и в 0, если сложение
+    long long result = 1;
+    long long partial_result = 1;
 
+    // Инициализировать в 1, если умножение и в 0, если сложение
     #pragma omp parallel for
     for(int i = 0; i < N; i++){
         C[i] = op(A[i],B[i]);
     }
     
+    // Изменить операцию над result на свой вариант
     #pragma omp parallel for 
     for(int i = 0; i < N; i++){
         #pragma omp atomic
-        final_calc(&result, C[i]);
+        result *= final_calc(&partial result, C[i]);
     }
     return result;
 }
@@ -105,11 +117,12 @@ int main(){
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
     start = std::chrono::high_resolution_clock::now();
 
-    CHOOSE_VAR(1);
+    auto result = CHOOSE_VAR(1);
 
     end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
     std::cout << elapsed << " microseconds" << std::endl;
+    std::cout << "result: " << result << std::endl;
 
 }
 
