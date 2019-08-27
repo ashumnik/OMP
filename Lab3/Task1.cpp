@@ -9,8 +9,15 @@
 #include <cstdlib>
 #include <ctime>
 #define OUTPUT
-#define N 40
-#define LF 20
+#define N 4
+#define DESIRED_LF 20
+
+#if N < DESIRED_LF
+    #define LF N
+#else
+    #define LF DESIRED_LF
+#endif
+
 /* Склейка функции под вариант */
 #define CHOOSE_VAR(X)(calculate(var_ ## X ## ## _op , var_ ## X ## ## _res))
 
@@ -56,6 +63,7 @@ void print_matrix(int matrix[N]){
         std::cout << std::endl;
         std::cout << std::endl;
     }
+
     #endif
     
 }
@@ -90,7 +98,7 @@ long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
     }
     
     // Изменить операцию в reduction на свой вариант
-    #pragma omp parallel for private(result) reduction( + : result)
+    #pragma omp parallel for reduction( + : result)
     for(int i = 0; i < N; i++){
         final_calc(&result, C[i]);
     }
@@ -114,11 +122,12 @@ int main(){
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
     start = std::chrono::high_resolution_clock::now();
 
-    CHOOSE_VAR(1);
+    auto result = CHOOSE_VAR(1);
 
     end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
     std::cout << elapsed << " microseconds" << std::endl;
+    std::cout << "result: " << result << std::endl;
 
 }
 
