@@ -90,7 +90,8 @@ void init(int matrix[N]){
  */
 long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
 
-    long long result;
+    // Инициализировать в 1, если умножение и в 0, если сложение
+    long long result = 1;
 
     #pragma omp parallel for
     for(int i = 0; i < N; i++){
@@ -98,7 +99,7 @@ long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
     }
     
     // Изменить операцию в reduction на свой вариант
-    #pragma omp parallel for reduction( + : result)
+    #pragma omp parallel for reduction( * : result)
     for(int i = 0; i < N; i++){
         final_calc(&result, C[i]);
     }
@@ -145,7 +146,9 @@ int var_0_op(int a, int b){
 }
 
 int var_1_op(int a, int b){
-    return a*b;
+    // std::cout << "a = " << a << "; b = " << b << std::endl;
+    // std::cout << "return " << a+b << std::endl;
+    return a+b;
 }
 
 int var_2_op(int a, int b){
