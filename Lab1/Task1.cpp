@@ -12,13 +12,13 @@
 #define N 10000
 #define N_h N/2         // N_h(alf), размер массива для пар 
 
-int mul(int a, int b)
-int sum(int a, int b)
-void init()
-void print_matrix()
-long long bits(int a)
-long long compute(int (*op)(int,int), long long (*amount)(int))
-long long sevens(int a)
+int mul(int a, int b);
+int sum(int a, int b);
+void init();
+void print_matrix();
+long long bits(int a);
+long long compute(int (*op)(int,int), long long (*amount)(int));
+long long sevens(int a);
 
 int matrix[M][N];
 int matrix_computed[M][N/2] = {0};
