@@ -1,0 +1,208 @@
+﻿<Window x:Class="GenericInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GenericInterface"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="MainGrid" Background="WhiteSmoke"
+          >
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Rectangle x:Name="GridSplitter"
+                      Grid.Column="2"
+                      Grid.RowSpan="3"
+                      Fill="LightGray"
+                      HorizontalAlignment="Stretch"/>
+        
+        <TextBlock x:Name="Progress"
+                   Text="Прогресс"
+                   Grid.ColumnSpan="{Binding ElementName=MainGrid, Path=ColumnDefinitions.Count}" 
+                   TextAlignment="Center"
+                   Grid.Row="4" 
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" />
+
+        <ProgressBar x:Name="ProgressBar"
+            Grid.ColumnSpan="{Binding ElementName=MainGrid, Path=ColumnDefinitions.Count}" 
+            Height="10"
+            Grid.Row="4" 
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Center" />
+        
+        <Rectangle x:Name="ProgressBarBackground"
+            Grid.ColumnSpan="{Binding ElementName=MainGrid, Path=ColumnDefinitions.Count}"
+            Grid.Row="4" 
+            Grid.Column="0"
+            Height="Auto"
+            Width="Auto"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Panel.ZIndex="-4"
+            Fill="White"/>
+        
+        <!--Принимающий узел-->
+        <TextBlock x:Name="DestHeader"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="0" 
+                 Grid.Column="0" 
+                 TextWrapping="Wrap" 
+                 Text="Введите в поля ниже IP адрес и порт принимающего узла"
+                 VerticalAlignment="Top" Height="32"/>
+        <TextBlock x:Name="TextBlock_IP_Dest"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Grid.Row="1" 
+                 Grid.Column="0" 
+                 TextWrapping="Wrap" 
+                 Text="IP адрес" 
+                 VerticalAlignment="Center"/>
+        <TextBox x:Name="DestIP"
+                 HorizontalAlignment="Center" 
+                 Grid.Row="1" 
+                 Grid.Column="0" 
+                 TextWrapping="Wrap" 
+                 TextAlignment="Center"
+                 Text="127.0.0.1" 
+                 Width="80"
+                 VerticalAlignment="Center"
+                 LostFocus="IP_LostFocus"/>
+        <TextBlock x:Name="TextBlock_Port_Dest"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Grid.Row="1" 
+                 Grid.Column="0" 
+                 TextWrapping="Wrap" 
+                 Text="Порт" 
+                 VerticalAlignment="Bottom"/>
+        <TextBox x:Name="DestPort"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Center" 
+                 Grid.Row="1" 
+                 Grid.Column="0" 
+                 TextWrapping="Wrap" 
+                 Text="0000" 
+                 Width="80"
+                 VerticalAlignment="Bottom"
+                 LostFocus="Port_LostFocus"/>
+
+        <!--Передающий узел-->
+        <TextBlock x:Name="SrcHeader"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="0" 
+                 Grid.Column="1" 
+                 TextWrapping="Wrap" 
+                 Text="Введите в поля ниже IP адрес и порт передающего узла"
+                 VerticalAlignment="Top" Height="32"/>
+        <TextBlock x:Name="TextBlock_IP_Src"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 TextWrapping="Wrap" 
+                 Text="IP адрес" 
+                 VerticalAlignment="Center"/>
+        <TextBox x:Name="SrcIP"
+                 HorizontalAlignment="Center" 
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 TextWrapping="Wrap" 
+                 TextAlignment="Center"
+                 Text="127.0.0.1" 
+                 Width="80"
+                 VerticalAlignment="Center"
+                 LostFocus="IP_LostFocus"/>
+        <TextBlock x:Name="TextBlock_Port_Src"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 TextWrapping="Wrap" 
+                 Text="Порт" 
+                 VerticalAlignment="Bottom"/>
+        <TextBox x:Name="SrcPort"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Center" 
+                 Grid.Row="1" 
+                 Grid.Column="1" 
+                 TextWrapping="Wrap" 
+                 Text="0000" 
+                 Width="80"
+                 VerticalAlignment="Bottom"
+                 LostFocus="Port_LostFocus"/>
+
+        <!--Работа с файлами-->
+        <TextBlock x:Name="File"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Stretch"
+                 Grid.Row="0" 
+                 Grid.Column="3" 
+                 Grid.ColumnSpan="2"
+                 TextWrapping="Wrap" 
+                 Text="Выберите в поле ниже файл для"
+                 VerticalAlignment="Top" Height="32"/>
+        
+        <TextBlock x:Name="TextBlock_FilePath"
+                 TextAlignment="Center"
+                 HorizontalAlignment="Left"
+                 Width="290"
+                 Grid.Row="1" 
+                 Grid.Column="3" 
+                 Grid.ColumnSpan="2"
+                 TextWrapping="Wrap" 
+                 Text="..." 
+                 Background="White"
+                 VerticalAlignment="Center"/>
+        <Button  x:Name="ChooseFile"
+                 HorizontalAlignment="Right"
+                 Grid.Row="1" 
+                 Grid.Column="3" 
+                 Grid.ColumnSpan="2"
+                 Content="Выбрать"
+                 VerticalAlignment="Center"
+                 Click="ChooseFile_Click"/>
+
+        <RadioButton x:Name="Send"
+            GroupName="SendOrRecv"
+            Content="Передачи"
+            IsChecked="True"
+            Grid.Column="3" 
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
+        <RadioButton x:Name="Recieve"
+            GroupName="SendOrRecv"
+            Content="Приема" 
+            Grid.Column="3" 
+            Grid.ColumnSpan="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"/>
+
+
+        <Button 
+            Grid.ColumnSpan="3" 
+            Content="Сделать хорошо" 
+            Grid.Column="1" 
+            HorizontalAlignment="Stretch"
+            Grid.Row="3" 
+            VerticalAlignment="Stretch" 
+            Click="Action_Click"/>
+    </Grid>
+
+</Window>
