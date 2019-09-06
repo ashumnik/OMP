@@ -5,6 +5,7 @@
 #include <map>
 #include <regex>
 #include <stack>
+#include <deque>
 #include <string>
 #include <utility>
 #include <vector>
@@ -42,7 +43,7 @@ struct AtomicActions{
 };
 
 std::stack<double> global_stack;
-std::stack<struct StackOperation> operation_stack;
+std::deque<struct StackOperation> operation_stack;
 std::stack<struct StackOperation> parse_operation_stack;
 
 struct StackOperation{
@@ -69,7 +70,7 @@ struct StackOperation{
             case '-': ChooseOp(AtomicActions::Type::SUB); priority = Priority['-']; break;
             case '*': ChooseOp(AtomicActions::Type::MUL); priority = Priority['*']; break;
             case '/': ChooseOp(AtomicActions::Type::DIV); priority = Priority['/']; break;
-            case 'r': ChooseOp(AtomicActions::Type::STR); priority = Priority['r']; break;
+            case 'r': ChooseOp(AtomicActions::Type::STR); priority = Priority['r']; frames_affected = 1; break;
             case 'u': ChooseOp(AtomicActions::Type::POW); priority = Priority['u']; break;
             case '(': priority = Priority['(']; parse_operation_stack.push(*this);  break;
             case ')': while(parse_operation_stack.top().priority != Priority[')']){
@@ -82,11 +83,24 @@ struct StackOperation{
     }
 
     void operator()(){
-        auto left = global_stack.top();
-        auto right = global_stack.top();
-        global_stack.pop();
-        global_stack.pop();
-        global_stack.push(this->op(left, right));
+        switch(this->frames_affected){
+            case 1:
+                {
+                    auto val = global_stack.top();
+                    global_stack.pop();
+                    global_stack.push(this->op(val, val));
+                }
+                break;
+            case 2:
+                {
+                    auto left = global_stack.top();
+                    auto right = global_stack.top();
+                    global_stack.pop();
+                    global_stack.pop();
+                    global_stack.push(this->op(left, right));
+                }
+                break;
+        }
     }
 
 };
@@ -106,7 +120,7 @@ void stackSwap(std::stack<StackOperation>& stack){
 }
 
 void stackPopToOp(){
-    operation_stack.push(parse_operation_stack.top());
+    operation_stack.push_back(parse_operation_stack.top());
     parse_operation_stack.pop();
 }
 
@@ -125,16 +139,25 @@ void ParseInput(std::string process){
         if(std::isdigit(out[0])){
             auto number = StackOperation('r');
             number.storage = std::stod(out); 
-            operation_stack.push(number);
+            operation_stack.push_back(number);
             continue;
         }
 
         parse_operation_stack.push(StackOperation(out[0]));
         
-        
+    }
+    while(!parse_operation_stack.empty()){
+        stackPopToOp();
     }
 }
 
+void Execute(){
+    for(auto element : operation_stack){
+        element();
+    }
+    std::cout << global_stack.top() << std::endl;
+
+}
 
 
 int main(){
