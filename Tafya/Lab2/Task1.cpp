@@ -14,6 +14,7 @@
 #include <ctime>
 #include <cmath>
 #include <cctype>
+#define DBG_PRINT(X) (std::cout << X << std::endl)
 
 std::map<char, int> Priority; 
 void stackSwap(std::stack<struct StackOperation>& stack);
@@ -64,7 +65,8 @@ struct StackOperation{
         }
     }
 
-    StackOperation(char op){
+    StackOperation(char op){ 
+        DBG_PRINT(op);
         switch(op){
             case '+': ChooseOp(AtomicActions::Type::SUM); priority = Priority['+']; break;
             case '-': ChooseOp(AtomicActions::Type::SUB); priority = Priority['-']; break;
@@ -86,17 +88,18 @@ struct StackOperation{
         switch(this->frames_affected){
             case 1:
                 {
-                    auto val = global_stack.top();
-                    global_stack.pop();
-                    global_stack.push(this->op(val, val));
+                    global_stack.push(this->op(this->storage, this->storage));
                 }
                 break;
             case 2:
                 {
-                    auto left = global_stack.top();
                     auto right = global_stack.top();
                     global_stack.pop();
+        DBG_PRINT("right " << right);
+                    auto left = global_stack.top();
                     global_stack.pop();
+        DBG_PRINT("left " << left);
+        DBG_PRINT(this->op(left, right));
                     global_stack.push(this->op(left, right));
                 }
                 break;
@@ -129,7 +132,7 @@ void ParseInput(std::string process){
     std::regex_replace(process,find_func,"u");
 
     //std::regex parse_regex("^(\\d*\\.?\\d*|\\+|-|\\*|\\/|\\(|\\)|u)");
-    std::regex parse_regex(R"###(^(\d*\.?\d*|\+|-|\*|\/|\(|\)|u))###");
+    std::regex parse_regex(R"###(^(\+|-|\*|\/|\(|\)|u|\d*\.?\d*))###");
 
     while(!process.empty()){
         std::smatch match;
@@ -139,6 +142,7 @@ void ParseInput(std::string process){
         std::cout << process << " | " << full_match << " | " << out <<" | " << match.size() << std::endl;
         process = std::regex_replace(process, parse_regex, "");
 
+        DBG_PRINT("in parse " << out[0]);
         if(std::isdigit(out[0])){
             auto number = StackOperation('r');
             number.storage = std::stod(out); 
@@ -175,7 +179,7 @@ int main(){
     Priority['('] = -1;
     Priority[')'] = -1;
 
-    ParseInput("1+2");
+    ParseInput("(1+2)*2");
     Execute();
 
     return 0;
