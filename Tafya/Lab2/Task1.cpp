@@ -128,13 +128,16 @@ void ParseInput(std::string process){
     std::regex find_func("pow");
     std::regex_replace(process,find_func,"u");
 
-    std::regex parse_regex("^(\\d*\\.?d*|\\+|-|\\*|/|\\(|\\)|u)");
+    //std::regex parse_regex("^(\\d*\\.?\\d*|\\+|-|\\*|\\/|\\(|\\)|u)");
+    std::regex parse_regex(R"###(^(\d*\.?\d*|\+|-|\*|\/|\(|\)|u))###");
 
     while(!process.empty()){
         std::smatch match;
-        std::regex_match(process, match, parse_regex);
+        std::regex_search(process, match, parse_regex);
         std::string out = match[1];
-        std::regex_replace(process, parse_regex, "");
+        std::string full_match = match[0];
+        std::cout << process << " | " << full_match << " | " << out <<" | " << match.size() << std::endl;
+        process = std::regex_replace(process, parse_regex, "");
 
         if(std::isdigit(out[0])){
             auto number = StackOperation('r');
@@ -146,17 +149,18 @@ void ParseInput(std::string process){
         parse_operation_stack.push(StackOperation(out[0]));
         
     }
+
     while(!parse_operation_stack.empty()){
         stackPopToOp();
     }
 }
 
 void Execute(){
-    for(auto element : operation_stack){
-        element();
+    while(!operation_stack.empty()){
+        operation_stack.front()();
+        operation_stack.pop_front();    
     }
-    std::cout << global_stack.top() << std::endl;
-
+    std::cout << "result: " << global_stack.top() << std::endl;
 }
 
 
@@ -172,6 +176,7 @@ int main(){
     Priority[')'] = -1;
 
     ParseInput("1+2");
+    Execute();
 
     return 0;
 }
