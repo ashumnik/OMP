@@ -2,11 +2,12 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <chrono>
 #include <cstring>
 #include "star.hpp"
 
 #define D(X) (std::cout << X << std::endl)
-#define SEND_RECIEVE_BYTES 5
+#define SEND_RECIEVE_BYTES (5)
 
 void star(std::string message_to_root, std::string message_to_edges){
     
@@ -32,74 +33,58 @@ void star(std::string message_to_root, std::string message_to_edges){
     for(int round = M; round > 0; round--){
         std::cout << std::setfill('-') << std::setw(40) << "Current round is " << round << " in [" << rank << "]" << std::endl;
 
-        if(rank == 0){
-            if(round == M){
-                std::strcpy(sended_to_edges, message_to_edges.c_str());
-                D(sended_to_edges);
-            }
-            // Послать сообщение всем крайним процессам
-            MPI_Scatter(
-                      sended_to_edges,
-                      SEND_RECIEVE_BYTES, 
-                      MPI_CHAR, 
-                      recieved_by_edges,
-                      SEND_RECIEVE_BYTES,
-                      MPI_CHAR,
-                      0, 
-                      MPI_COMM_WORLD); 
-            
-            // Принять сообщения от всех крайних процессов
+        if(round == M){
+            std::strcpy(sended_to_edges, message_to_edges.c_str());
+            D(sended_to_edges);
+        }
 
-            MPI_Gather(
-                     sended_to_root, 
-                     message_to_root.size(),
-                     MPI_CHAR,
-                     recieved_by_root,
-                     message_to_root.size(),
-                     MPI_CHAR,
-                     0,
-                     MPI_COMM_WORLD);
-            /*MPI_Allgather(
-                     sended_to_root, 
-                     message_to_root.size(),
-                     MPI_CHAR,
-                     recieved_by_root,
-                     message_to_root.size(),
-                     MPI_CHAR,
-                     MPI_COMM_WORLD);
-             */        
+        // Послать сообщение всем крайним процессам
+        MPI_Scatter(
+                  sended_to_edges,
+                  SEND_RECIEVE_BYTES, 
+                  MPI_CHAR, 
+                  recieved_by_edges,
+                  SEND_RECIEVE_BYTES,
+                  MPI_CHAR,
+                  0, 
+                  MPI_COMM_WORLD); 
+        
+        // Принять сообщения от всех крайних процессов
+
+/*            MPI_Gather(
+                 sended_to_root, 
+                 message_to_root.size(),
+                 MPI_CHAR,
+                 recieved_by_root,
+                 message_to_root.size(),
+                 MPI_CHAR,
+                 0,
+                 MPI_COMM_WORLD);
+                 */
+        if(rank == 0){ 
             std::cout << "It's root process, and i recieved this:{" << recieved_by_root << "}" << '\n';
             std::cout << "Begining of scatter..." << std::endl;
         }
         else{
-            if(round == M){
-                std::strcpy(sended_to_root, message_to_root.c_str());
-                D(sended_to_root);
-            }
             // Принять сообщение от главного процесса
-            /*MPI_Allgather(
-                     sended_to_edges, 
-                     SEND_RECIEVE_BYTES, 
-                     MPI_CHAR,
-                     recieved_by_edges,
-                     SEND_RECIEVE_BYTES,
-                     MPI_CHAR,
-                     MPI_COMM_WORLD
-                     );
-                     */
             std::cout << "It's " << rank << " process, and i recieved this:{" << recieved_by_edges << "}" << std::endl;
-
-            // Послать сообщение главному процессу
-            MPI_Gather(
-                     message_to_root.c_str(),
-                     SEND_RECIEVE_BYTES, 
-                     MPI_CHAR, 
-                     recieved_by_root,
-                     SEND_RECIEVE_BYTES,
-                     MPI_CHAR, 
-                     0, 
-                     MPI_COMM_WORLD); 
         }
+
+        if(round == M){
+            std::strcpy(sended_to_root, message_to_root.c_str());
+            D(sended_to_root);
+        }
+
+        // Послать сообщение главному процессу
+        MPI_Gather(
+                 sended_to_root,
+                 SEND_RECIEVE_BYTES, 
+                 MPI_CHAR, 
+                 recieved_by_root,
+                 SEND_RECIEVE_BYTES,
+                 MPI_CHAR, 
+                 0, 
+                 MPI_COMM_WORLD); 
 
     }
 
