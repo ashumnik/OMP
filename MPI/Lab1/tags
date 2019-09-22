@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+HPP_RING	ring.hpp	2;"	d
+HPP_STAR	star.hpp	2;"	d
+M	ring.hpp	6;"	d
+M	star.hpp	5;"	d
+N	ring.hpp	5;"	d
+N	star.hpp	4;"	d
+main	Task1.cpp	/^int main(int argc, char *argv[]){$/;"	f
+ring	ring.cpp	/^void ring(std::string message){$/;"	f
+star	star.cpp	/^void star(std::string message_to_root, std::string message_to_edges){$/;"	f
