@@ -2,6 +2,7 @@
 #include <iostream>
 #include <iomanip>
 #include <string>
+#include <sstream>
 #include <chrono>
 #include <cstdlib>
 #include <cstring>
@@ -54,13 +55,13 @@ std::string LongInt<SIZE_IN_BYTES>::ToString(){
     std::size_t proxy_int = 0;
     decltype(proxy_int) bit_count = sizeof(proxy_int)*8;
 
-    decltype(std::bitset::count()) index = 0;
+    decltype(std::bitset<SIZE_IN_BYTES>::count()) index = 0;
     for(;index < this->size(); index++){
         proxy_int ^= (static_cast<decltype(proxy_int)>
                         (this->container[index]) << index % bit_count);
         
         if(index % bit_count == 0 && index != 0){
-            out_stream << std::hex << std::to_string() << proxy_int;
+            out_stream << std::hex << proxy_int;
             proxy_int = 0;
         }
     }
@@ -71,9 +72,10 @@ std::string LongInt<SIZE_IN_BYTES>::ToString(){
 template<typename std::size_t SIZE_IN_BYTES>
 LongInt<SIZE_IN_BYTES> LongInt<SIZE_IN_BYTES>::operator+(const LongInt<SIZE_IN_BYTES>& other){
 
-    LongInt<SIZE_IN_BYTES*2>container.size()> result;
+    LongInt<SIZE_IN_BYTES> result;
     result.reset();
-    decltype(std::bitset::count()) index = 0;
+
+    std::size_t index = 0;
     bool carry = false;
     for(;index < result.size(); index++){
         if(carry){
@@ -89,11 +91,11 @@ LongInt<SIZE_IN_BYTES> LongInt<SIZE_IN_BYTES>::operator+(const LongInt<SIZE_IN_B
             continue;
         }
     }
-}
+};
 
 template<typename std::size_t SIZE_IN_BYTES>
 LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN_BYTES>& other){
-    LongInt<SIZE_IN_BYTES*2>container.size()> result;
+    LongInt<SIZE_IN_BYTES*2> result;
     result.reset();
     std::vector<LongInt<SIZE_IN_BYTES*2>> intermediate_ints;
 
@@ -102,7 +104,7 @@ LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN
     for(auto tbit : this->container){
         LongInt<SIZE_IN_BYTES*2> intermediate;
         intermediate.reset();
-        decltype(std::bitset::count()) index = 0;
+        std::size_t index = 0;
         for(auto obit : other.container){
             intermediate[index++] = tbit & obit;
         }

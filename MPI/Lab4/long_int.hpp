@@ -22,8 +22,8 @@ public:
     LongInt<SIZE_IN_BYTES*2> operator*(const LongInt<SIZE_IN_BYTES>& other);
     LongInt<SIZE_IN_BYTES> operator+(const LongInt<SIZE_IN_BYTES>& other);
 
-    decltype(std::bitset::size()) size(){
-        return container.size();
+    std::size_t size(){
+        return this->container.size();
     }
 
     void reset();
