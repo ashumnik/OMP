@@ -1,5 +1,6 @@
 #ifndef HPP_LONG_INT
 #define HPP_LONG_INT
+#include "mpi.h"
 #include <iostream>
 #include <iomanip>
 #include <string>
@@ -74,7 +75,7 @@ LongInt<SIZE_IN_BYTES>::LongInt(const LongInt& ln){
 
 template<typename std::size_t SIZE_IN_BYTES>
 LongInt<SIZE_IN_BYTES>& LongInt<SIZE_IN_BYTES>::operator=(const LongInt<SIZE_IN_BYTES>& other){
-    this->container(other.container);
+    this->container = other.get_container();
     return this;
 };
 
@@ -100,7 +101,6 @@ std::string LongInt<SIZE_IN_BYTES>::ToString(){
         proxy_int ^= (static_cast<decltype(proxy_int)>
                         (this->container[index]) << index % bit_count);
 
-        
         if(index % (bit_count-1) == 0 && index != 0){
             out_stream << std::hex << proxy_int;
             proxy_int = 0;
@@ -146,20 +146,64 @@ LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN
 
 
     /*ANDing*/
-    for(auto tbit : this->container){
+    std::size_t int_size = this->get_container().size();
+
+    for(std::size_t i = 0, index = 0 ;i < int_size; i++){
+        auto tbit = this->container[i];
         LongInt<SIZE_IN_BYTES*2> intermediate;
         intermediate.reset();
-        std::size_t index = 0;
-        for(auto obit : other.container){
-            intermediate[index++] = tbit & obit;
+        for(std::size_t j ;j < int_size; j++){
+            auto obit = this->container[j];
+            intermediate.get_container()[i++] = tbit & obit;
         }
-        intermediate_ints.pushback(intermediate);
+        intermediate_ints.push_back(intermediate);
+        std::cout << std::endl;
+        std::cout << intermediate.get_container().to_string() << "|" << std::endl;
     }
 
 
-    /*SUMming*/
-    for(auto _int : intermediate_ints){
-        result = result + _int;
+    LongInt<SIZE_IN_BYTES*2> recv_buffer [200];
+
+    std::size_t inter_ints_byte_size = intermediate_ints.size()*sizeof(result);
+    //std::cout << result.get_container().size() << std::endl;
+
+
+    int rank, comm_size;
+    MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+    MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
+
+    MPI_Scatter(
+            reinterpret_cast<void*>(&intermediate_ints[0]),
+            inter_ints_byte_size/comm_size,
+            MPI_CHAR,
+            reinterpret_cast<void*>(recv_buffer),
+            inter_ints_byte_size/comm_size,
+            MPI_CHAR,
+            0,
+            MPI_COMM_WORLD
+            );
+
+    if(rank != 0){
+        for(std::size_t i = 0; i < intermediate_ints.size()/comm_size; i++){
+            result = result + recv_buffer[i];
+        }
+    }
+
+    MPI_Gather(
+            reinterpret_cast<void*>(&result),
+            sizeof(result),
+            MPI_CHAR,
+            reinterpret_cast<void*>(recv_buffer),
+            sizeof(result),
+            MPI_CHAR,
+            0,
+            MPI_COMM_WORLD
+            );
+
+    if(rank == 0){
+        for(std::size_t i = 0; i < comm_size; i++){
+            result = result + recv_buffer[i];
+        }
     }
 
     return result;
