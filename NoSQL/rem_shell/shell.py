@@ -7,6 +7,7 @@ import datetime
 import db_comm as db
 
 print("{:^60}".format("Welcome to shell, that remembers everything"))
+print("{:^60}".format('type "#help" to get help'))
 
 
 database = db.DB_Connection()
@@ -20,6 +21,17 @@ while True:
     if command == 'quit' or command == 'exit' or command == 'q':
         sys.exit("exiting...")
     db_query_match = re.search(r'#get from (\*$|.+?)~(elapsed time|elapsed|stdout|stderr|std|date|all|avg)?\s*', command)
+    if re.match(r'#help\s*', command ):
+        print('type "#get from *command*~elapsed time" to get elapsed time of executed command')
+        print('type "#get from *command*~elapsed"      to get elapsed time of executed command')
+        print('type "#get from *command*~stdout"       to get stdout of executed command')
+        print('type "#get from *command*~stderr"       to get stderr of executed command')
+        print('type "#get from *command*~std"          to get both stdout and stderr of executed command')
+        print('type "#get from *command*~date"         to get date when command was executed')
+        print('type "#get from *command*~all"          to get all information about executed command')
+        print('type "#get from *command*~avg"          to get avgerage elapsed time of executed command')
+        print('type "#get from *~"                     to get all executed commands in database')
+        continue
 
     #import pdb; pdb.set_trace()
     if db_query_match:
