@@ -1,0 +1,120 @@
+﻿<Window x:Class="GenericInterface.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GenericInterface"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <Grid x:Name="MainGrid" Background="WhiteSmoke">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle x:Name="GridSplitter"
+                      Grid.Column="3"
+                      Grid.RowSpan="5"
+                      Fill="LightGray"
+                      HorizontalAlignment="Stretch"/>
+
+
+
+        <TextBox x:Name="From"
+                 Grid.Column="4" 
+                 HorizontalAlignment="Stretch"
+                 TextWrapping="Wrap" 
+                 Text="example@example.com" 
+                 VerticalAlignment="Center"/>
+        <TextBlock 
+                 Grid.Column="4" 
+                 HorizontalAlignment="Center" 
+                 TextWrapping="Wrap" 
+                 Text="От кого" 
+                 VerticalAlignment="Top"/>
+
+        <TextBox x:Name="To"
+                 Grid.Column="5" 
+                 HorizontalAlignment="Stretch"
+                 TextWrapping="Wrap" 
+                 Text="example@example.com" 
+                 VerticalAlignment="Center"/>
+        <TextBlock 
+                 Grid.Column="5" 
+                 HorizontalAlignment="Center" 
+                 TextWrapping="Wrap" 
+                 Text="Кому" 
+                 VerticalAlignment="Top"/>
+
+        <TextBox x:Name="Mail"
+                 Grid.ColumnSpan="3" 
+                 Grid.Column="4"
+                 Grid.Row="1" 
+                 Grid.RowSpan="{Binding ElementName=MainGrid, Path=RowDefinitions.Count}" 
+                 HorizontalAlignment="Stretch"
+                 VerticalAlignment="Stretch"/>
+
+        <Button x:Name="Send"
+                Grid.Column="6" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Content="Отправить"
+                Click="Send_Click"/>
+
+
+
+
+
+
+        <StackPanel x:Name="StackContainer" 
+                    HorizontalAlignment="Stretch" 
+                    VerticalAlignment="Stretch"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.RowSpan="4"
+                    Grid.ColumnSpan="3"
+                    />
+
+        <TextBox x:Name="FromFetch" 
+            HorizontalAlignment="Stretch"
+            TextWrapping="Wrap" 
+            Text="example@example.com" 
+            VerticalAlignment="Center"/>
+        
+        <TextBlock x:Name="Addr"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap" 
+            Text="Адрес" 
+            VerticalAlignment="Top"/>
+        
+        <TextBlock x:Name="MailHeader"
+            Grid.Column="1"
+            HorizontalAlignment="Center" 
+            TextWrapping="Wrap" 
+            Text="Письма" 
+            VerticalAlignment="Bottom"/>
+        
+        <Button x:Name="Fetch"
+            Grid.Column="2" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Content="Получить"
+            Click="Fetch_Click"/>
+
+
+    </Grid>
+
+</Window>
