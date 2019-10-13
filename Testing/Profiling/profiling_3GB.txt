@@ -1,0 +1,1343 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 95.04     90.20    90.20                             SortContainer::Sort(OrderBy)::Func::Asc(void const*, void const*)
+  4.99     94.93     4.74        1     4.74     4.74  SortContainer::~SortContainer()
+  0.00     94.93     0.00     1152     0.00     0.00  SortContainer*&& std::forward<SortContainer*>(std::remove_reference<SortContainer*>::type&)
+  0.00     94.93     0.00      385     0.00     0.00  SortContainer::SortContainer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long)
+  0.00     94.93     0.00      385     0.00     0.00  operator new(unsigned long, void*)
+  0.00     94.93     0.00      384     0.00     0.00  void __gnu_cxx::new_allocator<SortContainer*>::construct<SortContainer*, SortContainer*>(SortContainer**, SortContainer*&&)
+  0.00     94.93     0.00      384     0.00     0.00  void std::allocator_traits<std::allocator<SortContainer*> >::construct<SortContainer*, SortContainer*>(std::allocator<SortContainer*>&, SortContainer**, SortContainer*&&)
+  0.00     94.93     0.00      384     0.00     0.00  void std::vector<SortContainer*, std::allocator<SortContainer*> >::emplace_back<SortContainer*>(SortContainer*&&)
+  0.00     94.93     0.00      384     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::push_back(SortContainer*&&)
+  0.00     94.93     0.00      384     0.00     0.00  std::remove_reference<SortContainer*&>::type&& std::move<SortContainer*&>(SortContainer*&)
+  0.00     94.93     0.00      356     0.00     0.00  LibController::getProgress()
+  0.00     94.93     0.00      324     0.00     0.00  FileManager::getAllChunks()
+  0.00     94.93     0.00      284     0.00     0.00  FileManager::getProcessedChunks()
+  0.00     94.93     0.00       81     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::operator[](unsigned long)
+  0.00     94.93     0.00       66     0.00     0.00  SortContainer::Sort(OrderBy)
+  0.00     94.93     0.00       29     0.00     0.00  std::operator&(std::memory_order, std::__memory_order_modifier)
+  0.00     94.93     0.00       27     0.00     0.00  int QAtomicOps<int>::load<int>(std::atomic<int> const&)
+  0.00     94.93     0.00       27     0.00     0.00  QBasicAtomicInteger<int>::load() const
+  0.00     94.93     0.00       24     0.00     0.00  QScopedPointer<QObjectData, QScopedPointerDeleter<QObjectData> >::operator->() const
+  0.00     94.93     0.00       19     0.00     0.00  QtPrivate::RefCount::deref()
+  0.00     94.93     0.00       16     0.00     0.00  bool QAtomicOps<int>::deref<int>(std::atomic<int>&)
+  0.00     94.93     0.00       16     0.00     0.00  QBasicAtomicInteger<int>::deref()
+  0.00     94.93     0.00       16     0.00     0.00  std::__atomic_base<int>::operator--()
+  0.00     94.93     0.00       10     0.00     0.00  QByteArray::~QByteArray()
+  0.00     94.93     0.00        9     0.00     0.00  QString::~QString()
+  0.00     94.93     0.00        7     0.00     0.00  bool QAtomicOps<int>::ref<int>(std::atomic<int>&)
+  0.00     94.93     0.00        7     0.00     0.00  QBasicAtomicInteger<int>::ref()
+  0.00     94.93     0.00        7     0.00     0.00  QtPrivate::RefCount::ref()
+  0.00     94.93     0.00        7     0.00     0.00  std::__atomic_base<int>::operator++()
+  0.00     94.93     0.00        6     0.00     0.00  QTypedArrayData<char>::deallocate(QArrayData*)
+  0.00     94.93     0.00        5     0.00     0.00  LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**)
+  0.00     94.93     0.00        4     0.00     0.00  QByteArray::QByteArray(QByteArray const&)
+  0.00     94.93     0.00        4     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::size() const
+  0.00     94.93     0.00        4     0.00     0.00  std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator()
+  0.00     94.93     0.00        3     0.00     0.00  QArrayData::data()
+  0.00     94.93     0.00        3     0.00     0.00  QTypedArrayData<char>::data()
+  0.00     94.93     0.00        3     0.00     0.00  QString::QString(char const*)
+  0.00     94.93     0.00        3     0.00     0.00  QString::QString(QString const&)
+  0.00     94.93     0.00        3     0.00     0.00  QByteArray::constData() const
+  0.00     94.93     0.00        3     0.00     0.00  QString::toUtf8() const &
+  0.00     94.93     0.00        3     0.00     0.00  std::_Iter_base<SortContainer**, false>::_S_base(SortContainer**)
+  0.00     94.93     0.00        3     0.00     0.00  void std::_Destroy_aux<true>::__destroy<SortContainer**>(SortContainer**, SortContainer**)
+  0.00     94.93     0.00        3     0.00     0.00  std::_Niter_base<SortContainer**>::iterator_type std::__niter_base<SortContainer**>(SortContainer**)
+  0.00     94.93     0.00        3     0.00     0.00  std::remove_reference<QTypedArrayData<unsigned short>*&>::type&& std::move<QTypedArrayData<unsigned short>*&>(QTypedArrayData<unsigned short>*&)
+  0.00     94.93     0.00        3     0.00     0.00  void std::_Destroy<SortContainer**>(SortContainer**, SortContainer**)
+  0.00     94.93     0.00        3     0.00     0.00  void std::_Destroy<SortContainer**, SortContainer*>(SortContainer**, SortContainer**, std::allocator<SortContainer*>&)
+  0.00     94.93     0.00        3     0.00     0.00  main::{lambda(QObject*, QUrl const&)#2}::~QUrl()
+  0.00     94.93     0.00        2     0.00     0.00  int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType)
+  0.00     94.93     0.00        2     0.00     0.00  QArrayData::sharedNull()
+  0.00     94.93     0.00        2     0.00     0.00  QByteArray::operator+=(char const*)
+  0.00     94.93     0.00        2     0.00     0.00  LibController::isReady()
+  0.00     94.93     0.00        2     0.00     0.00  QVarLengthArray<char, 48>::operator[](int)
+  0.00     94.93     0.00        2     0.00     0.00  QVarLengthArray<char, 64>::data()
+  0.00     94.93     0.00        2     0.00     0.00  QVarLengthArray<char, 64>::operator[](int)
+  0.00     94.93     0.00        2     0.00     0.00  __gnu_cxx::new_allocator<SortContainer*>::max_size() const
+  0.00     94.93     0.00        2     0.00     0.00  std::move_iterator<SortContainer**>::base() const
+  0.00     94.93     0.00        2     0.00     0.00  std::_Iter_base<std::move_iterator<SortContainer**>, true>::_S_base(std::move_iterator<SortContainer**>)
+  0.00     94.93     0.00        2     0.00     0.00  std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_deallocate(SortContainer**, unsigned long)
+  0.00     94.93     0.00        2     0.00     0.00  std::move_iterator<SortContainer**>::move_iterator(SortContainer**)
+  0.00     94.93     0.00        2     0.00     0.00  std::_Miter_base<std::move_iterator<SortContainer**> >::iterator_type std::__miter_base<std::move_iterator<SortContainer**> >(std::move_iterator<SortContainer**>)
+  0.00     94.93     0.00        2     0.00     0.00  std::move_iterator<SortContainer**> std::__make_move_if_noexcept_iterator<SortContainer**, std::move_iterator<SortContainer**> >(SortContainer**)
+  0.00     94.93     0.00        2     0.00     0.00  std::remove_reference<main::{lambda(QObject*, QUrl const&)#2}&>::type&& std::move<main::{lambda(QObject*, QUrl const&)#2}&>(std::remove_reference&&)
+  0.00     94.93     0.00        2     0.00     0.00  main::{lambda(QObject*, QUrl const&)#2}::QUrl({lambda(QObject*, QUrl const&)#2}&&)
+  0.00     94.93     0.00        2     0.00     0.00  operator+(QByteArray const&, char const*)
+  0.00     94.93     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN11FileManager8CopyFileENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_
+  0.00     94.93     0.00        1     0.00     0.00  _GLOBAL__sub_I__ZN13SortContainerC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmm
+  0.00     94.93     0.00        1     0.00     4.74  Wrapper4Thread(LibController*)
+  0.00     94.93     0.00        1     0.00     0.00  int qmlRegisterType<LibController>(char const*, int, int, char const*)
+  0.00     94.93     0.00        1     0.00     0.00  qInitResources_qml()
+  0.00     94.93     0.00        1     0.00     0.00  qCleanupResources_qml()
+  0.00     94.93     0.00        1     0.00     0.00  int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType)
+  0.00     94.93     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     94.93     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     94.93     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     94.93     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     94.93     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     94.93     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     94.93     0.00        1     0.00     0.00  unsigned int const& qMax<unsigned int>(unsigned int const&, unsigned int const&)
+  0.00     94.93     0.00        1     0.00     0.00  void qSwap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&)
+  0.00     94.93     0.00        1     0.00     0.00  qResourceFeatureZlib()
+  0.00     94.93     0.00        1     0.00     0.00  QAtomicInt::QAtomicInt(int)
+  0.00     94.93     0.00        1     0.00     0.00  int QAtomicOps<int>::loadAcquire<int>(std::atomic<int> const&)
+  0.00     94.93     0.00        1     0.00     0.00  void QAtomicOps<int>::storeRelease<int>(std::atomic<int>&, int)
+  0.00     94.93     0.00        1     0.00     0.00  QByteArray::reserve(int)
+  0.00     94.93     0.00        1     0.00     0.00  QByteArray::QByteArray()
+  0.00     94.93     0.00        1     0.00     0.00  FileManager::DivideFile(unsigned long, unsigned long)
+  0.00     94.93     0.00        1     0.00     0.00  FileManager::CopyFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  0.00     94.93     0.00        1     0.00     4.74  FileManager::SortFile(OrderBy)
+  0.00     94.93     0.00        1     0.00     0.00  FileManager::FileManager(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)
+  0.00     94.93     0.00        1     0.00     0.00  FileManager::~FileManager()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::QQmlElement<LibController>::QQmlElement()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::QQmlElement<LibController>::~QQmlElement()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::QQmlElement<LibController>::operator delete(void*)
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::RegisterType::~RegisterType()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::StaticCastSelector<LibController, QQmlParserStatus>::cast()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueSource>::cast()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueInterceptor>::cast()
+  0.00     94.93     0.00        1     0.00     0.00  QObject* (*QQmlPrivate::attachedPropertiesFunc<LibController>())(QObject*)
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::StaticCastSelectorClass<LibController, QQmlParserStatus, 1>::cast()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::StaticCastSelectorClass<LibController, QQmlPropertyValueSource, 1>::cast()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::StaticCastSelectorClass<LibController, QQmlPropertyValueInterceptor, 1>::cast()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::AttachedPropertySelector<LibController, 0>::metaObject()
+  0.00     94.93     0.00        1     0.00     0.00  QQmlPrivate::AttachedPropertySelector<LibController, 0>::func()
+  0.00     94.93     0.00        1     0.00     0.00  QMetaObject const* QQmlPrivate::attachedPropertiesMetaObject<LibController>()
+  0.00     94.93     0.00        1     0.00     0.00  QMetaTypeId2<LibController*>::qt_metatype_id()
+  0.00     94.93     0.00        1     0.00     0.00  QtConcurrent::RunFunctionTask<void>::RunFunctionTask()
+  0.00     94.93     0.00        1     0.00     0.00  QtConcurrent::RunFunctionTask<void>::~RunFunctionTask()
+  0.00     94.93     0.00        1     0.00     4.74  QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor()
+  0.00     94.93     0.00        1     0.00     0.00  QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::StoredFunctorCall1(void (*)(LibController*), LibController* const&)
+  0.00     94.93     0.00        1     0.00     0.00  QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::~StoredFunctorCall1()
+  0.00     94.93     0.00        1     0.00     0.00  QtConcurrent::RunFunctionTaskBase<void>::start(QThreadPool*)
+  0.00     94.93     0.00        1     0.00     0.00  QtConcurrent::RunFunctionTaskBase<void>::start()
+  0.00     94.93     0.00        1     0.00     0.00  QtConcurrent::RunFunctionTaskBase<void>::RunFunctionTaskBase()
+  0.00     94.93     0.00        1     0.00     0.00  QtConcurrent::RunFunctionTaskBase<void>::~RunFunctionTaskBase()
+  0.00     94.93     0.00        1     0.00     0.00  QFuture<void> QtConcurrent::run<void, LibController*, LibController*>(void (*)(LibController*), LibController* const&)
+  0.00     94.93     0.00        1     0.00     0.00  (anonymous namespace)::initializer::initializer()
+  0.00     94.93     0.00        1     0.00     0.00  LibController::getSortFile()
+  0.00     94.93     0.00        1     0.00     0.00  LibController::handleReady()
+  0.00     94.93     0.00        1     0.00     0.00  LibController::setSaveFile(QString, QString)
+  0.00     94.93     0.00        1     0.00     0.00  LibController::setSortFile(QString)
+  0.00     94.93     0.00        1     0.00     0.00  LibController::createFileManager()
+  0.00     94.93     0.00        1     0.00     0.00  LibController::sortFile()
+  0.00     94.93     0.00        1     0.00     0.00  LibController::LibController(QObject*)
+  0.00     94.93     0.00        1     0.00     0.00  LibController::~LibController()
+  0.00     94.93     0.00        1     0.00     0.00  QAtomicInteger<int>::QAtomicInteger(int)
+  0.00     94.93     0.00        1     0.00     0.00  QTypedArrayData<char>::sharedNull()
+  0.00     94.93     0.00        1     0.00     0.00  QTypedArrayData<unsigned short>::sharedNull()
+  0.00     94.93     0.00        1     0.00     0.00  QVarLengthArray<char, 48>::data()
+  0.00     94.93     0.00        1     0.00     0.00  QVarLengthArray<char, 48>::QVarLengthArray(int)
+  0.00     94.93     0.00        1     0.00     0.00  QVarLengthArray<char, 48>::~QVarLengthArray()
+  0.00     94.93     0.00        1     0.00     0.00  QVarLengthArray<char, 64>::QVarLengthArray(int)
+  0.00     94.93     0.00        1     0.00     0.00  QVarLengthArray<char, 64>::~QVarLengthArray()
+  0.00     94.93     0.00        1     0.00     0.00  QFutureInterface<void>::reportFinished(void const*)
+  0.00     94.93     0.00        1     0.00     0.00  QFutureInterface<void>::future()
+  0.00     94.93     0.00        1     0.00     0.00  QFutureInterface<void>::QFutureInterface(QFutureInterfaceBase::State)
+  0.00     94.93     0.00        1     0.00     0.00  QFutureInterface<void>::~QFutureInterface()
+  0.00     94.93     0.00        1     0.00     0.00  QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id()
+  0.00     94.93     0.00        1     0.00     0.00  QBasicAtomicInteger<int>::storeRelease(int)
+  0.00     94.93     0.00        1     0.00     0.00  QBasicAtomicInteger<int>::QBasicAtomicInteger(int)
+  0.00     94.93     0.00        1     0.00     0.00  QFlag::QFlag(unsigned int)
+  0.00     94.93     0.00        1     0.00     0.00  QFlags<QArrayData::AllocationOption>::QFlags(QFlag)
+  0.00     94.93     0.00        1     0.00     0.00  QFlags<QMetaType::TypeFlag>::operator|=(QMetaType::TypeFlag)
+  0.00     94.93     0.00        1     0.00     0.00  QFuture<void>::QFuture(QFutureInterfaceBase*)
+  0.00     94.93     0.00        1     0.00     0.00  QFuture<void>::~QFuture()
+  0.00     94.93     0.00        1     0.00     0.00  std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type QObject::connect<void (QQmlApplicationEngine::*)(QObject*, QUrl const&), main::{lambda(QObject*, QUrl const&)#2}>(QtPrivate<void (QQmlApplicationEngine::*)(QObject*, QUrl const&)>::Object const*, std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type, QObject const*, QtPrivate::FunctionPointer, Qt::ConnectionType)
+  0.00     94.93     0.00        1     0.00     0.00  QString::fromUtf8(char const*, int)
+  0.00     94.93     0.00        1     0.00     0.00  QString::QString(QStringDataPtr)
+  0.00     94.93     0.00        1     0.00     0.00  QString::QString()
+  0.00     94.93     0.00        1     0.00     0.00  QString::operator=(QString&&)
+  0.00     94.93     0.00        1     0.00     0.00  QRunnable::QRunnable()
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::FunctorCall<QtPrivate::IndexesList<0, 1>, QtPrivate::List<QObject*, QUrl const&>, void, main::{lambda(QObject*, QUrl const&)#2}>::call({lambda(QObject*, QUrl const&)#2}&, void**)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::ConnectionTypes<QtPrivate::List<QObject*, QUrl const&>, true>::types()
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::QSlotObjectBase::QSlotObjectBase(void (*)(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*))
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::QSlotObjectBase::~QSlotObjectBase()
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::ApplyReturnValue<void>::ApplyReturnValue(void*)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::MetaObjectForType<QQmlListProperty<LibController>, void>::value()
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::MetaObjectForType<LibController*, void>::value()
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::QMetaTypeIdHelper<QQmlListProperty<LibController>, false>::qt_metatype_id()
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::QMetaTypeIdHelper<LibController*, true>::qt_metatype_id()
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::QFunctorSlotObject({lambda(QObject*, QUrl const&)#2})
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::~QFunctorSlotObject()
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::MetaTypeSmartPointerHelper<QQmlListProperty<LibController>, void>::registerConverter(int)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::MetaTypeSmartPointerHelper<LibController*, void>::registerConverter(int)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::SequentialContainerConverterHelper<QQmlListProperty<LibController>, false>::registerConverter(int)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::SequentialContainerConverterHelper<LibController*, false>::registerConverter(int)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::AssociativeContainerConverterHelper<QQmlListProperty<LibController>, false>::registerConverter(int)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::AssociativeContainerConverterHelper<LibController*, false>::registerConverter(int)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::IsPair<QQmlListProperty<LibController> >::registerConverter(int)
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::IsPair<LibController*>::registerConverter(int)
+  0.00     94.93     0.00        1     0.00     0.00  void QtPrivate::Functor<main::{lambda(QObject*, QUrl const&)#2}, 2>::call<QtPrivate::List<QObject*, QUrl const&>, void>({lambda(QObject*, QUrl const&)#2}&, void*, {lambda(QObject*, QUrl const&)#2}&*)
+  0.00     94.93     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<SortContainer*>::deallocate(SortContainer**, unsigned long)
+  0.00     94.93     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<SortContainer*>::allocate(unsigned long, void const*)
+  0.00     94.93     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<SortContainer*>::new_allocator()
+  0.00     94.93     0.00        1     0.00     0.00  __gnu_cxx::new_allocator<SortContainer*>::~new_allocator()
+  0.00     94.93     0.00        1     0.00     0.00  QArrayData::detachFlags() const
+  0.00     94.93     0.00        1     0.00     0.00  QByteArray::size() const
+  0.00     94.93     0.00        1     0.00     0.00  QVarLengthArray<char, 48>::constData() const
+  0.00     94.93     0.00        1     0.00     0.00  QVarLengthArray<char, 64>::constData() const
+  0.00     94.93     0.00        1     0.00     0.00  QStaticStringData<13>::data_ptr() const
+  0.00     94.93     0.00        1     0.00     0.00  QBasicAtomicInteger<int>::loadAcquire() const
+  0.00     94.93     0.00        1     0.00     0.00  QFlag::operator unsigned int() const
+  0.00     94.93     0.00        1     0.00     0.00  QFlags<QArrayData::AllocationOption>::operator|(QArrayData::AllocationOption) const
+  0.00     94.93     0.00        1     0.00     0.00  QtPrivate::RefCount::isShared() const
+  0.00     94.93     0.00        1     0.00     0.00  std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() const
+  0.00     94.93     0.00        1     0.00     0.00  std::fpos<__mbstate_t>::operator long() const
+  0.00     94.93     0.00        1     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::capacity() const
+  0.00     94.93     0.00        1     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::max_size() const
+  0.00     94.93     0.00        1     0.00     0.00  std::allocator<SortContainer*>::allocator()
+  0.00     94.93     0.00        1     0.00     0.00  std::allocator<SortContainer*>::~allocator()
+  0.00     94.93     0.00        1     0.00     0.00  SortContainer** std::__copy_move<true, true, std::random_access_iterator_tag>::__copy_m<SortContainer*>(SortContainer* const*, SortContainer* const*, SortContainer**)
+  0.00     94.93     0.00        1     0.00     0.00  std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_allocate(unsigned long)
+  0.00     94.93     0.00        1     0.00     0.00  std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::_Vector_impl()
+  0.00     94.93     0.00        1     0.00     0.00  std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::~_Vector_impl()
+  0.00     94.93     0.00        1     0.00     0.00  std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_base()
+  0.00     94.93     0.00        1     0.00     0.00  std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::~_Vector_base()
+  0.00     94.93     0.00        1     0.00     0.00  std::__atomic_base<int>::__atomic_base(int)
+  0.00     94.93     0.00        1     0.00     0.00  std::allocator_traits<std::allocator<SortContainer*> >::deallocate(std::allocator<SortContainer*>&, SortContainer**, unsigned long)
+  0.00     94.93     0.00        1     0.00     0.00  std::allocator_traits<std::allocator<SortContainer*> >::allocate(std::allocator<SortContainer*>&, unsigned long)
+  0.00     94.93     0.00        1     0.00     0.00  std::allocator_traits<std::allocator<SortContainer*> >::max_size(std::allocator<SortContainer*> const&)
+  0.00     94.93     0.00        1     0.00     0.00  SortContainer** std::__uninitialized_copy<true>::__uninit_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**)
+  0.00     94.93     0.00        1     0.00     0.00  std::atomic<int>::atomic(int)
+  0.00     94.93     0.00        1     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_erase_at_end(SortContainer**)
+  0.00     94.93     0.00        1     0.00     0.00  SortContainer** std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_allocate_and_copy<std::move_iterator<SortContainer**> >(unsigned long, std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>)
+  0.00     94.93     0.00        1     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::clear()
+  0.00     94.93     0.00        1     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long)
+  0.00     94.93     0.00        1     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::vector()
+  0.00     94.93     0.00        1     0.00     0.00  std::vector<SortContainer*, std::allocator<SortContainer*> >::~vector()
+  0.00     94.93     0.00        1     0.00     0.00  SortContainer** std::__copy_move_a<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**)
+  0.00     94.93     0.00        1     0.00     0.00  SortContainer** std::__copy_move_a2<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**)
+  0.00     94.93     0.00        1     0.00     0.00  SortContainer** std::uninitialized_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**)
+  0.00     94.93     0.00        1     0.00     0.00  SortContainer** std::__uninitialized_copy_a<std::move_iterator<SortContainer**>, SortContainer**, SortContainer*>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**, std::allocator<SortContainer*>&)
+  0.00     94.93     0.00        1     0.00     0.00  SortContainer** std::copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**)
+  0.00     94.93     0.00        1     0.00     0.00  void std::swap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&)
+  0.00     94.93     0.00        1     0.00     0.00  main::{lambda(QObject*, QUrl const&)#2}::operator()(QObject*, QUrl const&) const
+  0.00     94.93     0.00        1     0.00     0.00  main::{lambda()#1}::operator()() const
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.01% of 94.93 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]     95.0   90.20    0.00                 SortContainer::Sort(OrderBy)::Func::Asc(void const*, void const*) [1]
+-----------------------------------------------
+                0.00    4.74       1/1           QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() [4]
+[2]      5.0    0.00    4.74       1         Wrapper4Thread(LibController*) [2]
+                0.00    4.74       1/1           FileManager::SortFile(OrderBy) [3]
+                0.00    0.00       1/1           LibController::handleReady() [127]
+-----------------------------------------------
+                0.00    4.74       1/1           Wrapper4Thread(LibController*) [2]
+[3]      5.0    0.00    4.74       1         FileManager::SortFile(OrderBy) [3]
+                4.74    0.00       1/1           SortContainer::~SortContainer() [5]
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::clear() [213]
+                0.00    0.00       1/385         SortContainer::SortContainer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long) [16]
+                0.00    0.00       1/66          SortContainer::Sort(OrderBy) [27]
+-----------------------------------------------
+                0.00    4.74       1/1           QtConcurrent::RunFunctionTask<void>::run() [6]
+[4]      5.0    0.00    4.74       1         QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() [4]
+                0.00    4.74       1/1           Wrapper4Thread(LibController*) [2]
+-----------------------------------------------
+                4.74    0.00       1/1           FileManager::SortFile(OrderBy) [3]
+[5]      5.0    4.74    0.00       1         SortContainer::~SortContainer() [5]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]      5.0    0.00    4.74                 QtConcurrent::RunFunctionTask<void>::run() [6]
+                0.00    4.74       1/1           QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() [4]
+                0.00    0.00       1/1           QFutureInterface<void>::reportFinished(void const*) [142]
+-----------------------------------------------
+[7]      0.0    0.00    0.00       1+4       <cycle 1 as a whole> [7]
+                0.00    0.00       2             int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+                0.00    0.00       1             QtPrivate::QMetaTypeIdHelper<LibController*, true>::qt_metatype_id() <cycle 1> [168]
+                0.00    0.00       1             QMetaTypeId2<LibController*>::qt_metatype_id() <cycle 1> [115]
+                0.00    0.00       1             QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+-----------------------------------------------
+                0.00    0.00     384/1152        void std::vector<SortContainer*, std::allocator<SortContainer*> >::emplace_back<SortContainer*>(SortContainer*&&) [20]
+                0.00    0.00     384/1152        void std::allocator_traits<std::allocator<SortContainer*> >::construct<SortContainer*, SortContainer*>(std::allocator<SortContainer*>&, SortContainer**, SortContainer*&&) [19]
+                0.00    0.00     384/1152        void __gnu_cxx::new_allocator<SortContainer*>::construct<SortContainer*, SortContainer*>(SortContainer**, SortContainer*&&) [18]
+[15]     0.0    0.00    0.00    1152         SortContainer*&& std::forward<SortContainer*>(std::remove_reference<SortContainer*>::type&) [15]
+-----------------------------------------------
+                0.00    0.00       1/385         FileManager::SortFile(OrderBy) [3]
+                0.00    0.00     384/385         FileManager::DivideFile(unsigned long, unsigned long) [97]
+[16]     0.0    0.00    0.00     385         SortContainer::SortContainer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long) [16]
+-----------------------------------------------
+                0.00    0.00       1/385         void QQmlPrivate::createInto<LibController>(void*) [226]
+                0.00    0.00     384/385         void __gnu_cxx::new_allocator<SortContainer*>::construct<SortContainer*, SortContainer*>(SortContainer**, SortContainer*&&) [18]
+[17]     0.0    0.00    0.00     385         operator new(unsigned long, void*) [17]
+-----------------------------------------------
+                0.00    0.00     384/384         void std::allocator_traits<std::allocator<SortContainer*> >::construct<SortContainer*, SortContainer*>(std::allocator<SortContainer*>&, SortContainer**, SortContainer*&&) [19]
+[18]     0.0    0.00    0.00     384         void __gnu_cxx::new_allocator<SortContainer*>::construct<SortContainer*, SortContainer*>(SortContainer**, SortContainer*&&) [18]
+                0.00    0.00     384/1152        SortContainer*&& std::forward<SortContainer*>(std::remove_reference<SortContainer*>::type&) [15]
+                0.00    0.00     384/385         operator new(unsigned long, void*) [17]
+-----------------------------------------------
+                0.00    0.00     384/384         void std::vector<SortContainer*, std::allocator<SortContainer*> >::emplace_back<SortContainer*>(SortContainer*&&) [20]
+[19]     0.0    0.00    0.00     384         void std::allocator_traits<std::allocator<SortContainer*> >::construct<SortContainer*, SortContainer*>(std::allocator<SortContainer*>&, SortContainer**, SortContainer*&&) [19]
+                0.00    0.00     384/1152        SortContainer*&& std::forward<SortContainer*>(std::remove_reference<SortContainer*>::type&) [15]
+                0.00    0.00     384/384         void __gnu_cxx::new_allocator<SortContainer*>::construct<SortContainer*, SortContainer*>(SortContainer**, SortContainer*&&) [18]
+-----------------------------------------------
+                0.00    0.00     384/384         std::vector<SortContainer*, std::allocator<SortContainer*> >::push_back(SortContainer*&&) [21]
+[20]     0.0    0.00    0.00     384         void std::vector<SortContainer*, std::allocator<SortContainer*> >::emplace_back<SortContainer*>(SortContainer*&&) [20]
+                0.00    0.00     384/1152        SortContainer*&& std::forward<SortContainer*>(std::remove_reference<SortContainer*>::type&) [15]
+                0.00    0.00     384/384         void std::allocator_traits<std::allocator<SortContainer*> >::construct<SortContainer*, SortContainer*>(std::allocator<SortContainer*>&, SortContainer**, SortContainer*&&) [19]
+-----------------------------------------------
+                0.00    0.00     384/384         FileManager::DivideFile(unsigned long, unsigned long) [97]
+[21]     0.0    0.00    0.00     384         std::vector<SortContainer*, std::allocator<SortContainer*> >::push_back(SortContainer*&&) [21]
+                0.00    0.00     384/384         std::remove_reference<SortContainer*&>::type&& std::move<SortContainer*&>(SortContainer*&) [22]
+                0.00    0.00     384/384         void std::vector<SortContainer*, std::allocator<SortContainer*> >::emplace_back<SortContainer*>(SortContainer*&&) [20]
+-----------------------------------------------
+                0.00    0.00     384/384         std::vector<SortContainer*, std::allocator<SortContainer*> >::push_back(SortContainer*&&) [21]
+[22]     0.0    0.00    0.00     384         std::remove_reference<SortContainer*&>::type&& std::move<SortContainer*&>(SortContainer*&) [22]
+-----------------------------------------------
+                0.00    0.00     356/356         LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[23]     0.0    0.00    0.00     356         LibController::getProgress() [23]
+                0.00    0.00     324/324         FileManager::getAllChunks() [24]
+                0.00    0.00     284/284         FileManager::getProcessedChunks() [25]
+-----------------------------------------------
+                0.00    0.00     324/324         LibController::getProgress() [23]
+[24]     0.0    0.00    0.00     324         FileManager::getAllChunks() [24]
+-----------------------------------------------
+                0.00    0.00     284/284         LibController::getProgress() [23]
+[25]     0.0    0.00    0.00     284         FileManager::getProcessedChunks() [25]
+-----------------------------------------------
+                0.00    0.00      81/81          _GLOBAL__sub_I__ZN11FileManager8CopyFileENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ [77]
+[26]     0.0    0.00    0.00      81         std::vector<SortContainer*, std::allocator<SortContainer*> >::operator[](unsigned long) [26]
+-----------------------------------------------
+                0.00    0.00       1/66          FileManager::SortFile(OrderBy) [3]
+                0.00    0.00      65/66          _GLOBAL__sub_I__ZN11FileManager8CopyFileENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ [77]
+[27]     0.0    0.00    0.00      66         SortContainer::Sort(OrderBy) [27]
+-----------------------------------------------
+                0.00    0.00       1/29          int QAtomicOps<int>::loadAcquire<int>(std::atomic<int> const&) [93]
+                0.00    0.00       1/29          void QAtomicOps<int>::storeRelease<int>(std::atomic<int>&, int) [94]
+                0.00    0.00      27/29          int QAtomicOps<int>::load<int>(std::atomic<int> const&) [29]
+[28]     0.0    0.00    0.00      29         std::operator&(std::memory_order, std::__memory_order_modifier) [28]
+-----------------------------------------------
+                0.00    0.00      27/27          QBasicAtomicInteger<int>::load() const [30]
+[29]     0.0    0.00    0.00      27         int QAtomicOps<int>::load<int>(std::atomic<int> const&) [29]
+                0.00    0.00      27/29          std::operator&(std::memory_order, std::__memory_order_modifier) [28]
+-----------------------------------------------
+                0.00    0.00       1/27          QtPrivate::RefCount::isShared() const [192]
+                0.00    0.00       7/27          QtPrivate::RefCount::ref() [40]
+                0.00    0.00      19/27          QtPrivate::RefCount::deref() [32]
+[30]     0.0    0.00    0.00      27         QBasicAtomicInteger<int>::load() const [30]
+                0.00    0.00      27/27          int QAtomicOps<int>::load<int>(std::atomic<int> const&) [29]
+-----------------------------------------------
+                0.00    0.00      24/24          LibController::metaObject() const [256]
+[31]     0.0    0.00    0.00      24         QScopedPointer<QObjectData, QScopedPointerDeleter<QObjectData> >::operator->() const [31]
+-----------------------------------------------
+                0.00    0.00       9/19          QString::~QString() [37]
+                0.00    0.00      10/19          QByteArray::~QByteArray() [36]
+[32]     0.0    0.00    0.00      19         QtPrivate::RefCount::deref() [32]
+                0.00    0.00      19/27          QBasicAtomicInteger<int>::load() const [30]
+                0.00    0.00      16/16          QBasicAtomicInteger<int>::deref() [34]
+-----------------------------------------------
+                0.00    0.00      16/16          QBasicAtomicInteger<int>::deref() [34]
+[33]     0.0    0.00    0.00      16         bool QAtomicOps<int>::deref<int>(std::atomic<int>&) [33]
+                0.00    0.00      16/16          std::__atomic_base<int>::operator--() [35]
+-----------------------------------------------
+                0.00    0.00      16/16          QtPrivate::RefCount::deref() [32]
+[34]     0.0    0.00    0.00      16         QBasicAtomicInteger<int>::deref() [34]
+                0.00    0.00      16/16          bool QAtomicOps<int>::deref<int>(std::atomic<int>&) [33]
+-----------------------------------------------
+                0.00    0.00      16/16          bool QAtomicOps<int>::deref<int>(std::atomic<int>&) [33]
+[35]     0.0    0.00    0.00      16         std::__atomic_base<int>::operator--() [35]
+-----------------------------------------------
+                0.00    0.00       1/10          LibController::setSortFile(QString) [129]
+                0.00    0.00       1/10          QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+                0.00    0.00       2/10          operator+(QByteArray const&, char const*) [76]
+                0.00    0.00       2/10          int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+                0.00    0.00       4/10          LibController::setSaveFile(QString, QString) [128]
+[36]     0.0    0.00    0.00      10         QByteArray::~QByteArray() [36]
+                0.00    0.00      10/19          QtPrivate::RefCount::deref() [32]
+                0.00    0.00       6/6           QTypedArrayData<char>::deallocate(QArrayData*) [42]
+-----------------------------------------------
+                0.00    0.00       1/9           QQmlPrivate::RegisterType::~RegisterType() [104]
+                0.00    0.00       4/9           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+                0.00    0.00       4/9           main [13]
+[37]     0.0    0.00    0.00       9         QString::~QString() [37]
+                0.00    0.00       9/19          QtPrivate::RefCount::deref() [32]
+-----------------------------------------------
+                0.00    0.00       7/7           QBasicAtomicInteger<int>::ref() [39]
+[38]     0.0    0.00    0.00       7         bool QAtomicOps<int>::ref<int>(std::atomic<int>&) [38]
+                0.00    0.00       7/7           std::__atomic_base<int>::operator++() [41]
+-----------------------------------------------
+                0.00    0.00       7/7           QtPrivate::RefCount::ref() [40]
+[39]     0.0    0.00    0.00       7         QBasicAtomicInteger<int>::ref() [39]
+                0.00    0.00       7/7           bool QAtomicOps<int>::ref<int>(std::atomic<int>&) [38]
+-----------------------------------------------
+                0.00    0.00       3/7           QString::QString(QString const&) [50]
+                0.00    0.00       4/7           QByteArray::QByteArray(QByteArray const&) [44]
+[40]     0.0    0.00    0.00       7         QtPrivate::RefCount::ref() [40]
+                0.00    0.00       7/27          QBasicAtomicInteger<int>::load() const [30]
+                0.00    0.00       7/7           QBasicAtomicInteger<int>::ref() [39]
+-----------------------------------------------
+                0.00    0.00       7/7           bool QAtomicOps<int>::ref<int>(std::atomic<int>&) [38]
+[41]     0.0    0.00    0.00       7         std::__atomic_base<int>::operator++() [41]
+-----------------------------------------------
+                0.00    0.00       6/6           QByteArray::~QByteArray() [36]
+[42]     0.0    0.00    0.00       6         QTypedArrayData<char>::deallocate(QArrayData*) [42]
+-----------------------------------------------
+                0.00    0.00       5/5           LibController::qt_metacall(QMetaObject::Call, int, void**) [235]
+[43]     0.0    0.00    0.00       5         LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+                0.00    0.00     356/356         LibController::getProgress() [23]
+                0.00    0.00       4/9           QString::~QString() [37]
+                0.00    0.00       3/3           QString::QString(QString const&) [50]
+                0.00    0.00       2/2           LibController::isReady() [63]
+                0.00    0.00       1/1           LibController::setSaveFile(QString, QString) [128]
+                0.00    0.00       1/1           LibController::createFileManager() [130]
+                0.00    0.00       1/1           LibController::sortFile() [131]
+                0.00    0.00       1/1           LibController::getSortFile() [126]
+                0.00    0.00       1/1           QString::operator=(QString&&) [158]
+                0.00    0.00       1/1           LibController::setSortFile(QString) [129]
+-----------------------------------------------
+                0.00    0.00       4/4           operator+(QByteArray const&, char const*) [76]
+[44]     0.0    0.00    0.00       4         QByteArray::QByteArray(QByteArray const&) [44]
+                0.00    0.00       4/7           QtPrivate::RefCount::ref() [40]
+-----------------------------------------------
+                0.00    0.00       1/4           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+                0.00    0.00       3/4           _GLOBAL__sub_I__ZN11FileManager8CopyFileENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ [77]
+[45]     0.0    0.00    0.00       4         std::vector<SortContainer*, std::allocator<SortContainer*> >::size() const [45]
+-----------------------------------------------
+                0.00    0.00       1/4           std::vector<SortContainer*, std::allocator<SortContainer*> >::~vector() [216]
+                0.00    0.00       1/4           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+                0.00    0.00       1/4           SortContainer** std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_allocate_and_copy<std::move_iterator<SortContainer**> >(unsigned long, std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>) [212]
+                0.00    0.00       1/4           std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_erase_at_end(SortContainer**) [211]
+[46]     0.0    0.00    0.00       4         std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() [46]
+-----------------------------------------------
+                0.00    0.00       3/3           QTypedArrayData<char>::data() [48]
+[47]     0.0    0.00    0.00       3         QArrayData::data() [47]
+-----------------------------------------------
+                0.00    0.00       3/3           QByteArray::constData() const [51]
+[48]     0.0    0.00    0.00       3         QTypedArrayData<char>::data() [48]
+                0.00    0.00       3/3           QArrayData::data() [47]
+-----------------------------------------------
+                0.00    0.00       3/3           main [13]
+[49]     0.0    0.00    0.00       3         QString::QString(char const*) [49]
+-----------------------------------------------
+                0.00    0.00       3/3           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[50]     0.0    0.00    0.00       3         QString::QString(QString const&) [50]
+                0.00    0.00       3/7           QtPrivate::RefCount::ref() [40]
+-----------------------------------------------
+                0.00    0.00       1/3           LibController::setSortFile(QString) [129]
+                0.00    0.00       2/3           LibController::setSaveFile(QString, QString) [128]
+[51]     0.0    0.00    0.00       3         QByteArray::constData() const [51]
+                0.00    0.00       3/3           QTypedArrayData<char>::data() [48]
+-----------------------------------------------
+                0.00    0.00       1/3           LibController::setSortFile(QString) [129]
+                0.00    0.00       2/3           LibController::setSaveFile(QString, QString) [128]
+[52]     0.0    0.00    0.00       3         QString::toUtf8() const & [52]
+-----------------------------------------------
+                0.00    0.00       3/3           std::_Niter_base<SortContainer**>::iterator_type std::__niter_base<SortContainer**>(SortContainer**) [55]
+[53]     0.0    0.00    0.00       3         std::_Iter_base<SortContainer**, false>::_S_base(SortContainer**) [53]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::_Destroy<SortContainer**>(SortContainer**, SortContainer**) [57]
+[54]     0.0    0.00    0.00       3         void std::_Destroy_aux<true>::__destroy<SortContainer**>(SortContainer**, SortContainer**) [54]
+-----------------------------------------------
+                0.00    0.00       3/3           SortContainer** std::__copy_move_a2<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**) [218]
+[55]     0.0    0.00    0.00       3         std::_Niter_base<SortContainer**>::iterator_type std::__niter_base<SortContainer**>(SortContainer**) [55]
+                0.00    0.00       3/3           std::_Iter_base<SortContainer**, false>::_S_base(SortContainer**) [53]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::swap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&) [222]
+[56]     0.0    0.00    0.00       3         std::remove_reference<QTypedArrayData<unsigned short>*&>::type&& std::move<QTypedArrayData<unsigned short>*&>(QTypedArrayData<unsigned short>*&) [56]
+-----------------------------------------------
+                0.00    0.00       3/3           void std::_Destroy<SortContainer**, SortContainer*>(SortContainer**, SortContainer**, std::allocator<SortContainer*>&) [58]
+[57]     0.0    0.00    0.00       3         void std::_Destroy<SortContainer**>(SortContainer**, SortContainer**) [57]
+                0.00    0.00       3/3           void std::_Destroy_aux<true>::__destroy<SortContainer**>(SortContainer**, SortContainer**) [54]
+-----------------------------------------------
+                0.00    0.00       1/3           std::vector<SortContainer*, std::allocator<SortContainer*> >::~vector() [216]
+                0.00    0.00       1/3           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+                0.00    0.00       1/3           std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_erase_at_end(SortContainer**) [211]
+[58]     0.0    0.00    0.00       3         void std::_Destroy<SortContainer**, SortContainer*>(SortContainer**, SortContainer**, std::allocator<SortContainer*>&) [58]
+                0.00    0.00       3/3           void std::_Destroy<SortContainer**>(SortContainer**, SortContainer**) [57]
+-----------------------------------------------
+                0.00    0.00       1/3           main [13]
+                0.00    0.00       1/3           std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type QObject::connect<void (QQmlApplicationEngine::*)(QObject*, QUrl const&), main::{lambda(QObject*, QUrl const&)#2}>(QtPrivate<void (QQmlApplicationEngine::*)(QObject*, QUrl const&)>::Object const*, std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type, QObject const*, QtPrivate::FunctionPointer, Qt::ConnectionType) [154]
+                0.00    0.00       1/3           QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::~QFunctorSlotObject() [170]
+[59]     0.0    0.00    0.00       3         main::{lambda(QObject*, QUrl const&)#2}::~QUrl() [59]
+-----------------------------------------------
+                                   1             QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[60]     0.0    0.00    0.00       2         int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+                0.00    0.00       1/1           QtPrivate::MetaObjectForType<LibController*, void>::value() [166]
+                0.00    0.00       1/1           QFlags<QMetaType::TypeFlag>::operator|=(QMetaType::TypeFlag) [151]
+                0.00    0.00       1/1           QtPrivate::SequentialContainerConverterHelper<LibController*, false>::registerConverter(int) [174]
+                0.00    0.00       1/1           QtPrivate::IsPair<LibController*>::registerConverter(int) [178]
+                0.00    0.00       1/1           QtPrivate::AssociativeContainerConverterHelper<LibController*, false>::registerConverter(int) [176]
+                0.00    0.00       1/1           QtPrivate::MetaTypeSmartPointerHelper<LibController*, void>::registerConverter(int) [172]
+                                   1             QtPrivate::QMetaTypeIdHelper<LibController*, true>::qt_metatype_id() <cycle 1> [168]
+-----------------------------------------------
+                0.00    0.00       1/2           QTypedArrayData<char>::sharedNull() [135]
+                0.00    0.00       1/2           QTypedArrayData<unsigned short>::sharedNull() [136]
+[61]     0.0    0.00    0.00       2         QArrayData::sharedNull() [61]
+-----------------------------------------------
+                0.00    0.00       2/2           operator+(QByteArray const&, char const*) [76]
+[62]     0.0    0.00    0.00       2         QByteArray::operator+=(char const*) [62]
+-----------------------------------------------
+                0.00    0.00       2/2           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[63]     0.0    0.00    0.00       2         LibController::isReady() [63]
+-----------------------------------------------
+                0.00    0.00       2/2           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[64]     0.0    0.00    0.00       2         QVarLengthArray<char, 48>::operator[](int) [64]
+-----------------------------------------------
+                0.00    0.00       2/2           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[65]     0.0    0.00    0.00       2         QVarLengthArray<char, 64>::data() [65]
+-----------------------------------------------
+                0.00    0.00       2/2           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[66]     0.0    0.00    0.00       2         QVarLengthArray<char, 64>::operator[](int) [66]
+-----------------------------------------------
+                0.00    0.00       1/2           std::allocator_traits<std::allocator<SortContainer*> >::max_size(std::allocator<SortContainer*> const&) [208]
+                0.00    0.00       1/2           __gnu_cxx::new_allocator<SortContainer*>::allocate(unsigned long, void const*) [181]
+[67]     0.0    0.00    0.00       2         __gnu_cxx::new_allocator<SortContainer*>::max_size() const [67]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Iter_base<std::move_iterator<SortContainer**>, true>::_S_base(std::move_iterator<SortContainer**>) [69]
+[68]     0.0    0.00    0.00       2         std::move_iterator<SortContainer**>::base() const [68]
+-----------------------------------------------
+                0.00    0.00       2/2           std::_Miter_base<std::move_iterator<SortContainer**> >::iterator_type std::__miter_base<std::move_iterator<SortContainer**> >(std::move_iterator<SortContainer**>) [72]
+[69]     0.0    0.00    0.00       2         std::_Iter_base<std::move_iterator<SortContainer**>, true>::_S_base(std::move_iterator<SortContainer**>) [69]
+                0.00    0.00       2/2           std::move_iterator<SortContainer**>::base() const [68]
+-----------------------------------------------
+                0.00    0.00       1/2           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+                0.00    0.00       1/2           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::~_Vector_base() [204]
+[70]     0.0    0.00    0.00       2         std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_deallocate(SortContainer**, unsigned long) [70]
+                0.00    0.00       1/1           std::allocator_traits<std::allocator<SortContainer*> >::deallocate(std::allocator<SortContainer*>&, SortContainer**, unsigned long) [206]
+-----------------------------------------------
+                0.00    0.00       2/2           std::move_iterator<SortContainer**> std::__make_move_if_noexcept_iterator<SortContainer**, std::move_iterator<SortContainer**> >(SortContainer**) [73]
+[71]     0.0    0.00    0.00       2         std::move_iterator<SortContainer**>::move_iterator(SortContainer**) [71]
+-----------------------------------------------
+                0.00    0.00       2/2           SortContainer** std::copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [221]
+[72]     0.0    0.00    0.00       2         std::_Miter_base<std::move_iterator<SortContainer**> >::iterator_type std::__miter_base<std::move_iterator<SortContainer**> >(std::move_iterator<SortContainer**>) [72]
+                0.00    0.00       2/2           std::_Iter_base<std::move_iterator<SortContainer**>, true>::_S_base(std::move_iterator<SortContainer**>) [69]
+-----------------------------------------------
+                0.00    0.00       2/2           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+[73]     0.0    0.00    0.00       2         std::move_iterator<SortContainer**> std::__make_move_if_noexcept_iterator<SortContainer**, std::move_iterator<SortContainer**> >(SortContainer**) [73]
+                0.00    0.00       2/2           std::move_iterator<SortContainer**>::move_iterator(SortContainer**) [71]
+-----------------------------------------------
+                0.00    0.00       1/2           std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type QObject::connect<void (QQmlApplicationEngine::*)(QObject*, QUrl const&), main::{lambda(QObject*, QUrl const&)#2}>(QtPrivate<void (QQmlApplicationEngine::*)(QObject*, QUrl const&)>::Object const*, std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type, QObject const*, QtPrivate::FunctionPointer, Qt::ConnectionType) [154]
+                0.00    0.00       1/2           QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::QFunctorSlotObject({lambda(QObject*, QUrl const&)#2}) [169]
+[74]     0.0    0.00    0.00       2         std::remove_reference<main::{lambda(QObject*, QUrl const&)#2}&>::type&& std::move<main::{lambda(QObject*, QUrl const&)#2}&>(std::remove_reference&&) [74]
+-----------------------------------------------
+                0.00    0.00       1/2           std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type QObject::connect<void (QQmlApplicationEngine::*)(QObject*, QUrl const&), main::{lambda(QObject*, QUrl const&)#2}>(QtPrivate<void (QQmlApplicationEngine::*)(QObject*, QUrl const&)>::Object const*, std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type, QObject const*, QtPrivate::FunctionPointer, Qt::ConnectionType) [154]
+                0.00    0.00       1/2           QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::QFunctorSlotObject({lambda(QObject*, QUrl const&)#2}) [169]
+[75]     0.0    0.00    0.00       2         main::{lambda(QObject*, QUrl const&)#2}::QUrl({lambda(QObject*, QUrl const&)#2}&&) [75]
+-----------------------------------------------
+                0.00    0.00       2/2           LibController::setSaveFile(QString, QString) [128]
+[76]     0.0    0.00    0.00       2         operator+(QByteArray const&, char const*) [76]
+                0.00    0.00       4/4           QByteArray::QByteArray(QByteArray const&) [44]
+                0.00    0.00       2/2           QByteArray::operator+=(char const*) [62]
+                0.00    0.00       2/10          QByteArray::~QByteArray() [36]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [279]
+[77]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN11FileManager8CopyFileENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ [77]
+                0.00    0.00      81/81          std::vector<SortContainer*, std::allocator<SortContainer*> >::operator[](unsigned long) [26]
+                0.00    0.00      65/66          SortContainer::Sort(OrderBy) [27]
+                0.00    0.00       3/4           std::vector<SortContainer*, std::allocator<SortContainer*> >::size() const [45]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [87]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [279]
+[78]     0.0    0.00    0.00       1         _GLOBAL__sub_I__ZN13SortContainerC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmm [78]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [88]
+-----------------------------------------------
+                0.00    0.00       1/1           main [13]
+[79]     0.0    0.00    0.00       1         int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+                0.00    0.00       2/2           QVarLengthArray<char, 48>::operator[](int) [64]
+                0.00    0.00       2/2           QVarLengthArray<char, 64>::data() [65]
+                0.00    0.00       2/2           QVarLengthArray<char, 64>::operator[](int) [66]
+                0.00    0.00       2/10          QByteArray::~QByteArray() [36]
+                0.00    0.00       1/1           QVarLengthArray<char, 48>::QVarLengthArray(int) [138]
+                0.00    0.00       1/1           QVarLengthArray<char, 48>::data() [137]
+                0.00    0.00       1/1           QVarLengthArray<char, 64>::QVarLengthArray(int) [140]
+                0.00    0.00       1/1           QVarLengthArray<char, 48>::constData() const [186]
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+                0.00    0.00       1/1           QVarLengthArray<char, 64>::constData() const [187]
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [82]
+                0.00    0.00       1/1           QString::QString() [157]
+                0.00    0.00       1/1           QObject* (*QQmlPrivate::attachedPropertiesFunc<LibController>())(QObject*) [108]
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelector<LibController, QQmlParserStatus>::cast() [105]
+                0.00    0.00       1/1           QMetaObject const* QQmlPrivate::attachedPropertiesMetaObject<LibController>() [114]
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueSource>::cast() [106]
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueInterceptor>::cast() [107]
+                0.00    0.00       1/1           QVarLengthArray<char, 64>::~QVarLengthArray() [141]
+                0.00    0.00       1/1           QQmlPrivate::RegisterType::~RegisterType() [104]
+                0.00    0.00       1/1           QVarLengthArray<char, 48>::~QVarLengthArray() [139]
+-----------------------------------------------
+                0.00    0.00       1/1           (anonymous namespace)::initializer::initializer() [125]
+[80]     0.0    0.00    0.00       1         qInitResources_qml() [80]
+-----------------------------------------------
+                0.00    0.00       1/1           (anonymous namespace)::initializer::~initializer() [233]
+[81]     0.0    0.00    0.00       1         qCleanupResources_qml() [81]
+                0.00    0.00       1/1           qResourceFeatureZlib() [91]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[82]     0.0    0.00    0.00       1         int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [82]
+                0.00    0.00       1/1           QtPrivate::QMetaTypeIdHelper<QQmlListProperty<LibController>, false>::qt_metatype_id() [167]
+                0.00    0.00       1/1           QtPrivate::MetaObjectForType<QQmlListProperty<LibController>, void>::value() [165]
+                0.00    0.00       1/1           QtPrivate::SequentialContainerConverterHelper<QQmlListProperty<LibController>, false>::registerConverter(int) [173]
+                0.00    0.00       1/1           QtPrivate::IsPair<QQmlListProperty<LibController> >::registerConverter(int) [177]
+                0.00    0.00       1/1           QtPrivate::AssociativeContainerConverterHelper<QQmlListProperty<LibController>, false>::registerConverter(int) [175]
+                0.00    0.00       1/1           QtPrivate::MetaTypeSmartPointerHelper<QQmlListProperty<LibController>, void>::registerConverter(int) [171]
+-----------------------------------------------
+                                   1             __static_initialization_and_destruction_0(int, int) [83]
+                0.00    0.00       1/1           __libc_csu_init [279]
+[83]     0.0    0.00    0.00       1+1       __static_initialization_and_destruction_0(int, int) [83]
+                                   1             __static_initialization_and_destruction_0(int, int) [83]
+-----------------------------------------------
+                                   1             __static_initialization_and_destruction_0(int, int) [84]
+                0.00    0.00       1/1           __libc_csu_init [279]
+[84]     0.0    0.00    0.00       1+1       __static_initialization_and_destruction_0(int, int) [84]
+                                   1             __static_initialization_and_destruction_0(int, int) [84]
+-----------------------------------------------
+                                   1             __static_initialization_and_destruction_0(int, int) [85]
+                0.00    0.00       1/1           __libc_csu_init [279]
+[85]     0.0    0.00    0.00       1+1       __static_initialization_and_destruction_0(int, int) [85]
+                                   1             __static_initialization_and_destruction_0(int, int) [85]
+-----------------------------------------------
+                                   1             __static_initialization_and_destruction_0(int, int) [86]
+                0.00    0.00       1/1           __libc_csu_init [279]
+[86]     0.0    0.00    0.00       1+1       __static_initialization_and_destruction_0(int, int) [86]
+                0.00    0.00       1/1           (anonymous namespace)::initializer::initializer() [125]
+                                   1             __static_initialization_and_destruction_0(int, int) [86]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN11FileManager8CopyFileENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ [77]
+[87]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [87]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I__ZN13SortContainerC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmm [78]
+[88]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [88]
+-----------------------------------------------
+                0.00    0.00       1/1           QByteArray::reserve(int) [95]
+[89]     0.0    0.00    0.00       1         unsigned int const& qMax<unsigned int>(unsigned int const&, unsigned int const&) [89]
+-----------------------------------------------
+                0.00    0.00       1/1           QString::operator=(QString&&) [158]
+[90]     0.0    0.00    0.00       1         void qSwap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&) [90]
+                0.00    0.00       1/1           void std::swap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&) [222]
+-----------------------------------------------
+                0.00    0.00       1/1           qCleanupResources_qml() [81]
+[91]     0.0    0.00    0.00       1         qResourceFeatureZlib() [91]
+-----------------------------------------------
+                0.00    0.00       1/1           QtPrivate::QSlotObjectBase::QSlotObjectBase(void (*)(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*)) [162]
+[92]     0.0    0.00    0.00       1         QAtomicInt::QAtomicInt(int) [92]
+                0.00    0.00       1/1           QAtomicInteger<int>::QAtomicInteger(int) [134]
+-----------------------------------------------
+                0.00    0.00       1/1           QBasicAtomicInteger<int>::loadAcquire() const [189]
+[93]     0.0    0.00    0.00       1         int QAtomicOps<int>::loadAcquire<int>(std::atomic<int> const&) [93]
+                0.00    0.00       1/29          std::operator&(std::memory_order, std::__memory_order_modifier) [28]
+-----------------------------------------------
+                0.00    0.00       1/1           QBasicAtomicInteger<int>::storeRelease(int) [147]
+[94]     0.0    0.00    0.00       1         void QAtomicOps<int>::storeRelease<int>(std::atomic<int>&, int) [94]
+                0.00    0.00       1/29          std::operator&(std::memory_order, std::__memory_order_modifier) [28]
+-----------------------------------------------
+                0.00    0.00       1/1           QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+[95]     0.0    0.00    0.00       1         QByteArray::reserve(int) [95]
+                0.00    0.00       1/1           QtPrivate::RefCount::isShared() const [192]
+                0.00    0.00       1/1           QArrayData::detachFlags() const [184]
+                0.00    0.00       1/1           QFlags<QArrayData::AllocationOption>::operator|(QArrayData::AllocationOption) const [191]
+                0.00    0.00       1/1           QByteArray::size() const [185]
+                0.00    0.00       1/1           unsigned int const& qMax<unsigned int>(unsigned int const&, unsigned int const&) [89]
+-----------------------------------------------
+                0.00    0.00       1/1           QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+[96]     0.0    0.00    0.00       1         QByteArray::QByteArray() [96]
+                0.00    0.00       1/1           QTypedArrayData<char>::sharedNull() [135]
+-----------------------------------------------
+                0.00    0.00       1/1           FileManager::FileManager(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [99]
+[97]     0.0    0.00    0.00       1         FileManager::DivideFile(unsigned long, unsigned long) [97]
+                0.00    0.00     384/385         SortContainer::SortContainer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long) [16]
+                0.00    0.00     384/384         std::vector<SortContainer*, std::allocator<SortContainer*> >::push_back(SortContainer*&&) [21]
+-----------------------------------------------
+                0.00    0.00       1/1           FileManager::FileManager(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [99]
+[98]     0.0    0.00    0.00       1         FileManager::CopyFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [98]
+                0.00    0.00       1/1           std::fpos<__mbstate_t>::operator long() const [194]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::createFileManager() [130]
+[99]     0.0    0.00    0.00       1         FileManager::FileManager(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [99]
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::vector() [215]
+                0.00    0.00       1/1           FileManager::CopyFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [98]
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+                0.00    0.00       1/1           FileManager::DivideFile(unsigned long, unsigned long) [97]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::~LibController() [133]
+[100]    0.0    0.00    0.00       1         FileManager::~FileManager() [100]
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::~vector() [216]
+-----------------------------------------------
+                0.00    0.00       1/1           void QQmlPrivate::createInto<LibController>(void*) [226]
+[101]    0.0    0.00    0.00       1         QQmlPrivate::QQmlElement<LibController>::QQmlElement() [101]
+                0.00    0.00       1/1           LibController::LibController(QObject*) [132]
+-----------------------------------------------
+                0.00    0.00       1/1           QQmlPrivate::QQmlElement<LibController>::~QQmlElement() [227]
+[102]    0.0    0.00    0.00       1         QQmlPrivate::QQmlElement<LibController>::~QQmlElement() [102]
+                0.00    0.00       1/1           LibController::~LibController() [133]
+-----------------------------------------------
+                0.00    0.00       1/1           QQmlPrivate::QQmlElement<LibController>::~QQmlElement() [227]
+[103]    0.0    0.00    0.00       1         QQmlPrivate::QQmlElement<LibController>::operator delete(void*) [103]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[104]    0.0    0.00    0.00       1         QQmlPrivate::RegisterType::~RegisterType() [104]
+                0.00    0.00       1/9           QString::~QString() [37]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[105]    0.0    0.00    0.00       1         QQmlPrivate::StaticCastSelector<LibController, QQmlParserStatus>::cast() [105]
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelectorClass<LibController, QQmlParserStatus, 1>::cast() [109]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[106]    0.0    0.00    0.00       1         QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueSource>::cast() [106]
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelectorClass<LibController, QQmlPropertyValueSource, 1>::cast() [110]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[107]    0.0    0.00    0.00       1         QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueInterceptor>::cast() [107]
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelectorClass<LibController, QQmlPropertyValueInterceptor, 1>::cast() [111]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[108]    0.0    0.00    0.00       1         QObject* (*QQmlPrivate::attachedPropertiesFunc<LibController>())(QObject*) [108]
+                0.00    0.00       1/1           QQmlPrivate::AttachedPropertySelector<LibController, 0>::func() [113]
+-----------------------------------------------
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelector<LibController, QQmlParserStatus>::cast() [105]
+[109]    0.0    0.00    0.00       1         QQmlPrivate::StaticCastSelectorClass<LibController, QQmlParserStatus, 1>::cast() [109]
+-----------------------------------------------
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueSource>::cast() [106]
+[110]    0.0    0.00    0.00       1         QQmlPrivate::StaticCastSelectorClass<LibController, QQmlPropertyValueSource, 1>::cast() [110]
+-----------------------------------------------
+                0.00    0.00       1/1           QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueInterceptor>::cast() [107]
+[111]    0.0    0.00    0.00       1         QQmlPrivate::StaticCastSelectorClass<LibController, QQmlPropertyValueInterceptor, 1>::cast() [111]
+-----------------------------------------------
+                0.00    0.00       1/1           QMetaObject const* QQmlPrivate::attachedPropertiesMetaObject<LibController>() [114]
+[112]    0.0    0.00    0.00       1         QQmlPrivate::AttachedPropertySelector<LibController, 0>::metaObject() [112]
+-----------------------------------------------
+                0.00    0.00       1/1           QObject* (*QQmlPrivate::attachedPropertiesFunc<LibController>())(QObject*) [108]
+[113]    0.0    0.00    0.00       1         QQmlPrivate::AttachedPropertySelector<LibController, 0>::func() [113]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[114]    0.0    0.00    0.00       1         QMetaObject const* QQmlPrivate::attachedPropertiesMetaObject<LibController>() [114]
+                0.00    0.00       1/1           QQmlPrivate::AttachedPropertySelector<LibController, 0>::metaObject() [112]
+-----------------------------------------------
+                                   1             QtPrivate::QMetaTypeIdHelper<LibController*, true>::qt_metatype_id() <cycle 1> [168]
+[115]    0.0    0.00    0.00       1         QMetaTypeId2<LibController*>::qt_metatype_id() <cycle 1> [115]
+                                   1             QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::StoredFunctorCall1(void (*)(LibController*), LibController* const&) [118]
+[116]    0.0    0.00    0.00       1         QtConcurrent::RunFunctionTask<void>::RunFunctionTask() [116]
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::RunFunctionTaskBase() [122]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::~StoredFunctorCall1() [119]
+[117]    0.0    0.00    0.00       1         QtConcurrent::RunFunctionTask<void>::~RunFunctionTask() [117]
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::~RunFunctionTaskBase() [123]
+-----------------------------------------------
+                0.00    0.00       1/1           QFuture<void> QtConcurrent::run<void, LibController*, LibController*>(void (*)(LibController*), LibController* const&) [124]
+[118]    0.0    0.00    0.00       1         QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::StoredFunctorCall1(void (*)(LibController*), LibController* const&) [118]
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTask<void>::RunFunctionTask() [116]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::~StoredFunctorCall1() [230]
+[119]    0.0    0.00    0.00       1         QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::~StoredFunctorCall1() [119]
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTask<void>::~RunFunctionTask() [117]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::start() [121]
+[120]    0.0    0.00    0.00       1         QtConcurrent::RunFunctionTaskBase<void>::start(QThreadPool*) [120]
+                0.00    0.00       1/1           QFutureInterface<void>::future() [143]
+-----------------------------------------------
+                0.00    0.00       1/1           QFuture<void> QtConcurrent::run<void, LibController*, LibController*>(void (*)(LibController*), LibController* const&) [124]
+[121]    0.0    0.00    0.00       1         QtConcurrent::RunFunctionTaskBase<void>::start() [121]
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::start(QThreadPool*) [120]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTask<void>::RunFunctionTask() [116]
+[122]    0.0    0.00    0.00       1         QtConcurrent::RunFunctionTaskBase<void>::RunFunctionTaskBase() [122]
+                0.00    0.00       1/1           QFutureInterface<void>::QFutureInterface(QFutureInterfaceBase::State) [144]
+                0.00    0.00       1/1           QRunnable::QRunnable() [159]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTask<void>::~RunFunctionTask() [117]
+[123]    0.0    0.00    0.00       1         QtConcurrent::RunFunctionTaskBase<void>::~RunFunctionTaskBase() [123]
+                0.00    0.00       1/1           QFutureInterface<void>::~QFutureInterface() [145]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::sortFile() [131]
+[124]    0.0    0.00    0.00       1         QFuture<void> QtConcurrent::run<void, LibController*, LibController*>(void (*)(LibController*), LibController* const&) [124]
+                0.00    0.00       1/1           QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::StoredFunctorCall1(void (*)(LibController*), LibController* const&) [118]
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::start() [121]
+-----------------------------------------------
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [86]
+[125]    0.0    0.00    0.00       1         (anonymous namespace)::initializer::initializer() [125]
+                0.00    0.00       1/1           qInitResources_qml() [80]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[126]    0.0    0.00    0.00       1         LibController::getSortFile() [126]
+                0.00    0.00       1/1           QString::fromUtf8(char const*, int) [155]
+-----------------------------------------------
+                0.00    0.00       1/1           Wrapper4Thread(LibController*) [2]
+[127]    0.0    0.00    0.00       1         LibController::handleReady() [127]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[128]    0.0    0.00    0.00       1         LibController::setSaveFile(QString, QString) [128]
+                0.00    0.00       4/10          QByteArray::~QByteArray() [36]
+                0.00    0.00       2/3           QString::toUtf8() const & [52]
+                0.00    0.00       2/3           QByteArray::constData() const [51]
+                0.00    0.00       2/2           operator+(QByteArray const&, char const*) [76]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[129]    0.0    0.00    0.00       1         LibController::setSortFile(QString) [129]
+                0.00    0.00       1/3           QByteArray::constData() const [51]
+                0.00    0.00       1/3           QString::toUtf8() const & [52]
+                0.00    0.00       1/10          QByteArray::~QByteArray() [36]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[130]    0.0    0.00    0.00       1         LibController::createFileManager() [130]
+                0.00    0.00       1/1           FileManager::FileManager(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [99]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[131]    0.0    0.00    0.00       1         LibController::sortFile() [131]
+                0.00    0.00       1/1           QFuture<void> QtConcurrent::run<void, LibController*, LibController*>(void (*)(LibController*), LibController* const&) [124]
+                0.00    0.00       1/1           QFuture<void>::~QFuture() [153]
+-----------------------------------------------
+                0.00    0.00       1/1           QQmlPrivate::QQmlElement<LibController>::QQmlElement() [101]
+[132]    0.0    0.00    0.00       1         LibController::LibController(QObject*) [132]
+-----------------------------------------------
+                0.00    0.00       1/1           QQmlPrivate::QQmlElement<LibController>::~QQmlElement() [102]
+[133]    0.0    0.00    0.00       1         LibController::~LibController() [133]
+                0.00    0.00       1/1           FileManager::~FileManager() [100]
+-----------------------------------------------
+                0.00    0.00       1/1           QAtomicInt::QAtomicInt(int) [92]
+[134]    0.0    0.00    0.00       1         QAtomicInteger<int>::QAtomicInteger(int) [134]
+                0.00    0.00       1/1           QBasicAtomicInteger<int>::QBasicAtomicInteger(int) [148]
+-----------------------------------------------
+                0.00    0.00       1/1           QByteArray::QByteArray() [96]
+[135]    0.0    0.00    0.00       1         QTypedArrayData<char>::sharedNull() [135]
+                0.00    0.00       1/2           QArrayData::sharedNull() [61]
+-----------------------------------------------
+                0.00    0.00       1/1           QString::QString() [157]
+[136]    0.0    0.00    0.00       1         QTypedArrayData<unsigned short>::sharedNull() [136]
+                0.00    0.00       1/2           QArrayData::sharedNull() [61]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[137]    0.0    0.00    0.00       1         QVarLengthArray<char, 48>::data() [137]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[138]    0.0    0.00    0.00       1         QVarLengthArray<char, 48>::QVarLengthArray(int) [138]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[139]    0.0    0.00    0.00       1         QVarLengthArray<char, 48>::~QVarLengthArray() [139]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[140]    0.0    0.00    0.00       1         QVarLengthArray<char, 64>::QVarLengthArray(int) [140]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[141]    0.0    0.00    0.00       1         QVarLengthArray<char, 64>::~QVarLengthArray() [141]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTask<void>::run() [6]
+[142]    0.0    0.00    0.00       1         QFutureInterface<void>::reportFinished(void const*) [142]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::start(QThreadPool*) [120]
+[143]    0.0    0.00    0.00       1         QFutureInterface<void>::future() [143]
+                0.00    0.00       1/1           QFuture<void>::QFuture(QFutureInterfaceBase*) [152]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::RunFunctionTaskBase() [122]
+[144]    0.0    0.00    0.00       1         QFutureInterface<void>::QFutureInterface(QFutureInterfaceBase::State) [144]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::~RunFunctionTaskBase() [123]
+[145]    0.0    0.00    0.00       1         QFutureInterface<void>::~QFutureInterface() [145]
+-----------------------------------------------
+                                   1             QMetaTypeId2<LibController*>::qt_metatype_id() <cycle 1> [115]
+[146]    0.0    0.00    0.00       1         QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+                0.00    0.00       1/1           QBasicAtomicInteger<int>::loadAcquire() const [189]
+                0.00    0.00       1/1           QByteArray::QByteArray() [96]
+                0.00    0.00       1/1           QByteArray::reserve(int) [95]
+                0.00    0.00       1/1           QBasicAtomicInteger<int>::storeRelease(int) [147]
+                0.00    0.00       1/10          QByteArray::~QByteArray() [36]
+                                   1             int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+-----------------------------------------------
+                0.00    0.00       1/1           QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+[147]    0.0    0.00    0.00       1         QBasicAtomicInteger<int>::storeRelease(int) [147]
+                0.00    0.00       1/1           void QAtomicOps<int>::storeRelease<int>(std::atomic<int>&, int) [94]
+-----------------------------------------------
+                0.00    0.00       1/1           QAtomicInteger<int>::QAtomicInteger(int) [134]
+[148]    0.0    0.00    0.00       1         QBasicAtomicInteger<int>::QBasicAtomicInteger(int) [148]
+                0.00    0.00       1/1           std::atomic<int>::atomic(int) [210]
+-----------------------------------------------
+                0.00    0.00       1/1           QFlags<QArrayData::AllocationOption>::operator|(QArrayData::AllocationOption) const [191]
+[149]    0.0    0.00    0.00       1         QFlag::QFlag(unsigned int) [149]
+-----------------------------------------------
+                0.00    0.00       1/1           QFlags<QArrayData::AllocationOption>::operator|(QArrayData::AllocationOption) const [191]
+[150]    0.0    0.00    0.00       1         QFlags<QArrayData::AllocationOption>::QFlags(QFlag) [150]
+                0.00    0.00       1/1           QFlag::operator unsigned int() const [190]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+[151]    0.0    0.00    0.00       1         QFlags<QMetaType::TypeFlag>::operator|=(QMetaType::TypeFlag) [151]
+-----------------------------------------------
+                0.00    0.00       1/1           QFutureInterface<void>::future() [143]
+[152]    0.0    0.00    0.00       1         QFuture<void>::QFuture(QFutureInterfaceBase*) [152]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::sortFile() [131]
+[153]    0.0    0.00    0.00       1         QFuture<void>::~QFuture() [153]
+-----------------------------------------------
+                0.00    0.00       1/1           main [13]
+[154]    0.0    0.00    0.00       1         std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type QObject::connect<void (QQmlApplicationEngine::*)(QObject*, QUrl const&), main::{lambda(QObject*, QUrl const&)#2}>(QtPrivate<void (QQmlApplicationEngine::*)(QObject*, QUrl const&)>::Object const*, std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type, QObject const*, QtPrivate::FunctionPointer, Qt::ConnectionType) [154]
+                0.00    0.00       1/1           QtPrivate::ConnectionTypes<QtPrivate::List<QObject*, QUrl const&>, true>::types() [161]
+                0.00    0.00       1/2           std::remove_reference<main::{lambda(QObject*, QUrl const&)#2}&>::type&& std::move<main::{lambda(QObject*, QUrl const&)#2}&>(std::remove_reference&&) [74]
+                0.00    0.00       1/2           main::{lambda(QObject*, QUrl const&)#2}::QUrl({lambda(QObject*, QUrl const&)#2}&&) [75]
+                0.00    0.00       1/1           QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::QFunctorSlotObject({lambda(QObject*, QUrl const&)#2}) [169]
+                0.00    0.00       1/3           main::{lambda(QObject*, QUrl const&)#2}::~QUrl() [59]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::getSortFile() [126]
+[155]    0.0    0.00    0.00       1         QString::fromUtf8(char const*, int) [155]
+-----------------------------------------------
+                0.00    0.00       1/1           main::{lambda()#1}::operator()() const [224]
+[156]    0.0    0.00    0.00       1         QString::QString(QStringDataPtr) [156]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[157]    0.0    0.00    0.00       1         QString::QString() [157]
+                0.00    0.00       1/1           QTypedArrayData<unsigned short>::sharedNull() [136]
+-----------------------------------------------
+                0.00    0.00       1/1           LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [43]
+[158]    0.0    0.00    0.00       1         QString::operator=(QString&&) [158]
+                0.00    0.00       1/1           void qSwap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&) [90]
+-----------------------------------------------
+                0.00    0.00       1/1           QtConcurrent::RunFunctionTaskBase<void>::RunFunctionTaskBase() [122]
+[159]    0.0    0.00    0.00       1         QRunnable::QRunnable() [159]
+-----------------------------------------------
+                0.00    0.00       1/1           void QtPrivate::Functor<main::{lambda(QObject*, QUrl const&)#2}, 2>::call<QtPrivate::List<QObject*, QUrl const&>, void>({lambda(QObject*, QUrl const&)#2}&, void*, {lambda(QObject*, QUrl const&)#2}&*) [179]
+[160]    0.0    0.00    0.00       1         QtPrivate::FunctorCall<QtPrivate::IndexesList<0, 1>, QtPrivate::List<QObject*, QUrl const&>, void, main::{lambda(QObject*, QUrl const&)#2}>::call({lambda(QObject*, QUrl const&)#2}&, void**) [160]
+                0.00    0.00       1/1           main::{lambda(QObject*, QUrl const&)#2}::operator()(QObject*, QUrl const&) const [223]
+                0.00    0.00       1/1           QtPrivate::ApplyReturnValue<void>::ApplyReturnValue(void*) [164]
+-----------------------------------------------
+                0.00    0.00       1/1           std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type QObject::connect<void (QQmlApplicationEngine::*)(QObject*, QUrl const&), main::{lambda(QObject*, QUrl const&)#2}>(QtPrivate<void (QQmlApplicationEngine::*)(QObject*, QUrl const&)>::Object const*, std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type, QObject const*, QtPrivate::FunctionPointer, Qt::ConnectionType) [154]
+[161]    0.0    0.00    0.00       1         QtPrivate::ConnectionTypes<QtPrivate::List<QObject*, QUrl const&>, true>::types() [161]
+-----------------------------------------------
+                0.00    0.00       1/1           QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::QFunctorSlotObject({lambda(QObject*, QUrl const&)#2}) [169]
+[162]    0.0    0.00    0.00       1         QtPrivate::QSlotObjectBase::QSlotObjectBase(void (*)(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*)) [162]
+                0.00    0.00       1/1           QAtomicInt::QAtomicInt(int) [92]
+-----------------------------------------------
+                0.00    0.00       1/1           QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::~QFunctorSlotObject() [170]
+[163]    0.0    0.00    0.00       1         QtPrivate::QSlotObjectBase::~QSlotObjectBase() [163]
+-----------------------------------------------
+                0.00    0.00       1/1           QtPrivate::FunctorCall<QtPrivate::IndexesList<0, 1>, QtPrivate::List<QObject*, QUrl const&>, void, main::{lambda(QObject*, QUrl const&)#2}>::call({lambda(QObject*, QUrl const&)#2}&, void**) [160]
+[164]    0.0    0.00    0.00       1         QtPrivate::ApplyReturnValue<void>::ApplyReturnValue(void*) [164]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [82]
+[165]    0.0    0.00    0.00       1         QtPrivate::MetaObjectForType<QQmlListProperty<LibController>, void>::value() [165]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+[166]    0.0    0.00    0.00       1         QtPrivate::MetaObjectForType<LibController*, void>::value() [166]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [82]
+[167]    0.0    0.00    0.00       1         QtPrivate::QMetaTypeIdHelper<QQmlListProperty<LibController>, false>::qt_metatype_id() [167]
+-----------------------------------------------
+                                   1             int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+[168]    0.0    0.00    0.00       1         QtPrivate::QMetaTypeIdHelper<LibController*, true>::qt_metatype_id() <cycle 1> [168]
+                                   1             QMetaTypeId2<LibController*>::qt_metatype_id() <cycle 1> [115]
+-----------------------------------------------
+                0.00    0.00       1/1           std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type QObject::connect<void (QQmlApplicationEngine::*)(QObject*, QUrl const&), main::{lambda(QObject*, QUrl const&)#2}>(QtPrivate<void (QQmlApplicationEngine::*)(QObject*, QUrl const&)>::Object const*, std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type, QObject const*, QtPrivate::FunctionPointer, Qt::ConnectionType) [154]
+[169]    0.0    0.00    0.00       1         QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::QFunctorSlotObject({lambda(QObject*, QUrl const&)#2}) [169]
+                0.00    0.00       1/2           std::remove_reference<main::{lambda(QObject*, QUrl const&)#2}&>::type&& std::move<main::{lambda(QObject*, QUrl const&)#2}&>(std::remove_reference&&) [74]
+                0.00    0.00       1/1           QtPrivate::QSlotObjectBase::QSlotObjectBase(void (*)(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*)) [162]
+                0.00    0.00       1/2           main::{lambda(QObject*, QUrl const&)#2}::QUrl({lambda(QObject*, QUrl const&)#2}&&) [75]
+-----------------------------------------------
+                0.00    0.00       1/1           QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::impl(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*) [254]
+[170]    0.0    0.00    0.00       1         QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::~QFunctorSlotObject() [170]
+                0.00    0.00       1/3           main::{lambda(QObject*, QUrl const&)#2}::~QUrl() [59]
+                0.00    0.00       1/1           QtPrivate::QSlotObjectBase::~QSlotObjectBase() [163]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [82]
+[171]    0.0    0.00    0.00       1         QtPrivate::MetaTypeSmartPointerHelper<QQmlListProperty<LibController>, void>::registerConverter(int) [171]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+[172]    0.0    0.00    0.00       1         QtPrivate::MetaTypeSmartPointerHelper<LibController*, void>::registerConverter(int) [172]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [82]
+[173]    0.0    0.00    0.00       1         QtPrivate::SequentialContainerConverterHelper<QQmlListProperty<LibController>, false>::registerConverter(int) [173]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+[174]    0.0    0.00    0.00       1         QtPrivate::SequentialContainerConverterHelper<LibController*, false>::registerConverter(int) [174]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [82]
+[175]    0.0    0.00    0.00       1         QtPrivate::AssociativeContainerConverterHelper<QQmlListProperty<LibController>, false>::registerConverter(int) [175]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+[176]    0.0    0.00    0.00       1         QtPrivate::AssociativeContainerConverterHelper<LibController*, false>::registerConverter(int) [176]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [82]
+[177]    0.0    0.00    0.00       1         QtPrivate::IsPair<QQmlListProperty<LibController> >::registerConverter(int) [177]
+-----------------------------------------------
+                0.00    0.00       1/1           int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) <cycle 1> [60]
+[178]    0.0    0.00    0.00       1         QtPrivate::IsPair<LibController*>::registerConverter(int) [178]
+-----------------------------------------------
+                0.00    0.00       1/1           QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::impl(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*) [254]
+[179]    0.0    0.00    0.00       1         void QtPrivate::Functor<main::{lambda(QObject*, QUrl const&)#2}, 2>::call<QtPrivate::List<QObject*, QUrl const&>, void>({lambda(QObject*, QUrl const&)#2}&, void*, {lambda(QObject*, QUrl const&)#2}&*) [179]
+                0.00    0.00       1/1           QtPrivate::FunctorCall<QtPrivate::IndexesList<0, 1>, QtPrivate::List<QObject*, QUrl const&>, void, main::{lambda(QObject*, QUrl const&)#2}>::call({lambda(QObject*, QUrl const&)#2}&, void**) [160]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator_traits<std::allocator<SortContainer*> >::deallocate(std::allocator<SortContainer*>&, SortContainer**, unsigned long) [206]
+[180]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<SortContainer*>::deallocate(SortContainer**, unsigned long) [180]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator_traits<std::allocator<SortContainer*> >::allocate(std::allocator<SortContainer*>&, unsigned long) [207]
+[181]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<SortContainer*>::allocate(unsigned long, void const*) [181]
+                0.00    0.00       1/2           __gnu_cxx::new_allocator<SortContainer*>::max_size() const [67]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<SortContainer*>::allocator() [197]
+[182]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<SortContainer*>::new_allocator() [182]
+-----------------------------------------------
+                0.00    0.00       1/1           std::allocator<SortContainer*>::~allocator() [198]
+[183]    0.0    0.00    0.00       1         __gnu_cxx::new_allocator<SortContainer*>::~new_allocator() [183]
+-----------------------------------------------
+                0.00    0.00       1/1           QByteArray::reserve(int) [95]
+[184]    0.0    0.00    0.00       1         QArrayData::detachFlags() const [184]
+-----------------------------------------------
+                0.00    0.00       1/1           QByteArray::reserve(int) [95]
+[185]    0.0    0.00    0.00       1         QByteArray::size() const [185]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[186]    0.0    0.00    0.00       1         QVarLengthArray<char, 48>::constData() const [186]
+-----------------------------------------------
+                0.00    0.00       1/1           int qmlRegisterType<LibController>(char const*, int, int, char const*) [79]
+[187]    0.0    0.00    0.00       1         QVarLengthArray<char, 64>::constData() const [187]
+-----------------------------------------------
+                0.00    0.00       1/1           main::{lambda()#1}::operator()() const [224]
+[188]    0.0    0.00    0.00       1         QStaticStringData<13>::data_ptr() const [188]
+-----------------------------------------------
+                0.00    0.00       1/1           QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() <cycle 1> [146]
+[189]    0.0    0.00    0.00       1         QBasicAtomicInteger<int>::loadAcquire() const [189]
+                0.00    0.00       1/1           int QAtomicOps<int>::loadAcquire<int>(std::atomic<int> const&) [93]
+-----------------------------------------------
+                0.00    0.00       1/1           QFlags<QArrayData::AllocationOption>::QFlags(QFlag) [150]
+[190]    0.0    0.00    0.00       1         QFlag::operator unsigned int() const [190]
+-----------------------------------------------
+                0.00    0.00       1/1           QByteArray::reserve(int) [95]
+[191]    0.0    0.00    0.00       1         QFlags<QArrayData::AllocationOption>::operator|(QArrayData::AllocationOption) const [191]
+                0.00    0.00       1/1           QFlag::QFlag(unsigned int) [149]
+                0.00    0.00       1/1           QFlags<QArrayData::AllocationOption>::QFlags(QFlag) [150]
+-----------------------------------------------
+                0.00    0.00       1/1           QByteArray::reserve(int) [95]
+[192]    0.0    0.00    0.00       1         QtPrivate::RefCount::isShared() const [192]
+                0.00    0.00       1/27          QBasicAtomicInteger<int>::load() const [30]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::max_size() const [196]
+[193]    0.0    0.00    0.00       1         std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() const [193]
+-----------------------------------------------
+                0.00    0.00       1/1           FileManager::CopyFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [98]
+[194]    0.0    0.00    0.00       1         std::fpos<__mbstate_t>::operator long() const [194]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+[195]    0.0    0.00    0.00       1         std::vector<SortContainer*, std::allocator<SortContainer*> >::capacity() const [195]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+[196]    0.0    0.00    0.00       1         std::vector<SortContainer*, std::allocator<SortContainer*> >::max_size() const [196]
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() const [193]
+                0.00    0.00       1/1           std::allocator_traits<std::allocator<SortContainer*> >::max_size(std::allocator<SortContainer*> const&) [208]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::_Vector_impl() [201]
+[197]    0.0    0.00    0.00       1         std::allocator<SortContainer*>::allocator() [197]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<SortContainer*>::new_allocator() [182]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::~_Vector_impl() [202]
+[198]    0.0    0.00    0.00       1         std::allocator<SortContainer*>::~allocator() [198]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<SortContainer*>::~new_allocator() [183]
+-----------------------------------------------
+                0.00    0.00       1/1           SortContainer** std::__copy_move_a<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**) [217]
+[199]    0.0    0.00    0.00       1         SortContainer** std::__copy_move<true, true, std::random_access_iterator_tag>::__copy_m<SortContainer*>(SortContainer* const*, SortContainer* const*, SortContainer**) [199]
+-----------------------------------------------
+                0.00    0.00       1/1           SortContainer** std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_allocate_and_copy<std::move_iterator<SortContainer**> >(unsigned long, std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>) [212]
+[200]    0.0    0.00    0.00       1         std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_allocate(unsigned long) [200]
+                0.00    0.00       1/1           std::allocator_traits<std::allocator<SortContainer*> >::allocate(std::allocator<SortContainer*>&, unsigned long) [207]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_base() [203]
+[201]    0.0    0.00    0.00       1         std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::_Vector_impl() [201]
+                0.00    0.00       1/1           std::allocator<SortContainer*>::allocator() [197]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::~_Vector_base() [204]
+[202]    0.0    0.00    0.00       1         std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::~_Vector_impl() [202]
+                0.00    0.00       1/1           std::allocator<SortContainer*>::~allocator() [198]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::vector() [215]
+[203]    0.0    0.00    0.00       1         std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_base() [203]
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::_Vector_impl() [201]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::~vector() [216]
+[204]    0.0    0.00    0.00       1         std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::~_Vector_base() [204]
+                0.00    0.00       1/2           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_deallocate(SortContainer**, unsigned long) [70]
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::~_Vector_impl() [202]
+-----------------------------------------------
+                0.00    0.00       1/1           std::atomic<int>::atomic(int) [210]
+[205]    0.0    0.00    0.00       1         std::__atomic_base<int>::__atomic_base(int) [205]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_deallocate(SortContainer**, unsigned long) [70]
+[206]    0.0    0.00    0.00       1         std::allocator_traits<std::allocator<SortContainer*> >::deallocate(std::allocator<SortContainer*>&, SortContainer**, unsigned long) [206]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<SortContainer*>::deallocate(SortContainer**, unsigned long) [180]
+-----------------------------------------------
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_allocate(unsigned long) [200]
+[207]    0.0    0.00    0.00       1         std::allocator_traits<std::allocator<SortContainer*> >::allocate(std::allocator<SortContainer*>&, unsigned long) [207]
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<SortContainer*>::allocate(unsigned long, void const*) [181]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::max_size() const [196]
+[208]    0.0    0.00    0.00       1         std::allocator_traits<std::allocator<SortContainer*> >::max_size(std::allocator<SortContainer*> const&) [208]
+                0.00    0.00       1/2           __gnu_cxx::new_allocator<SortContainer*>::max_size() const [67]
+-----------------------------------------------
+                0.00    0.00       1/1           SortContainer** std::uninitialized_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [219]
+[209]    0.0    0.00    0.00       1         SortContainer** std::__uninitialized_copy<true>::__uninit_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [209]
+                0.00    0.00       1/1           SortContainer** std::copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [221]
+-----------------------------------------------
+                0.00    0.00       1/1           QBasicAtomicInteger<int>::QBasicAtomicInteger(int) [148]
+[210]    0.0    0.00    0.00       1         std::atomic<int>::atomic(int) [210]
+                0.00    0.00       1/1           std::__atomic_base<int>::__atomic_base(int) [205]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::clear() [213]
+[211]    0.0    0.00    0.00       1         std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_erase_at_end(SortContainer**) [211]
+                0.00    0.00       1/4           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() [46]
+                0.00    0.00       1/3           void std::_Destroy<SortContainer**, SortContainer*>(SortContainer**, SortContainer**, std::allocator<SortContainer*>&) [58]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+[212]    0.0    0.00    0.00       1         SortContainer** std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_allocate_and_copy<std::move_iterator<SortContainer**> >(unsigned long, std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>) [212]
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_allocate(unsigned long) [200]
+                0.00    0.00       1/4           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() [46]
+                0.00    0.00       1/1           SortContainer** std::__uninitialized_copy_a<std::move_iterator<SortContainer**>, SortContainer**, SortContainer*>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**, std::allocator<SortContainer*>&) [220]
+-----------------------------------------------
+                0.00    0.00       1/1           FileManager::SortFile(OrderBy) [3]
+[213]    0.0    0.00    0.00       1         std::vector<SortContainer*, std::allocator<SortContainer*> >::clear() [213]
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_erase_at_end(SortContainer**) [211]
+-----------------------------------------------
+                0.00    0.00       1/1           FileManager::FileManager(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [99]
+[214]    0.0    0.00    0.00       1         std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long) [214]
+                0.00    0.00       2/2           std::move_iterator<SortContainer**> std::__make_move_if_noexcept_iterator<SortContainer**, std::move_iterator<SortContainer**> >(SortContainer**) [73]
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::max_size() const [196]
+                0.00    0.00       1/1           std::vector<SortContainer*, std::allocator<SortContainer*> >::capacity() const [195]
+                0.00    0.00       1/4           std::vector<SortContainer*, std::allocator<SortContainer*> >::size() const [45]
+                0.00    0.00       1/1           SortContainer** std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_allocate_and_copy<std::move_iterator<SortContainer**> >(unsigned long, std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>) [212]
+                0.00    0.00       1/4           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() [46]
+                0.00    0.00       1/3           void std::_Destroy<SortContainer**, SortContainer*>(SortContainer**, SortContainer**, std::allocator<SortContainer*>&) [58]
+                0.00    0.00       1/2           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_deallocate(SortContainer**, unsigned long) [70]
+-----------------------------------------------
+                0.00    0.00       1/1           FileManager::FileManager(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [99]
+[215]    0.0    0.00    0.00       1         std::vector<SortContainer*, std::allocator<SortContainer*> >::vector() [215]
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_base() [203]
+-----------------------------------------------
+                0.00    0.00       1/1           FileManager::~FileManager() [100]
+[216]    0.0    0.00    0.00       1         std::vector<SortContainer*, std::allocator<SortContainer*> >::~vector() [216]
+                0.00    0.00       1/4           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() [46]
+                0.00    0.00       1/3           void std::_Destroy<SortContainer**, SortContainer*>(SortContainer**, SortContainer**, std::allocator<SortContainer*>&) [58]
+                0.00    0.00       1/1           std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::~_Vector_base() [204]
+-----------------------------------------------
+                0.00    0.00       1/1           SortContainer** std::__copy_move_a2<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**) [218]
+[217]    0.0    0.00    0.00       1         SortContainer** std::__copy_move_a<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**) [217]
+                0.00    0.00       1/1           SortContainer** std::__copy_move<true, true, std::random_access_iterator_tag>::__copy_m<SortContainer*>(SortContainer* const*, SortContainer* const*, SortContainer**) [199]
+-----------------------------------------------
+                0.00    0.00       1/1           SortContainer** std::copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [221]
+[218]    0.0    0.00    0.00       1         SortContainer** std::__copy_move_a2<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**) [218]
+                0.00    0.00       3/3           std::_Niter_base<SortContainer**>::iterator_type std::__niter_base<SortContainer**>(SortContainer**) [55]
+                0.00    0.00       1/1           SortContainer** std::__copy_move_a<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**) [217]
+-----------------------------------------------
+                0.00    0.00       1/1           SortContainer** std::__uninitialized_copy_a<std::move_iterator<SortContainer**>, SortContainer**, SortContainer*>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**, std::allocator<SortContainer*>&) [220]
+[219]    0.0    0.00    0.00       1         SortContainer** std::uninitialized_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [219]
+                0.00    0.00       1/1           SortContainer** std::__uninitialized_copy<true>::__uninit_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [209]
+-----------------------------------------------
+                0.00    0.00       1/1           SortContainer** std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_allocate_and_copy<std::move_iterator<SortContainer**> >(unsigned long, std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>) [212]
+[220]    0.0    0.00    0.00       1         SortContainer** std::__uninitialized_copy_a<std::move_iterator<SortContainer**>, SortContainer**, SortContainer*>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**, std::allocator<SortContainer*>&) [220]
+                0.00    0.00       1/1           SortContainer** std::uninitialized_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [219]
+-----------------------------------------------
+                0.00    0.00       1/1           SortContainer** std::__uninitialized_copy<true>::__uninit_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [209]
+[221]    0.0    0.00    0.00       1         SortContainer** std::copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**) [221]
+                0.00    0.00       2/2           std::_Miter_base<std::move_iterator<SortContainer**> >::iterator_type std::__miter_base<std::move_iterator<SortContainer**> >(std::move_iterator<SortContainer**>) [72]
+                0.00    0.00       1/1           SortContainer** std::__copy_move_a2<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**) [218]
+-----------------------------------------------
+                0.00    0.00       1/1           void qSwap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&) [90]
+[222]    0.0    0.00    0.00       1         void std::swap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&) [222]
+                0.00    0.00       3/3           std::remove_reference<QTypedArrayData<unsigned short>*&>::type&& std::move<QTypedArrayData<unsigned short>*&>(QTypedArrayData<unsigned short>*&) [56]
+-----------------------------------------------
+                0.00    0.00       1/1           QtPrivate::FunctorCall<QtPrivate::IndexesList<0, 1>, QtPrivate::List<QObject*, QUrl const&>, void, main::{lambda(QObject*, QUrl const&)#2}>::call({lambda(QObject*, QUrl const&)#2}&, void**) [160]
+[223]    0.0    0.00    0.00       1         main::{lambda(QObject*, QUrl const&)#2}::operator()(QObject*, QUrl const&) const [223]
+-----------------------------------------------
+                0.00    0.00       1/1           main [13]
+[224]    0.0    0.00    0.00       1         main::{lambda()#1}::operator()() const [224]
+                0.00    0.00       1/1           QStaticStringData<13>::data_ptr() const [188]
+                0.00    0.00       1/1           QString::QString(QStringDataPtr) [156]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2015 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+  [77] _GLOBAL__sub_I__ZN11FileManager8CopyFileENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ [132] LibController::LibController(QObject*) [186] QVarLengthArray<char, 48>::constData() const
+  [78] _GLOBAL__sub_I__ZN13SortContainerC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEmm [133] LibController::~LibController() [187] QVarLengthArray<char, 64>::constData() const
+   [2] Wrapper4Thread(LibController*) [27] SortContainer::Sort(OrderBy) [188] QStaticStringData<13>::data_ptr() const
+  [79] int qmlRegisterType<LibController>(char const*, int, int, char const*) [16] SortContainer::SortContainer(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, unsigned long, unsigned long) [189] QBasicAtomicInteger<int>::loadAcquire() const
+  [80] qInitResources_qml()    [5] SortContainer::~SortContainer() [30] QBasicAtomicInteger<int>::load() const
+  [81] qCleanupResources_qml() [134] QAtomicInteger<int>::QAtomicInteger(int) [190] QFlag::operator unsigned int() const
+  [82] int qRegisterNormalizedMetaType<QQmlListProperty<LibController> >(QByteArray const&, QQmlListProperty<LibController>*, QtPrivate::MetaTypeDefinedHelper<QQmlListProperty<LibController>, QMetaTypeId2<QQmlListProperty<LibController> >::Defined&&(!QMetaTypeId2<QQmlListProperty<LibController> >::IsBuiltIn)>::DefinedType) [42] QTypedArrayData<char>::deallocate(QArrayData*) [191] QFlags<QArrayData::AllocationOption>::operator|(QArrayData::AllocationOption) const
+  [60] int qRegisterNormalizedMetaType<LibController*>(QByteArray const&, LibController**, QtPrivate::MetaTypeDefinedHelper<LibController*, QMetaTypeId2<LibController*>::Defined&&(!QMetaTypeId2<LibController*>::IsBuiltIn)>::DefinedType) [135] QTypedArrayData<char>::sharedNull() [192] QtPrivate::RefCount::isShared() const
+  [83] __static_initialization_and_destruction_0(int, int) [48] QTypedArrayData<char>::data() [67] __gnu_cxx::new_allocator<SortContainer*>::max_size() const
+  [84] __static_initialization_and_destruction_0(int, int) [136] QTypedArrayData<unsigned short>::sharedNull() [52] QString::toUtf8() const &
+  [85] __static_initialization_and_destruction_0(int, int) [137] QVarLengthArray<char, 48>::data() [193] std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator() const
+  [86] __static_initialization_and_destruction_0(int, int) [138] QVarLengthArray<char, 48>::QVarLengthArray(int) [68] std::move_iterator<SortContainer**>::base() const
+  [87] __static_initialization_and_destruction_0(int, int) [139] QVarLengthArray<char, 48>::~QVarLengthArray() [194] std::fpos<__mbstate_t>::operator long() const
+  [88] __static_initialization_and_destruction_0(int, int) [64] QVarLengthArray<char, 48>::operator[](int) [45] std::vector<SortContainer*, std::allocator<SortContainer*> >::size() const
+  [89] unsigned int const& qMax<unsigned int>(unsigned int const&, unsigned int const&) [65] QVarLengthArray<char, 64>::data() [195] std::vector<SortContainer*, std::allocator<SortContainer*> >::capacity() const
+  [90] void qSwap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&) [140] QVarLengthArray<char, 64>::QVarLengthArray(int) [196] std::vector<SortContainer*, std::allocator<SortContainer*> >::max_size() const
+  [91] qResourceFeatureZlib() [141] QVarLengthArray<char, 64>::~QVarLengthArray() [197] std::allocator<SortContainer*>::allocator()
+  [61] QArrayData::sharedNull() [66] QVarLengthArray<char, 64>::operator[](int) [198] std::allocator<SortContainer*>::~allocator()
+  [47] QArrayData::data()    [142] QFutureInterface<void>::reportFinished(void const*) [53] std::_Iter_base<SortContainer**, false>::_S_base(SortContainer**)
+  [92] QAtomicInt::QAtomicInt(int) [143] QFutureInterface<void>::future() [69] std::_Iter_base<std::move_iterator<SortContainer**>, true>::_S_base(std::move_iterator<SortContainer**>)
+  [93] int QAtomicOps<int>::loadAcquire<int>(std::atomic<int> const&) [144] QFutureInterface<void>::QFutureInterface(QFutureInterfaceBase::State) [199] SortContainer** std::__copy_move<true, true, std::random_access_iterator_tag>::__copy_m<SortContainer*>(SortContainer* const*, SortContainer* const*, SortContainer**)
+  [94] void QAtomicOps<int>::storeRelease<int>(std::atomic<int>&, int) [145] QFutureInterface<void>::~QFutureInterface() [54] void std::_Destroy_aux<true>::__destroy<SortContainer**>(SortContainer**, SortContainer**)
+  [38] bool QAtomicOps<int>::ref<int>(std::atomic<int>&) [146] QMetaTypeIdQObject<LibController*, 8>::qt_metatype_id() [200] std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_allocate(unsigned long)
+  [29] int QAtomicOps<int>::load<int>(std::atomic<int> const&) [147] QBasicAtomicInteger<int>::storeRelease(int) [201] std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::_Vector_impl()
+  [33] bool QAtomicOps<int>::deref<int>(std::atomic<int>&) [39] QBasicAtomicInteger<int>::ref() [202] std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_impl::~_Vector_impl()
+  [95] QByteArray::reserve(int) [34] QBasicAtomicInteger<int>::deref() [70] std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_deallocate(SortContainer**, unsigned long)
+  [44] QByteArray::QByteArray(QByteArray const&) [148] QBasicAtomicInteger<int>::QBasicAtomicInteger(int) [46] std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_M_get_Tp_allocator()
+  [96] QByteArray::QByteArray() [149] QFlag::QFlag(unsigned int) [203] std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::_Vector_base()
+  [36] QByteArray::~QByteArray() [150] QFlags<QArrayData::AllocationOption>::QFlags(QFlag) [204] std::_Vector_base<SortContainer*, std::allocator<SortContainer*> >::~_Vector_base()
+  [62] QByteArray::operator+=(char const*) [151] QFlags<QMetaType::TypeFlag>::operator|=(QMetaType::TypeFlag) [205] std::__atomic_base<int>::__atomic_base(int)
+  [97] FileManager::DivideFile(unsigned long, unsigned long) [152] QFuture<void>::QFuture(QFutureInterfaceBase*) [35] std::__atomic_base<int>::operator--()
+  [24] FileManager::getAllChunks() [153] QFuture<void>::~QFuture() [41] std::__atomic_base<int>::operator++()
+  [25] FileManager::getProcessedChunks() [154] std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type QObject::connect<void (QQmlApplicationEngine::*)(QObject*, QUrl const&), main::{lambda(QObject*, QUrl const&)#2}>(QtPrivate<void (QQmlApplicationEngine::*)(QObject*, QUrl const&)>::Object const*, std::enable_if<QtPrivate::FunctionPointer<main::{lambda(QObject*, QUrl const&)#2}>::ArgumentCount==(-(1)), QMetaObject::Connection>::type, QObject const*, QtPrivate::FunctionPointer, Qt::ConnectionType) [71] std::move_iterator<SortContainer**>::move_iterator(SortContainer**)
+  [98] FileManager::CopyFile(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [155] QString::fromUtf8(char const*, int) [206] std::allocator_traits<std::allocator<SortContainer*> >::deallocate(std::allocator<SortContainer*>&, SortContainer**, unsigned long)
+   [3] FileManager::SortFile(OrderBy) [49] QString::QString(char const*) [207] std::allocator_traits<std::allocator<SortContainer*> >::allocate(std::allocator<SortContainer*>&, unsigned long)
+  [99] FileManager::FileManager(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) [50] QString::QString(QString const&) [208] std::allocator_traits<std::allocator<SortContainer*> >::max_size(std::allocator<SortContainer*> const&)
+ [100] FileManager::~FileManager() [156] QString::QString(QStringDataPtr) [19] void std::allocator_traits<std::allocator<SortContainer*> >::construct<SortContainer*, SortContainer*>(std::allocator<SortContainer*>&, SortContainer**, SortContainer*&&)
+ [101] QQmlPrivate::QQmlElement<LibController>::QQmlElement() [157] QString::QString() [209] SortContainer** std::__uninitialized_copy<true>::__uninit_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**)
+ [102] QQmlPrivate::QQmlElement<LibController>::~QQmlElement() [37] QString::~QString() [210] std::atomic<int>::atomic(int)
+ [103] QQmlPrivate::QQmlElement<LibController>::operator delete(void*) [158] QString::operator=(QString&&) [20] void std::vector<SortContainer*, std::allocator<SortContainer*> >::emplace_back<SortContainer*>(SortContainer*&&)
+ [104] QQmlPrivate::RegisterType::~RegisterType() [159] QRunnable::QRunnable() [211] std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_erase_at_end(SortContainer**)
+ [105] QQmlPrivate::StaticCastSelector<LibController, QQmlParserStatus>::cast() [160] QtPrivate::FunctorCall<QtPrivate::IndexesList<0, 1>, QtPrivate::List<QObject*, QUrl const&>, void, main::{lambda(QObject*, QUrl const&)#2}>::call({lambda(QObject*, QUrl const&)#2}&, void**) [212] SortContainer** std::vector<SortContainer*, std::allocator<SortContainer*> >::_M_allocate_and_copy<std::move_iterator<SortContainer**> >(unsigned long, std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>)
+ [106] QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueSource>::cast() [161] QtPrivate::ConnectionTypes<QtPrivate::List<QObject*, QUrl const&>, true>::types() [213] std::vector<SortContainer*, std::allocator<SortContainer*> >::clear()
+ [107] QQmlPrivate::StaticCastSelector<LibController, QQmlPropertyValueInterceptor>::cast() [162] QtPrivate::QSlotObjectBase::QSlotObjectBase(void (*)(int, QtPrivate::QSlotObjectBase*, QObject*, void**, bool*)) [214] std::vector<SortContainer*, std::allocator<SortContainer*> >::reserve(unsigned long)
+ [108] QObject* (*QQmlPrivate::attachedPropertiesFunc<LibController>())(QObject*) [163] QtPrivate::QSlotObjectBase::~QSlotObjectBase() [21] std::vector<SortContainer*, std::allocator<SortContainer*> >::push_back(SortContainer*&&)
+ [109] QQmlPrivate::StaticCastSelectorClass<LibController, QQmlParserStatus, 1>::cast() [164] QtPrivate::ApplyReturnValue<void>::ApplyReturnValue(void*) [215] std::vector<SortContainer*, std::allocator<SortContainer*> >::vector()
+ [110] QQmlPrivate::StaticCastSelectorClass<LibController, QQmlPropertyValueSource, 1>::cast() [165] QtPrivate::MetaObjectForType<QQmlListProperty<LibController>, void>::value() [216] std::vector<SortContainer*, std::allocator<SortContainer*> >::~vector()
+ [111] QQmlPrivate::StaticCastSelectorClass<LibController, QQmlPropertyValueInterceptor, 1>::cast() [166] QtPrivate::MetaObjectForType<LibController*, void>::value() [26] std::vector<SortContainer*, std::allocator<SortContainer*> >::operator[](unsigned long)
+ [112] QQmlPrivate::AttachedPropertySelector<LibController, 0>::metaObject() [167] QtPrivate::QMetaTypeIdHelper<QQmlListProperty<LibController>, false>::qt_metatype_id() [72] std::_Miter_base<std::move_iterator<SortContainer**> >::iterator_type std::__miter_base<std::move_iterator<SortContainer**> >(std::move_iterator<SortContainer**>)
+ [113] QQmlPrivate::AttachedPropertySelector<LibController, 0>::func() [168] QtPrivate::QMetaTypeIdHelper<LibController*, true>::qt_metatype_id() [55] std::_Niter_base<SortContainer**>::iterator_type std::__niter_base<SortContainer**>(SortContainer**)
+ [114] QMetaObject const* QQmlPrivate::attachedPropertiesMetaObject<LibController>() [169] QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::QFunctorSlotObject({lambda(QObject*, QUrl const&)#2}) [217] SortContainer** std::__copy_move_a<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**)
+ [115] QMetaTypeId2<LibController*>::qt_metatype_id() [170] QtPrivate::QFunctorSlotObject<main::{lambda(QObject*, QUrl const&)#2}, 2, QtPrivate::List<QObject*, QUrl const&>, void>::~QFunctorSlotObject() [218] SortContainer** std::__copy_move_a2<true, SortContainer**, SortContainer**>(SortContainer**, SortContainer**, SortContainer**)
+ [116] QtConcurrent::RunFunctionTask<void>::RunFunctionTask() [171] QtPrivate::MetaTypeSmartPointerHelper<QQmlListProperty<LibController>, void>::registerConverter(int) [219] SortContainer** std::uninitialized_copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**)
+ [117] QtConcurrent::RunFunctionTask<void>::~RunFunctionTask() [172] QtPrivate::MetaTypeSmartPointerHelper<LibController*, void>::registerConverter(int) [220] SortContainer** std::__uninitialized_copy_a<std::move_iterator<SortContainer**>, SortContainer**, SortContainer*>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**, std::allocator<SortContainer*>&)
+   [4] QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() [173] QtPrivate::SequentialContainerConverterHelper<QQmlListProperty<LibController>, false>::registerConverter(int) [73] std::move_iterator<SortContainer**> std::__make_move_if_noexcept_iterator<SortContainer**, std::move_iterator<SortContainer**> >(SortContainer**)
+ [118] QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::StoredFunctorCall1(void (*)(LibController*), LibController* const&) [174] QtPrivate::SequentialContainerConverterHelper<LibController*, false>::registerConverter(int) [221] SortContainer** std::copy<std::move_iterator<SortContainer**>, SortContainer**>(std::move_iterator<SortContainer**>, std::move_iterator<SortContainer**>, SortContainer**)
+ [119] QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::~StoredFunctorCall1() [175] QtPrivate::AssociativeContainerConverterHelper<QQmlListProperty<LibController>, false>::registerConverter(int) [22] std::remove_reference<SortContainer*&>::type&& std::move<SortContainer*&>(SortContainer*&)
+ [120] QtConcurrent::RunFunctionTaskBase<void>::start(QThreadPool*) [176] QtPrivate::AssociativeContainerConverterHelper<LibController*, false>::registerConverter(int) [56] std::remove_reference<QTypedArrayData<unsigned short>*&>::type&& std::move<QTypedArrayData<unsigned short>*&>(QTypedArrayData<unsigned short>*&)
+ [121] QtConcurrent::RunFunctionTaskBase<void>::start() [177] QtPrivate::IsPair<QQmlListProperty<LibController> >::registerConverter(int) [74] std::remove_reference<main::{lambda(QObject*, QUrl const&)#2}&>::type&& std::move<main::{lambda(QObject*, QUrl const&)#2}&>(std::remove_reference&&)
+ [122] QtConcurrent::RunFunctionTaskBase<void>::RunFunctionTaskBase() [178] QtPrivate::IsPair<LibController*>::registerConverter(int) [222] void std::swap<QTypedArrayData<unsigned short>*>(QTypedArrayData<unsigned short>*&, QTypedArrayData<unsigned short>*&)
+ [123] QtConcurrent::RunFunctionTaskBase<void>::~RunFunctionTaskBase() [179] void QtPrivate::Functor<main::{lambda(QObject*, QUrl const&)#2}, 2>::call<QtPrivate::List<QObject*, QUrl const&>, void>({lambda(QObject*, QUrl const&)#2}&, void*, {lambda(QObject*, QUrl const&)#2}&*) [15] SortContainer*&& std::forward<SortContainer*>(std::remove_reference<SortContainer*>::type&)
+ [124] QFuture<void> QtConcurrent::run<void, LibController*, LibController*>(void (*)(LibController*), LibController* const&) [40] QtPrivate::RefCount::ref() [57] void std::_Destroy<SortContainer**>(SortContainer**, SortContainer**)
+ [125] (anonymous namespace)::initializer::initializer() [32] QtPrivate::RefCount::deref() [58] void std::_Destroy<SortContainer**, SortContainer*>(SortContainer**, SortContainer**, std::allocator<SortContainer*>&)
+  [23] LibController::getProgress() [180] __gnu_cxx::new_allocator<SortContainer*>::deallocate(SortContainer**, unsigned long) [28] std::operator&(std::memory_order, std::__memory_order_modifier)
+ [126] LibController::getSortFile() [181] __gnu_cxx::new_allocator<SortContainer*>::allocate(unsigned long, void const*) [223] main::{lambda(QObject*, QUrl const&)#2}::operator()(QObject*, QUrl const&) const
+ [127] LibController::handleReady() [18] void __gnu_cxx::new_allocator<SortContainer*>::construct<SortContainer*, SortContainer*>(SortContainer**, SortContainer*&&) [224] main::{lambda()#1}::operator()() const
+ [128] LibController::setSaveFile(QString, QString) [182] __gnu_cxx::new_allocator<SortContainer*>::new_allocator() [75] main::{lambda(QObject*, QUrl const&)#2}::QUrl({lambda(QObject*, QUrl const&)#2}&&)
+ [129] LibController::setSortFile(QString) [183] __gnu_cxx::new_allocator<SortContainer*>::~new_allocator() [59] main::{lambda(QObject*, QUrl const&)#2}::~QUrl()
+ [130] LibController::createFileManager() [184] QArrayData::detachFlags() const [1] SortContainer::Sort(OrderBy)::Func::Asc(void const*, void const*)
+  [43] LibController::qt_static_metacall(QObject*, QMetaObject::Call, int, void**) [185] QByteArray::size() const [17] operator new(unsigned long, void*)
+  [63] LibController::isReady() [51] QByteArray::constData() const [76] operator+(QByteArray const&, char const*)
+ [131] LibController::sortFile() [31] QScopedPointer<QObjectData, QScopedPointerDeleter<QObjectData> >::operator->() const [7] <cycle 1>
