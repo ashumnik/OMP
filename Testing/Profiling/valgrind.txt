@@ -1,0 +1,1184 @@
+--------------------------------------------------------------------------------
+Command:            ./uint32_sort_gui
+Massif arguments:   (none)
+ms_print arguments: massif.out.20004
+--------------------------------------------------------------------------------
+
+
+    GB
+1.101^                                                                   :    
+     |                                      #:::::::@:::::::::@::::::@::::::::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     |                                      #::::  :@:: :: :::@::::::@:: :: ::
+     | ::::@:@@:::@:@@:::::::::@::::::@:::::#::::  :@:: :: :::@::::::@:: :: ::
+     | ::: @:@@:::@:@@:::::::::@::::::@:::::#::::  :@:: :: :::@::::::@:: :: ::
+   0 +----------------------------------------------------------------------->Gi
+     0                                                                   366.2
+
+Number of snapshots: 87
+ Detailed snapshots: [7, 9, 11, 15, 18, 20, 32, 41, 48 (peak), 57, 67, 77]
+
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  0              0                0                0             0            0
+  1  5,704,002,724      175,646,208      172,250,022     3,396,186            0
+  2 10,264,891,307      175,646,352      172,250,162     3,396,190            0
+  3 14,693,152,415      167,253,664      163,861,530     3,392,134            0
+  4 17,435,386,636      175,646,312      172,250,138     3,396,174            0
+  5 21,637,894,490      175,646,520      172,250,306     3,396,214            0
+  6 28,236,580,160      175,646,520      172,250,306     3,396,214            0
+  7 32,307,249,756      175,646,560      172,250,330     3,396,230            0
+98.07% (172,250,330B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->38.21% (67,108,864B) 0x6ED7348: qsort_r (msort.c:222)
+| ->38.21% (67,108,864B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->38.21% (67,108,864B) 0x408137: FileManager::SortFile(OrderBy) [clone ._omp_fn.0] (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |   ->33.43% (58,720,256B) 0x64D643D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |   | ->33.43% (58,720,256B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |   |   ->33.43% (58,720,256B) 0x6FA541C: clone (clone.S:109)
+| |   |     
+| |   ->04.78% (8,388,608B) 0x64D2CBE: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |     ->04.78% (8,388,608B) 0x407F57: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |       ->04.78% (8,388,608B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |         ->04.78% (8,388,608B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |           ->04.78% (8,388,608B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |             ->04.78% (8,388,608B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| |               ->04.78% (8,388,608B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| |                 ->04.78% (8,388,608B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |                   ->04.78% (8,388,608B) 0x6FA541C: clone (clone.S:109)
+| |                     
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->30.03% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->30.03% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->30.03% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->30.03% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->30.03% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->30.03% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->30.03% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->30.03% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->30.03% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->30.03% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->30.03% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->30.03% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->30.03% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->30.03% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->30.03% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->30.03% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->30.03% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->30.03% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->30.03% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->30.03% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->30.03% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->30.03% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->30.03% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->30.03% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->30.03% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->13.48% (23,682,164B) in 1479 places, all below massif's threshold (1.00%)
+| 
+->06.15% (10,805,859B) 0x14E9DAEC: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.59% (9,820,568B) 0x14E9DBCD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->04.22% (7,408,376B) in 1427 places, all below massif's threshold (1.00%)
+| | | 
+| | ->01.37% (2,412,192B) 0x14EDB753: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| |   ->01.37% (2,412,192B) in 40 places, all below massif's threshold (1.00%)
+| |     
+| ->00.56% (985,291B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.23% (9,180,576B) 0x14CD8C53: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.23% (9,180,576B) 0x14D9C2A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->05.23% (9,180,576B) 0x14DD9457: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->05.23% (9,180,576B) 0x14FA8822: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|       ->05.23% (9,180,576B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|         ->05.23% (9,180,576B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|           ->05.23% (9,180,576B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|             ->05.23% (9,180,576B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|               ->05.23% (9,180,576B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|                 ->05.23% (9,180,576B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|                   ->05.23% (9,180,576B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                     ->05.23% (9,180,576B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                     | ->05.23% (9,180,576B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                     |   ->05.23% (9,180,576B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                     |     ->05.23% (9,180,576B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                     |       ->05.23% (9,180,576B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                     |         ->05.23% (9,180,576B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                     |           ->05.23% (9,180,576B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                     |             ->05.23% (9,180,576B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                     |               ->05.23% (9,180,576B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                     |                 ->05.23% (9,180,576B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                   ->05.23% (9,180,576B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                     ->05.23% (9,180,576B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                       ->05.23% (9,180,576B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                     |                         ->05.23% (9,180,576B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                     |                           ->05.23% (9,180,576B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                     |                             ->05.23% (9,180,576B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                     |                               
+|                     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                     
+->02.34% (4,106,046B) 0x14CD8BFE: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->02.32% (4,070,976B) 0x14D4D52E: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->02.32% (4,070,976B) in 14 places, all below massif's threshold (1.00%)
+| |   
+| ->00.02% (35,070B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.34% (2,351,760B) 0x51027EA: allocate (qrecyclepool_p.h:189)
+| ->01.34% (2,351,760B) 0x51027EA: New<QQmlJavaScriptExpression*> (qrecyclepool_p.h:150)
+|   ->01.34% (2,351,760B) 0x51027EA: New (qqmljavascriptexpression_p.h:277)
+|     ->01.34% (2,351,760B) 0x51027EA: QQmlPropertyCapture::captureProperty(QObject*, int, int, bool) (qqmljavascriptexpression.cpp:310)
+|       ->01.34% (2,351,760B) 0x4FE9976: QV4::QObjectWrapper::getProperty(QV4::ExecutionEngine*, QObject*, QQmlPropertyData*) (qv4qobjectwrapper.cpp:263)
+|         ->01.34% (2,351,760B) in 22 places, all below massif's threshold (1.00%)
+|           
+->01.30% (2,274,917B) 0x5DD027C: QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) (qarraydata.cpp:118)
+  ->01.30% (2,274,917B) in 116 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+  8 36,230,475,709      175,646,520      172,250,306     3,396,214            0
+  9 40,953,933,583      175,646,576      172,250,318     3,396,258            0
+98.07% (172,250,318B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->38.21% (67,108,864B) 0x6ED7348: qsort_r (msort.c:222)
+| ->38.21% (67,108,864B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->38.21% (67,108,864B) 0x408137: FileManager::SortFile(OrderBy) [clone ._omp_fn.0] (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |   ->33.43% (58,720,256B) 0x64D643D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |   | ->33.43% (58,720,256B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |   |   ->33.43% (58,720,256B) 0x6FA541C: clone (clone.S:109)
+| |   |     
+| |   ->04.78% (8,388,608B) 0x64D2CBE: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |     ->04.78% (8,388,608B) 0x407F57: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |       ->04.78% (8,388,608B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |         ->04.78% (8,388,608B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |           ->04.78% (8,388,608B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |             ->04.78% (8,388,608B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| |               ->04.78% (8,388,608B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| |                 ->04.78% (8,388,608B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |                   ->04.78% (8,388,608B) 0x6FA541C: clone (clone.S:109)
+| |                     
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->30.03% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->30.03% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->30.03% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->30.03% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->30.03% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->30.03% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->30.03% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->30.03% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->30.03% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->30.03% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->30.03% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->30.03% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->30.03% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->30.03% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->30.03% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->30.03% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->30.03% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->30.03% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->30.03% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->30.03% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->30.03% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->30.03% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->30.03% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->30.03% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->30.03% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->13.48% (23,682,152B) in 1479 places, all below massif's threshold (1.00%)
+| 
+->06.15% (10,805,859B) 0x14E9DAEC: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.59% (9,820,568B) 0x14E9DBCD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->04.22% (7,408,376B) in 1427 places, all below massif's threshold (1.00%)
+| | | 
+| | ->01.37% (2,412,192B) 0x14EDB753: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| |   ->01.37% (2,412,192B) in 40 places, all below massif's threshold (1.00%)
+| |     
+| ->00.56% (985,291B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.23% (9,180,576B) 0x14CD8C53: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.23% (9,180,576B) 0x14D9C2A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->05.23% (9,180,576B) 0x14DD9457: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->05.23% (9,180,576B) 0x14FA8822: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|       ->05.23% (9,180,576B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|         ->05.23% (9,180,576B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|           ->05.23% (9,180,576B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|             ->05.23% (9,180,576B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|               ->05.23% (9,180,576B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|                 ->05.23% (9,180,576B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|                   ->05.23% (9,180,576B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                     ->05.23% (9,180,576B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                     | ->05.23% (9,180,576B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                     |   ->05.23% (9,180,576B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                     |     ->05.23% (9,180,576B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                     |       ->05.23% (9,180,576B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                     |         ->05.23% (9,180,576B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                     |           ->05.23% (9,180,576B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                     |             ->05.23% (9,180,576B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                     |               ->05.23% (9,180,576B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                     |                 ->05.23% (9,180,576B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                   ->05.23% (9,180,576B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                     ->05.23% (9,180,576B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                       ->05.23% (9,180,576B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                     |                         ->05.23% (9,180,576B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                     |                           ->05.23% (9,180,576B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                     |                             ->05.23% (9,180,576B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                     |                               
+|                     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                     
+->02.34% (4,106,046B) 0x14CD8BFE: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->02.32% (4,070,976B) 0x14D4D52E: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->02.32% (4,070,976B) in 14 places, all below massif's threshold (1.00%)
+| |   
+| ->00.02% (35,070B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.34% (2,351,760B) 0x51027EA: allocate (qrecyclepool_p.h:189)
+| ->01.34% (2,351,760B) 0x51027EA: New<QQmlJavaScriptExpression*> (qrecyclepool_p.h:150)
+|   ->01.34% (2,351,760B) 0x51027EA: New (qqmljavascriptexpression_p.h:277)
+|     ->01.34% (2,351,760B) 0x51027EA: QQmlPropertyCapture::captureProperty(QObject*, int, int, bool) (qqmljavascriptexpression.cpp:310)
+|       ->01.34% (2,351,760B) 0x4FE9976: QV4::QObjectWrapper::getProperty(QV4::ExecutionEngine*, QObject*, QQmlPropertyData*) (qv4qobjectwrapper.cpp:263)
+|         ->01.34% (2,351,760B) in 22 places, all below massif's threshold (1.00%)
+|           
+->01.30% (2,274,917B) 0x5DD027C: QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) (qarraydata.cpp:118)
+  ->01.30% (2,274,917B) in 116 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 10 43,885,719,022      175,646,592      172,250,342     3,396,250            0
+ 11 47,991,884,639      175,646,560      172,250,330     3,396,230            0
+98.07% (172,250,330B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->38.21% (67,108,864B) 0x6ED7348: qsort_r (msort.c:222)
+| ->38.21% (67,108,864B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->38.21% (67,108,864B) 0x408137: FileManager::SortFile(OrderBy) [clone ._omp_fn.0] (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |   ->33.43% (58,720,256B) 0x64D643D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |   | ->33.43% (58,720,256B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |   |   ->33.43% (58,720,256B) 0x6FA541C: clone (clone.S:109)
+| |   |     
+| |   ->04.78% (8,388,608B) 0x64D2CBE: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |     ->04.78% (8,388,608B) 0x407F57: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |       ->04.78% (8,388,608B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |         ->04.78% (8,388,608B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |           ->04.78% (8,388,608B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |             ->04.78% (8,388,608B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| |               ->04.78% (8,388,608B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| |                 ->04.78% (8,388,608B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |                   ->04.78% (8,388,608B) 0x6FA541C: clone (clone.S:109)
+| |                     
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->30.03% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->30.03% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->30.03% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->30.03% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->30.03% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->30.03% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->30.03% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->30.03% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->30.03% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->30.03% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->30.03% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->30.03% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->30.03% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->30.03% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->30.03% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->30.03% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->30.03% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->30.03% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->30.03% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->30.03% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->30.03% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->30.03% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->30.03% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->30.03% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->30.03% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->13.48% (23,682,164B) in 1479 places, all below massif's threshold (1.00%)
+| 
+->06.15% (10,805,859B) 0x14E9DAEC: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.59% (9,820,568B) 0x14E9DBCD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->04.22% (7,408,376B) in 1427 places, all below massif's threshold (1.00%)
+| | | 
+| | ->01.37% (2,412,192B) 0x14EDB753: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| |   ->01.37% (2,412,192B) in 40 places, all below massif's threshold (1.00%)
+| |     
+| ->00.56% (985,291B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.23% (9,180,576B) 0x14CD8C53: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.23% (9,180,576B) 0x14D9C2A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->05.23% (9,180,576B) 0x14DD9457: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->05.23% (9,180,576B) 0x14FA8822: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|       ->05.23% (9,180,576B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|         ->05.23% (9,180,576B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|           ->05.23% (9,180,576B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|             ->05.23% (9,180,576B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|               ->05.23% (9,180,576B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|                 ->05.23% (9,180,576B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|                   ->05.23% (9,180,576B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                     ->05.23% (9,180,576B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                     | ->05.23% (9,180,576B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                     |   ->05.23% (9,180,576B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                     |     ->05.23% (9,180,576B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                     |       ->05.23% (9,180,576B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                     |         ->05.23% (9,180,576B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                     |           ->05.23% (9,180,576B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                     |             ->05.23% (9,180,576B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                     |               ->05.23% (9,180,576B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                     |                 ->05.23% (9,180,576B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                   ->05.23% (9,180,576B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                     ->05.23% (9,180,576B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                       ->05.23% (9,180,576B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                     |                         ->05.23% (9,180,576B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                     |                           ->05.23% (9,180,576B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                     |                             ->05.23% (9,180,576B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                     |                               
+|                     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                     
+->02.34% (4,106,046B) 0x14CD8BFE: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->02.32% (4,070,976B) 0x14D4D52E: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->02.32% (4,070,976B) in 14 places, all below massif's threshold (1.00%)
+| |   
+| ->00.02% (35,070B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.34% (2,351,760B) 0x51027EA: allocate (qrecyclepool_p.h:189)
+| ->01.34% (2,351,760B) 0x51027EA: New<QQmlJavaScriptExpression*> (qrecyclepool_p.h:150)
+|   ->01.34% (2,351,760B) 0x51027EA: New (qqmljavascriptexpression_p.h:277)
+|     ->01.34% (2,351,760B) 0x51027EA: QQmlPropertyCapture::captureProperty(QObject*, int, int, bool) (qqmljavascriptexpression.cpp:310)
+|       ->01.34% (2,351,760B) 0x4FE9976: QV4::QObjectWrapper::getProperty(QV4::ExecutionEngine*, QObject*, QQmlPropertyData*) (qv4qobjectwrapper.cpp:263)
+|         ->01.34% (2,351,760B) in 22 places, all below massif's threshold (1.00%)
+|           
+->01.30% (2,274,917B) 0x5DD027C: QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) (qarraydata.cpp:118)
+  ->01.30% (2,274,917B) in 116 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 12 53,996,580,274      175,646,560      172,250,330     3,396,230            0
+ 13 57,420,501,153      175,646,560      172,250,330     3,396,230            0
+ 14 62,625,975,888      175,646,560      172,250,330     3,396,230            0
+ 15 67,461,982,724      175,646,520      172,250,306     3,396,214            0
+98.07% (172,250,306B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->38.21% (67,108,864B) 0x6ED7348: qsort_r (msort.c:222)
+| ->38.21% (67,108,864B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->38.21% (67,108,864B) 0x408137: FileManager::SortFile(OrderBy) [clone ._omp_fn.0] (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |   ->33.43% (58,720,256B) 0x64D643D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |   | ->33.43% (58,720,256B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |   |   ->33.43% (58,720,256B) 0x6FA541C: clone (clone.S:109)
+| |   |     
+| |   ->04.78% (8,388,608B) 0x64D2CBE: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |     ->04.78% (8,388,608B) 0x407F57: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |       ->04.78% (8,388,608B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |         ->04.78% (8,388,608B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |           ->04.78% (8,388,608B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |             ->04.78% (8,388,608B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| |               ->04.78% (8,388,608B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| |                 ->04.78% (8,388,608B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |                   ->04.78% (8,388,608B) 0x6FA541C: clone (clone.S:109)
+| |                     
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->30.03% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->30.03% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->30.03% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->30.03% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->30.03% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->30.03% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->30.03% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->30.03% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->30.03% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->30.03% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->30.03% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->30.03% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->30.03% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->30.03% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->30.03% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->30.03% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->30.03% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->30.03% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->30.03% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->30.03% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->30.03% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->30.03% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->30.03% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->30.03% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->30.03% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->13.48% (23,682,140B) in 1479 places, all below massif's threshold (1.00%)
+| 
+->06.15% (10,805,859B) 0x14E9DAEC: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.59% (9,820,568B) 0x14E9DBCD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->04.22% (7,408,376B) in 1427 places, all below massif's threshold (1.00%)
+| | | 
+| | ->01.37% (2,412,192B) 0x14EDB753: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| |   ->01.37% (2,412,192B) in 40 places, all below massif's threshold (1.00%)
+| |     
+| ->00.56% (985,291B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.23% (9,180,576B) 0x14CD8C53: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.23% (9,180,576B) 0x14D9C2A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->05.23% (9,180,576B) 0x14DD9457: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->05.23% (9,180,576B) 0x14FA8822: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|       ->05.23% (9,180,576B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|         ->05.23% (9,180,576B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|           ->05.23% (9,180,576B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|             ->05.23% (9,180,576B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|               ->05.23% (9,180,576B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|                 ->05.23% (9,180,576B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|                   ->05.23% (9,180,576B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                     ->05.23% (9,180,576B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                     | ->05.23% (9,180,576B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                     |   ->05.23% (9,180,576B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                     |     ->05.23% (9,180,576B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                     |       ->05.23% (9,180,576B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                     |         ->05.23% (9,180,576B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                     |           ->05.23% (9,180,576B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                     |             ->05.23% (9,180,576B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                     |               ->05.23% (9,180,576B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                     |                 ->05.23% (9,180,576B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                   ->05.23% (9,180,576B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                     ->05.23% (9,180,576B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                       ->05.23% (9,180,576B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                     |                         ->05.23% (9,180,576B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                     |                           ->05.23% (9,180,576B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                     |                             ->05.23% (9,180,576B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                     |                               
+|                     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                     
+->02.34% (4,106,046B) 0x14CD8BFE: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->02.32% (4,070,976B) 0x14D4D52E: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->02.32% (4,070,976B) in 14 places, all below massif's threshold (1.00%)
+| |   
+| ->00.02% (35,070B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.34% (2,351,760B) 0x51027EA: allocate (qrecyclepool_p.h:189)
+| ->01.34% (2,351,760B) 0x51027EA: New<QQmlJavaScriptExpression*> (qrecyclepool_p.h:150)
+|   ->01.34% (2,351,760B) 0x51027EA: New (qqmljavascriptexpression_p.h:277)
+|     ->01.34% (2,351,760B) 0x51027EA: QQmlPropertyCapture::captureProperty(QObject*, int, int, bool) (qqmljavascriptexpression.cpp:310)
+|       ->01.34% (2,351,760B) 0x4FE9976: QV4::QObjectWrapper::getProperty(QV4::ExecutionEngine*, QObject*, QQmlPropertyData*) (qv4qobjectwrapper.cpp:263)
+|         ->01.34% (2,351,760B) in 22 places, all below massif's threshold (1.00%)
+|           
+->01.30% (2,274,917B) 0x5DD027C: QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) (qarraydata.cpp:118)
+  ->01.30% (2,274,917B) in 116 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 16 70,314,529,011      175,646,856      172,250,522     3,396,334            0
+ 17 74,205,267,200      175,647,624      172,251,022     3,396,602            0
+ 18 77,135,255,346      175,646,912      172,250,554     3,396,358            0
+98.07% (172,250,554B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->38.21% (67,108,864B) 0x6ED7348: qsort_r (msort.c:222)
+| ->38.21% (67,108,864B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->38.21% (67,108,864B) 0x408137: FileManager::SortFile(OrderBy) [clone ._omp_fn.0] (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |   ->33.43% (58,720,256B) 0x64D643D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |   | ->33.43% (58,720,256B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |   |   ->33.43% (58,720,256B) 0x6FA541C: clone (clone.S:109)
+| |   |     
+| |   ->04.78% (8,388,608B) 0x64D2CBE: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |     ->04.78% (8,388,608B) 0x407F57: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |       ->04.78% (8,388,608B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |         ->04.78% (8,388,608B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |           ->04.78% (8,388,608B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |             ->04.78% (8,388,608B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| |               ->04.78% (8,388,608B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| |                 ->04.78% (8,388,608B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |                   ->04.78% (8,388,608B) 0x6FA541C: clone (clone.S:109)
+| |                     
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->30.03% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->30.03% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->30.03% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->30.03% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->30.03% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->30.03% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->30.03% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->30.03% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->30.03% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->30.03% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->30.03% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->30.03% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->30.03% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->30.03% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->30.03% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->30.03% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->30.03% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->30.03% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->30.03% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->30.03% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->30.03% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->30.03% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->30.03% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->30.03% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->30.03% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->13.48% (23,682,388B) in 1479 places, all below massif's threshold (1.00%)
+| 
+->06.15% (10,805,859B) 0x14E9DAEC: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.59% (9,820,568B) 0x14E9DBCD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->04.22% (7,408,376B) in 1427 places, all below massif's threshold (1.00%)
+| | | 
+| | ->01.37% (2,412,192B) 0x14EDB753: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| |   ->01.37% (2,412,192B) in 40 places, all below massif's threshold (1.00%)
+| |     
+| ->00.56% (985,291B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.23% (9,180,576B) 0x14CD8C53: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.23% (9,180,576B) 0x14D9C2A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->05.23% (9,180,576B) 0x14DD9457: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->05.23% (9,180,576B) 0x14FA8822: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|       ->05.23% (9,180,576B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|         ->05.23% (9,180,576B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|           ->05.23% (9,180,576B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|             ->05.23% (9,180,576B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|               ->05.23% (9,180,576B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|                 ->05.23% (9,180,576B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|                   ->05.23% (9,180,576B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                     ->05.23% (9,180,576B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                     | ->05.23% (9,180,576B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                     |   ->05.23% (9,180,576B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                     |     ->05.23% (9,180,576B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                     |       ->05.23% (9,180,576B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                     |         ->05.23% (9,180,576B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                     |           ->05.23% (9,180,576B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                     |             ->05.23% (9,180,576B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                     |               ->05.23% (9,180,576B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                     |                 ->05.23% (9,180,576B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                   ->05.23% (9,180,576B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                     ->05.23% (9,180,576B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                       ->05.23% (9,180,576B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                     |                         ->05.23% (9,180,576B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                     |                           ->05.23% (9,180,576B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                     |                             ->05.23% (9,180,576B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                     |                               
+|                     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                     
+->02.34% (4,106,046B) 0x14CD8BFE: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->02.32% (4,070,976B) 0x14D4D52E: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->02.32% (4,070,976B) in 14 places, all below massif's threshold (1.00%)
+| |   
+| ->00.02% (35,070B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.34% (2,351,760B) 0x51027EA: allocate (qrecyclepool_p.h:189)
+| ->01.34% (2,351,760B) 0x51027EA: New<QQmlJavaScriptExpression*> (qrecyclepool_p.h:150)
+|   ->01.34% (2,351,760B) 0x51027EA: New (qqmljavascriptexpression_p.h:277)
+|     ->01.34% (2,351,760B) 0x51027EA: QQmlPropertyCapture::captureProperty(QObject*, int, int, bool) (qqmljavascriptexpression.cpp:310)
+|       ->01.34% (2,351,760B) 0x4FE9976: QV4::QObjectWrapper::getProperty(QV4::ExecutionEngine*, QObject*, QQmlPropertyData*) (qv4qobjectwrapper.cpp:263)
+|         ->01.34% (2,351,760B) in 22 places, all below massif's threshold (1.00%)
+|           
+->01.30% (2,274,917B) 0x5DD027C: QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) (qarraydata.cpp:118)
+  ->01.30% (2,274,917B) in 116 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 19 83,167,611,072      175,648,216      172,251,494     3,396,722            0
+ 20 87,261,879,563      175,646,904      172,250,594     3,396,310            0
+98.07% (172,250,594B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->38.21% (67,108,864B) 0x6ED7348: qsort_r (msort.c:222)
+| ->38.21% (67,108,864B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->38.21% (67,108,864B) 0x408137: FileManager::SortFile(OrderBy) [clone ._omp_fn.0] (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |   ->33.43% (58,720,256B) 0x64D643D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |   | ->33.43% (58,720,256B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |   |   ->33.43% (58,720,256B) 0x6FA541C: clone (clone.S:109)
+| |   |     
+| |   ->04.78% (8,388,608B) 0x64D2CBE: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |     ->04.78% (8,388,608B) 0x407F57: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |       ->04.78% (8,388,608B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |         ->04.78% (8,388,608B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |           ->04.78% (8,388,608B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |             ->04.78% (8,388,608B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| |               ->04.78% (8,388,608B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| |                 ->04.78% (8,388,608B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |                   ->04.78% (8,388,608B) 0x6FA541C: clone (clone.S:109)
+| |                     
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->30.03% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->30.03% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->30.03% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->30.03% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->30.03% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->30.03% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->30.03% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->30.03% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->30.03% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->30.03% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->30.03% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->30.03% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->30.03% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->30.03% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->30.03% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->30.03% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->30.03% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->30.03% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->30.03% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->30.03% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->30.03% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->30.03% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->30.03% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->30.03% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->30.03% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->13.48% (23,682,428B) in 1479 places, all below massif's threshold (1.00%)
+| 
+->06.15% (10,805,859B) 0x14E9DAEC: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.59% (9,820,568B) 0x14E9DBCD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->04.22% (7,408,376B) in 1427 places, all below massif's threshold (1.00%)
+| | | 
+| | ->01.37% (2,412,192B) 0x14EDB753: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| |   ->01.37% (2,412,192B) in 40 places, all below massif's threshold (1.00%)
+| |     
+| ->00.56% (985,291B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.23% (9,180,576B) 0x14CD8C53: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.23% (9,180,576B) 0x14D9C2A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->05.23% (9,180,576B) 0x14DD9457: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->05.23% (9,180,576B) 0x14FA8822: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|       ->05.23% (9,180,576B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|         ->05.23% (9,180,576B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|           ->05.23% (9,180,576B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|             ->05.23% (9,180,576B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|               ->05.23% (9,180,576B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|                 ->05.23% (9,180,576B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|                   ->05.23% (9,180,576B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                     ->05.23% (9,180,576B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                     | ->05.23% (9,180,576B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                     |   ->05.23% (9,180,576B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                     |     ->05.23% (9,180,576B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                     |       ->05.23% (9,180,576B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                     |         ->05.23% (9,180,576B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                     |           ->05.23% (9,180,576B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                     |             ->05.23% (9,180,576B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                     |               ->05.23% (9,180,576B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                     |                 ->05.23% (9,180,576B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                   ->05.23% (9,180,576B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                     ->05.23% (9,180,576B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                       ->05.23% (9,180,576B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                     |                         ->05.23% (9,180,576B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                     |                           ->05.23% (9,180,576B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                     |                             ->05.23% (9,180,576B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                     |                               
+|                     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                     
+->02.34% (4,106,046B) 0x14CD8BFE: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->02.32% (4,070,976B) 0x14D4D52E: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->02.32% (4,070,976B) in 14 places, all below massif's threshold (1.00%)
+| |   
+| ->00.02% (35,070B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.34% (2,351,760B) 0x51027EA: allocate (qrecyclepool_p.h:189)
+| ->01.34% (2,351,760B) 0x51027EA: New<QQmlJavaScriptExpression*> (qrecyclepool_p.h:150)
+|   ->01.34% (2,351,760B) 0x51027EA: New (qqmljavascriptexpression_p.h:277)
+|     ->01.34% (2,351,760B) 0x51027EA: QQmlPropertyCapture::captureProperty(QObject*, int, int, bool) (qqmljavascriptexpression.cpp:310)
+|       ->01.34% (2,351,760B) 0x4FE9976: QV4::QObjectWrapper::getProperty(QV4::ExecutionEngine*, QObject*, QQmlPropertyData*) (qv4qobjectwrapper.cpp:263)
+|         ->01.34% (2,351,760B) in 22 places, all below massif's threshold (1.00%)
+|           
+->01.30% (2,274,917B) 0x5DD027C: QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) (qarraydata.cpp:118)
+  ->01.30% (2,274,917B) in 116 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 21 90,985,056,066      167,255,512      163,862,778     3,392,734            0
+ 22 97,672,726,956      167,253,928      163,861,730     3,392,198            0
+ 23 103,436,657,502      175,646,616      172,250,362     3,396,254            0
+ 24 107,373,804,027      175,646,688      172,250,410     3,396,278            0
+ 25 113,739,631,671      175,646,616      172,250,362     3,396,254            0
+ 26 117,912,669,619      175,646,616      172,250,362     3,396,254            0
+ 27 120,787,363,489      167,253,928      163,861,730     3,392,198            0
+ 28 125,264,654,286      175,646,616      172,250,362     3,396,254            0
+ 29 130,436,250,672      167,253,928      163,861,730     3,392,198            0
+ 30 134,206,408,963      175,646,616      172,250,362     3,396,254            0
+ 31 138,063,964,311      175,646,616      172,250,362     3,396,254            0
+ 32 141,409,741,923      175,646,688      172,250,398     3,396,290            0
+98.07% (172,250,398B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->38.21% (67,108,864B) 0x6ED7348: qsort_r (msort.c:222)
+| ->38.21% (67,108,864B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->38.21% (67,108,864B) 0x408137: FileManager::SortFile(OrderBy) [clone ._omp_fn.0] (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |   ->33.43% (58,720,256B) 0x64D643D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |   | ->33.43% (58,720,256B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |   |   ->33.43% (58,720,256B) 0x6FA541C: clone (clone.S:109)
+| |   |     
+| |   ->04.78% (8,388,608B) 0x64D2CBE: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |     ->04.78% (8,388,608B) 0x407F57: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |       ->04.78% (8,388,608B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |         ->04.78% (8,388,608B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |           ->04.78% (8,388,608B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |             ->04.78% (8,388,608B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| |               ->04.78% (8,388,608B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| |                 ->04.78% (8,388,608B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |                   ->04.78% (8,388,608B) 0x6FA541C: clone (clone.S:109)
+| |                     
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->30.03% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->30.03% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->30.03% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->30.03% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->30.03% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->30.03% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->30.03% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->30.03% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->30.03% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->30.03% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->30.03% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->30.03% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->30.03% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->30.03% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->30.03% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->30.03% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->30.03% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->30.03% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->30.03% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->30.03% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->30.03% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->30.03% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->30.03% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->30.03% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->30.03% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->13.48% (23,682,232B) in 1479 places, all below massif's threshold (1.00%)
+| 
+->06.15% (10,805,859B) 0x14E9DAEC: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.59% (9,820,568B) 0x14E9DBCD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->04.22% (7,408,376B) in 1427 places, all below massif's threshold (1.00%)
+| | | 
+| | ->01.37% (2,412,192B) 0x14EDB753: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| |   ->01.37% (2,412,192B) in 40 places, all below massif's threshold (1.00%)
+| |     
+| ->00.56% (985,291B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.23% (9,180,576B) 0x14CD8C53: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.23% (9,180,576B) 0x14D9C2A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->05.23% (9,180,576B) 0x14DD9457: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->05.23% (9,180,576B) 0x14FA8822: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|       ->05.23% (9,180,576B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|         ->05.23% (9,180,576B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|           ->05.23% (9,180,576B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|             ->05.23% (9,180,576B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|               ->05.23% (9,180,576B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|                 ->05.23% (9,180,576B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|                   ->05.23% (9,180,576B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                     ->05.23% (9,180,576B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                     | ->05.23% (9,180,576B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                     |   ->05.23% (9,180,576B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                     |     ->05.23% (9,180,576B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                     |       ->05.23% (9,180,576B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                     |         ->05.23% (9,180,576B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                     |           ->05.23% (9,180,576B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                     |             ->05.23% (9,180,576B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                     |               ->05.23% (9,180,576B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                     |                 ->05.23% (9,180,576B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                   ->05.23% (9,180,576B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                     ->05.23% (9,180,576B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                       ->05.23% (9,180,576B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                     |                         ->05.23% (9,180,576B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                     |                           ->05.23% (9,180,576B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                     |                             ->05.23% (9,180,576B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                     |                               
+|                     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                     
+->02.34% (4,106,046B) 0x14CD8BFE: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->02.32% (4,070,976B) 0x14D4D52E: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->02.32% (4,070,976B) in 14 places, all below massif's threshold (1.00%)
+| |   
+| ->00.02% (35,070B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.34% (2,351,760B) 0x51027EA: allocate (qrecyclepool_p.h:189)
+| ->01.34% (2,351,760B) 0x51027EA: New<QQmlJavaScriptExpression*> (qrecyclepool_p.h:150)
+|   ->01.34% (2,351,760B) 0x51027EA: New (qqmljavascriptexpression_p.h:277)
+|     ->01.34% (2,351,760B) 0x51027EA: QQmlPropertyCapture::captureProperty(QObject*, int, int, bool) (qqmljavascriptexpression.cpp:310)
+|       ->01.34% (2,351,760B) 0x4FE9976: QV4::QObjectWrapper::getProperty(QV4::ExecutionEngine*, QObject*, QQmlPropertyData*) (qv4qobjectwrapper.cpp:263)
+|         ->01.34% (2,351,760B) in 22 places, all below massif's threshold (1.00%)
+|           
+->01.30% (2,274,917B) 0x5DD027C: QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) (qarraydata.cpp:118)
+  ->01.30% (2,274,917B) in 116 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 33 145,064,587,006      175,646,648      172,250,374     3,396,274            0
+ 34 148,752,447,333      175,646,616      172,250,362     3,396,254            0
+ 35 154,440,945,103      175,646,616      172,250,362     3,396,254            0
+ 36 158,378,093,860      175,647,864      172,251,266     3,396,598            0
+ 37 161,517,902,202      175,648,240      172,251,430     3,396,810            0
+ 38 165,369,850,142      175,647,824      172,251,222     3,396,602            0
+ 39 169,466,767,591      175,646,632      172,250,374     3,396,258            0
+ 40 173,294,507,542      175,646,560      172,250,330     3,396,230            0
+ 41 178,801,136,172      175,646,504      172,250,282     3,396,222            0
+98.07% (172,250,282B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->38.21% (67,108,864B) 0x6ED7348: qsort_r (msort.c:222)
+| ->38.21% (67,108,864B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->38.21% (67,108,864B) 0x408137: FileManager::SortFile(OrderBy) [clone ._omp_fn.0] (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |   ->33.43% (58,720,256B) 0x64D643D: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |   | ->33.43% (58,720,256B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |   |   ->33.43% (58,720,256B) 0x6FA541C: clone (clone.S:109)
+| |   |     
+| |   ->04.78% (8,388,608B) 0x64D2CBE: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+| |     ->04.78% (8,388,608B) 0x407F57: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |       ->04.78% (8,388,608B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |         ->04.78% (8,388,608B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |           ->04.78% (8,388,608B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| |             ->04.78% (8,388,608B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| |               ->04.78% (8,388,608B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| |                 ->04.78% (8,388,608B) 0x66F06B9: start_thread (pthread_create.c:333)
+| |                   ->04.78% (8,388,608B) 0x6FA541C: clone (clone.S:109)
+| |                     
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->30.03% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->30.03% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->30.03% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->30.03% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->30.03% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->30.03% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->30.03% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->30.03% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->30.03% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->30.03% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->30.03% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->30.03% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->30.03% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->30.03% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->30.03% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->30.03% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->30.03% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->30.03% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->30.03% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->30.03% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->30.03% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->30.03% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->30.03% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->30.03% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->30.03% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->13.48% (23,682,116B) in 1479 places, all below massif's threshold (1.00%)
+| 
+->06.15% (10,805,859B) 0x14E9DAEC: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.59% (9,820,568B) 0x14E9DBCD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->04.22% (7,408,376B) in 1427 places, all below massif's threshold (1.00%)
+| | | 
+| | ->01.37% (2,412,192B) 0x14EDB753: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| |   ->01.37% (2,412,192B) in 40 places, all below massif's threshold (1.00%)
+| |     
+| ->00.56% (985,291B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->05.23% (9,180,576B) 0x14CD8C53: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->05.23% (9,180,576B) 0x14D9C2A7: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->05.23% (9,180,576B) 0x14DD9457: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->05.23% (9,180,576B) 0x14FA8822: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|       ->05.23% (9,180,576B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|         ->05.23% (9,180,576B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|           ->05.23% (9,180,576B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|             ->05.23% (9,180,576B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|               ->05.23% (9,180,576B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|                 ->05.23% (9,180,576B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|                   ->05.23% (9,180,576B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                     ->05.23% (9,180,576B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                     | ->05.23% (9,180,576B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                     |   ->05.23% (9,180,576B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                     |     ->05.23% (9,180,576B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                     |       ->05.23% (9,180,576B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                     |         ->05.23% (9,180,576B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                     |           ->05.23% (9,180,576B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                     |             ->05.23% (9,180,576B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                     |               ->05.23% (9,180,576B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                     |                 ->05.23% (9,180,576B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                   ->05.23% (9,180,576B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                     ->05.23% (9,180,576B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                     |                       ->05.23% (9,180,576B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                     |                         ->05.23% (9,180,576B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                     |                           ->05.23% (9,180,576B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                     |                             ->05.23% (9,180,576B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                     |                               
+|                     ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                     
+->02.34% (4,106,046B) 0x14CD8BFE: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->02.32% (4,070,976B) 0x14D4D52E: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| | ->02.32% (4,070,976B) in 14 places, all below massif's threshold (1.00%)
+| |   
+| ->00.02% (35,070B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->01.34% (2,351,760B) 0x51027EA: allocate (qrecyclepool_p.h:189)
+| ->01.34% (2,351,760B) 0x51027EA: New<QQmlJavaScriptExpression*> (qrecyclepool_p.h:150)
+|   ->01.34% (2,351,760B) 0x51027EA: New (qqmljavascriptexpression_p.h:277)
+|     ->01.34% (2,351,760B) 0x51027EA: QQmlPropertyCapture::captureProperty(QObject*, int, int, bool) (qqmljavascriptexpression.cpp:310)
+|       ->01.34% (2,351,760B) 0x4FE9976: QV4::QObjectWrapper::getProperty(QV4::ExecutionEngine*, QObject*, QQmlPropertyData*) (qv4qobjectwrapper.cpp:263)
+|         ->01.34% (2,351,760B) in 22 places, all below massif's threshold (1.00%)
+|           
+->01.30% (2,274,917B) 0x5DD027C: QArrayData::allocate(unsigned long, unsigned long, unsigned long, QFlags<QArrayData::AllocationOption>) (qarraydata.cpp:118)
+  ->01.30% (2,274,917B) in 116 places, all below massif's threshold (1.00%)
+    
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 42 185,232,216,059      175,646,560      172,250,330     3,396,230            0
+ 43 188,534,466,388      175,646,504      172,250,282     3,396,222            0
+ 44 192,902,812,535      175,646,560      172,250,330     3,396,230            0
+ 45 199,618,220,368      167,253,944      163,861,734     3,392,210            0
+ 46 204,763,888,818      150,468,616      147,084,506     3,384,110            0
+ 47 208,687,163,625      125,290,672      121,918,682     3,371,990            0
+ 48 212,771,410,356    1,182,251,312    1,178,883,334     3,367,978            0
+99.72% (1,178,883,334B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->90.82% (1,073,741,824B) 0x6ED7348: qsort_r (msort.c:222)
+| ->90.82% (1,073,741,824B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->90.82% (1,073,741,824B) 0x407FB5: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | | ->90.82% (1,073,741,824B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |   ->90.82% (1,073,741,824B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |     ->90.82% (1,073,741,824B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |       ->90.82% (1,073,741,824B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| | |         ->90.82% (1,073,741,824B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| | |           ->90.82% (1,073,741,824B) 0x66F06B9: start_thread (pthread_create.c:333)
+| | |             ->90.82% (1,073,741,824B) 0x6FA541C: clone (clone.S:109)
+| | |               
+| | ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| | 
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->04.46% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->04.46% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->04.46% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->04.46% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->04.46% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->04.46% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->04.46% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->04.46% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->04.46% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->04.46% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->04.46% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->04.46% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->04.46% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->04.46% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->04.46% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->04.46% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->04.46% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->04.46% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->04.46% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->04.46% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->04.46% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->04.46% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->04.46% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->04.46% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->04.46% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->04.43% (52,401,366B) in 1484 places, all below massif's threshold (1.00%)
+  
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 49 217,390,618,485    1,182,251,312    1,178,883,334     3,367,978            0
+ 50 220,393,058,225    1,182,251,312    1,178,883,334     3,367,978            0
+ 51 223,512,811,939    1,182,251,312    1,178,883,334     3,367,978            0
+ 52 226,424,915,363    1,182,251,328    1,178,883,346     3,367,982            0
+ 53 230,725,924,972    1,182,251,272    1,178,883,310     3,367,962            0
+ 54 234,596,931,278    1,182,251,312    1,178,883,334     3,367,978            0
+ 55 248,133,939,312    1,182,251,536    1,178,883,490     3,368,046            0
+ 56 251,138,500,780    1,182,252,072    1,178,883,858     3,368,214            0
+ 57 254,290,809,319    1,182,251,272    1,178,883,310     3,367,962            0
+99.72% (1,178,883,310B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->90.82% (1,073,741,824B) 0x6ED7348: qsort_r (msort.c:222)
+| ->90.82% (1,073,741,824B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->90.82% (1,073,741,824B) 0x407FB5: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | | ->90.82% (1,073,741,824B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |   ->90.82% (1,073,741,824B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |     ->90.82% (1,073,741,824B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |       ->90.82% (1,073,741,824B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| | |         ->90.82% (1,073,741,824B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| | |           ->90.82% (1,073,741,824B) 0x66F06B9: start_thread (pthread_create.c:333)
+| | |             ->90.82% (1,073,741,824B) 0x6FA541C: clone (clone.S:109)
+| | |               
+| | ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| | 
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->04.46% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->04.46% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->04.46% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->04.46% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->04.46% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->04.46% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->04.46% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->04.46% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->04.46% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->04.46% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->04.46% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->04.46% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->04.46% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->04.46% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->04.46% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->04.46% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->04.46% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->04.46% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->04.46% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->04.46% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->04.46% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->04.46% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->04.46% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->04.46% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->04.46% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->04.43% (52,401,342B) in 1484 places, all below massif's threshold (1.00%)
+  
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 58 258,759,939,390    1,182,251,312    1,178,883,334     3,367,978            0
+ 59 261,743,185,409    1,182,251,312    1,178,883,334     3,367,978            0
+ 60 267,413,822,011    1,182,251,536    1,178,883,486     3,368,050            0
+ 61 274,003,349,842    1,182,251,552    1,178,883,514     3,368,038            0
+ 62 278,302,618,318    1,182,251,728    1,178,883,614     3,368,114            0
+ 63 281,967,439,259    1,182,251,648    1,178,883,550     3,368,098            0
+ 64 290,806,954,748    1,182,252,472    1,178,884,094     3,368,378            0
+ 65 297,589,864,013    1,182,252,192    1,178,883,934     3,368,258            0
+ 66 304,841,554,357    1,182,251,632    1,178,883,570     3,368,062            0
+ 67 308,197,394,546    1,182,251,744    1,178,883,618     3,368,126            0
+99.72% (1,178,883,618B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->90.82% (1,073,741,824B) 0x6ED7348: qsort_r (msort.c:222)
+| ->90.82% (1,073,741,824B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->90.82% (1,073,741,824B) 0x407FB5: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | | ->90.82% (1,073,741,824B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |   ->90.82% (1,073,741,824B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |     ->90.82% (1,073,741,824B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |       ->90.82% (1,073,741,824B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| | |         ->90.82% (1,073,741,824B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| | |           ->90.82% (1,073,741,824B) 0x66F06B9: start_thread (pthread_create.c:333)
+| | |             ->90.82% (1,073,741,824B) 0x6FA541C: clone (clone.S:109)
+| | |               
+| | ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| | 
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->04.46% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->04.46% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->04.46% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->04.46% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->04.46% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->04.46% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->04.46% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->04.46% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->04.46% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->04.46% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->04.46% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->04.46% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->04.46% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->04.46% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->04.46% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->04.46% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->04.46% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->04.46% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->04.46% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->04.46% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->04.46% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->04.46% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->04.46% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->04.46% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->04.46% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->04.43% (52,401,650B) in 1484 places, all below massif's threshold (1.00%)
+  
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 68 312,647,708,833    1,182,251,464    1,178,883,438     3,368,026            0
+ 69 316,330,422,102    1,182,251,368    1,178,883,378     3,367,990            0
+ 70 319,523,880,282    1,182,251,352    1,178,883,366     3,367,986            0
+ 71 322,497,418,400    1,182,251,352    1,178,883,366     3,367,986            0
+ 72 328,232,491,260    1,182,251,368    1,178,883,378     3,367,990            0
+ 73 332,199,747,972    1,182,251,648    1,178,883,558     3,368,090            0
+ 74 336,251,975,101    1,182,251,312    1,178,883,342     3,367,970            0
+ 75 340,341,211,909    1,182,251,312    1,178,883,342     3,367,970            0
+ 76 343,750,521,820    1,182,251,312    1,178,883,342     3,367,970            0
+ 77 346,807,616,683    1,182,251,368    1,178,883,378     3,367,990            0
+99.72% (1,178,883,378B) (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+->90.82% (1,073,741,824B) 0x6ED7348: qsort_r (msort.c:222)
+| ->90.82% (1,073,741,824B) 0x4092BF: SortContainer::Sort(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | ->90.82% (1,073,741,824B) 0x407FB5: FileManager::SortFile(OrderBy) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | | ->90.82% (1,073,741,824B) 0x405314: Wrapper4Thread(LibController*) (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |   ->90.82% (1,073,741,824B) 0x405E38: QtConcurrent::StoredFunctorCall1<void, void (*)(LibController*), LibController*>::runFunctor() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |     ->90.82% (1,073,741,824B) 0x40584C: QtConcurrent::RunFunctionTask<void>::run() (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+| | |       ->90.82% (1,073,741,824B) 0x5DC67E6: QThreadPoolThread::run() (qthreadpool.cpp:99)
+| | |         ->90.82% (1,073,741,824B) 0x5DC2A72: QThreadPrivate::start(void*) (qthread_unix.cpp:360)
+| | |           ->90.82% (1,073,741,824B) 0x66F06B9: start_thread (pthread_create.c:333)
+| | |             ->90.82% (1,073,741,824B) 0x6FA541C: clone (clone.S:109)
+| | |               
+| | ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| | 
+| ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+| 
+->04.46% (52,740,144B) 0x14DAB619: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+| ->04.46% (52,740,144B) 0x14FA87EF: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|   ->04.46% (52,740,144B) 0x14F6A8DD: ??? (in /usr/lib/x86_64-linux-gnu/dri/i965_dri.so)
+|     ->04.46% (52,740,144B) 0x7D73A4D: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|       ->04.46% (52,740,144B) 0x7D46B61: ??? (in /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0)
+|         ->04.46% (52,740,144B) 0x1499B75F: QGLXContext::init(QXcbScreen*, QPlatformOpenGLContext*) (qglxintegration.cpp:335)
+|           ->04.46% (52,740,144B) 0x14999096: QXcbGlxIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbglxintegration.cpp:187)
+|             ->04.46% (52,740,144B) 0xDBE9851: QXcbIntegration::createPlatformOpenGLContext(QOpenGLContext*) const (qxcbintegration.cpp:285)
+|               ->04.46% (52,740,144B) 0x566689C: QOpenGLContext::create() (qopenglcontext.cpp:611)
+|                 ->04.46% (52,740,144B) 0x11EE9492: QSGThreadedRenderLoop::handleExposure(QQuickWindow*) (qsgthreadedrenderloop.cpp:974)
+|                 | ->04.46% (52,740,144B) 0x11EE97CA: QSGThreadedRenderLoop::exposureChanged(QQuickWindow*) (qsgthreadedrenderloop.cpp:916)
+|                 |   ->04.46% (52,740,144B) 0x5631ADA: QWindow::event(QEvent*) (qwindow.cpp:2353)
+|                 |     ->04.46% (52,740,144B) 0x11F43024: QQuickWindow::event(QEvent*) (qquickwindow.cpp:1683)
+|                 |       ->04.46% (52,740,144B) 0x5F99EA7: QCoreApplication::notifyInternal2(QObject*, QEvent*) (qcoreapplication.cpp:1065)
+|                 |         ->04.46% (52,740,144B) 0x5627B41: QGuiApplicationPrivate::processExposeEvent(QWindowSystemInterfacePrivate::ExposeEvent*) (qguiapplication.cpp:3077)
+|                 |           ->04.46% (52,740,144B) 0x5627D6C: QGuiApplicationPrivate::processWindowSystemEvent(QWindowSystemInterfacePrivate::WindowSystemEvent*) (qguiapplication.cpp:1911)
+|                 |             ->04.46% (52,740,144B) 0x5603A0A: QWindowSystemInterface::sendWindowSystemEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qwindowsysteminterface.cpp:1148)
+|                 |               ->04.46% (52,740,144B) 0xDC0DFA9: xcbSourceDispatch(_GSource*, int (*)(void*), void*) (qxcbeventdispatcher.cpp:105)
+|                 |                 ->04.46% (52,740,144B) 0xA63D196: g_main_context_dispatch (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                   ->04.46% (52,740,144B) 0xA63D3EF: ??? (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                     ->04.46% (52,740,144B) 0xA63D49B: g_main_context_iteration (in /lib/x86_64-linux-gnu/libglib-2.0.so.0.4800.2)
+|                 |                       ->04.46% (52,740,144B) 0x5FF218E: QEventDispatcherGlib::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) (qeventdispatcher_glib.cpp:423)
+|                 |                         ->04.46% (52,740,144B) 0x5F98901: QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) (qeventloop.cpp:225)
+|                 |                           ->04.46% (52,740,144B) 0x5FA125F: QCoreApplication::exec() (qcoreapplication.cpp:1373)
+|                 |                             ->04.46% (52,740,144B) 0x40613B: main (in /home/pc/Coding/uint32-sort/uint32_sort_gui)
+|                 |                               
+|                 ->00.00% (0B) in 1+ places, all below ms_print's threshold (01.00%)
+|                 
+->04.43% (52,401,410B) in 1484 places, all below massif's threshold (1.00%)
+  
+--------------------------------------------------------------------------------
+  n        time(i)         total(B)   useful-heap(B) extra-heap(B)    stacks(B)
+--------------------------------------------------------------------------------
+ 78 353,113,754,538    1,182,251,800    1,178,883,670     3,368,130            0
+ 79 358,893,091,224    1,182,252,408    1,178,884,078     3,368,330            0
+ 80 366,874,777,643    1,182,252,760    1,178,884,338     3,368,422            0
+ 81 370,134,474,570    1,182,251,520    1,178,883,522     3,367,998            0
+ 82 374,168,136,436    1,182,251,520    1,178,883,522     3,367,998            0
+ 83 383,796,709,430    1,182,251,464    1,178,883,486     3,367,978            0
+ 84 386,850,342,165    1,182,251,576    1,178,883,558     3,368,018            0
+ 85 389,864,344,888    1,182,251,560    1,178,883,546     3,368,014            0
+ 86 393,178,601,231    1,182,251,464    1,178,883,486     3,367,978            0
