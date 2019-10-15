@@ -3,8 +3,7 @@ FILENAME=$1
 
 RAW_FREQUENCY=$(./freq.sh $FILENAME)
 IFS=$' '
-FREQUENCY=$( echo $RAW_FREQUENCY | sed -r '$d' | sed -r '$d' )
-
+FREQUENCY=$( echo $RAW_FREQUENCY | sed -r '$d' ) #| sed -r '$d' )
 
 SYM_COUNT=$( echo $RAW_FREQUENCY | tail -n1 )
 

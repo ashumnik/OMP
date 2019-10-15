@@ -1,0 +1,2892 @@
+<p>В данной лабораторной работе мы будем исследовать следующие файлы:</p>
+<ul>
+<li>С английским текстом:
+<ol type="1">
+<li>Frankenstein, by Mary Wollstonecraft (Godwin) Shelley.txt</li>
+<li>Puck of Pook’s Hill, by Rudyard Kipling.txt</li>
+</ol></li>
+<li>С русским текстом:
+<ol type="1">
+<li>Керниган, Ричи. Язык C.txt</li>
+<li>Рассел Сейдж. Приемы профессиональной работы в UNIX.txt</li>
+</ol></li>
+<li>Я пример</li>
+</ul>
+
+<h2 id="урезанные-таблицы-частот">Урезанные таблицы частот</h2>
+<h3 id="для-английских-текстов">Для английских текстов</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 73%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Frankenstein, by Mary Wollstonecraft (Godwin) Shelley.txt, Всего символов <em>441034</em></td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">25225</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">26743</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">30364</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">46043</td>
+<td style="text-align: center;">e</td>
+</tr>
+</tbody>
+</table>
+<p>Соотношения:</p>
+<ul>
+<li>Пробела и самой частой буквы: <br /><span class="math display">(7653 + 74143)/46043 = 1.7765</span><br /></li>
+<li>Самой частой буквы и второй по популярности:<br /><span class="math display">46043/30364 = 1.5163</span><br /></li>
+<li>Второй и третьей по популярности буквы: <br /><span class="math display">30364/26743 = 1.1353</span><br /></li>
+</ul>
+<p><img src="../hist_frank.jpg" title="Гистограмма частот" /></p>
+
+<table>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Puck of Pook’s Hill, by Rudyard Kipling.txt, Всего символов <em>332910</em></td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">18822</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">21016</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">21684</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">30952</td>
+<td style="text-align: center;">e</td>
+</tr>
+</tbody>
+</table>
+<p>Соотношения:</p>
+<ul>
+<li>Пробела и самой частой буквы: <br /><span class="math display">(7325 + 56154)/30952 = 2.0508</span><br /></li>
+<li>Самой частой буквы и второй по популярности:<br /><span class="math display">30952/21684 = 1.4274</span><br /></li>
+<li>Второй и третьей по популярности буквы: <br /><span class="math display">21684/21016 = 1.0317</span><br /></li>
+</ul>
+<p><img src="../hist_puck.jpg" title="Гистограмма частот" /></p>
+
+<h3 id="для-русских-текстов">Для русских текстов</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Керниган, Ричи. Язык C.txt, Всего символов <em>461275</em></td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">24053</td>
+<td style="text-align: center;">а</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">24307</td>
+<td style="text-align: center;">и</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">27488</td>
+<td style="text-align: center;">е</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">29507</td>
+<td style="text-align: center;">о</td>
+</tr>
+</tbody>
+</table>
+<p>Соотношения:</p>
+<ul>
+<li>Пробела и самой частой буквы: <br /><span class="math display">(13168 + 70419)/29507 = 2.8327</span><br /></li>
+<li>Самой частой буквы и второй по популярности:<br /><span class="math display">29507/27488 = 1.0734</span><br /></li>
+<li>Второй и третьей по популярности буквы: <br /><span class="math display">27488/24307 = 1.1308</span><br /></li>
+</ul>
+<p><img src="../hist_kern.jpg" title="Гистограмма частот" /></p>
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 73%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Рассел Сейдж. Приемы профессиональной работы в UNIX.txt, Всего символов <em>1029582</em></td>
+<td style="text-align: center;">…</td>
+<td style="text-align: center;">…</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">45742</td>
+<td style="text-align: center;">т</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">52556</td>
+<td style="text-align: center;">а</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">54101</td>
+<td style="text-align: center;">е</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">68833</td>
+<td style="text-align: center;">о</td>
+</tr>
+</tbody>
+</table>
+<p>Соотношения:</p>
+<ul>
+<li>Пробела и самой частой буквы: <br /><span class="math display">(22768 + 220704)/68833 = 3.5371</span><br /></li>
+<li>Самой частой буквы и второй по популярности:<br /><span class="math display">68833/54101 = 1.2723</span><br /></li>
+<li>Второй и третьей по популярности буквы: <br /><span class="math display">54101/52556 = 1.0293</span><br /></li>
+</ul>
+<p><img src="../hist_russ.jpg" title="Гистограмма частот" /></p>
+<h3 id="вывод">Вывод</h3>
+<p>Соотношения частот букв не сильно отличаются в зависимости от языка. Соотношения пробельных символов и самой частой буквы разнятся сильно даже в пределах одного языка.</p>
+
+<h3 id="возьмем-из-файла-frankenstein-by-mary-wollstonecraft-godwin-shelley.txt-два-отрывка-по-500-символов">Возьмем из файла <em>Frankenstein, by Mary Wollstonecraft (Godwin) Shelley.txt</em> два отрывка по 500 символов</h3>
+<h4 id="первый">Первый</h4>
+<pre><code>00000000: 6f20 6164 6d69 7265 2070 6561 6365 6162 6c65 206c  o admire peaceable l
+00000014: 6177 6769 7665 7273 2c20 4e75 6d61 2c0a 536f 6c6f  awgivers, Numa,.Solo
+00000028: 6e2c 2061 6e64 204c 7963 7572 6775 732c 2069 6e20  n, and Lycurgus, in 
+0000003c: 7072 6566 6572 656e 6365 2074 6f20 526f 6d75 6c75  preference to Romulu
+00000050: 7320 616e 6420 5468 6573 6575 732e 2020 5468 650a  s and Theseus.  The.
+00000064: 7061 7472 6961 7263 6861 6c20 6c69 7665 7320 6f66  patriarchal lives of
+00000078: 206d 7920 7072 6f74 6563 746f 7273 2063 6175 7365   my protectors cause
+0000008c: 6420 7468 6573 6520 696d 7072 6573 7369 6f6e 7320  d these impressions 
+000000a0: 746f 2074 616b 6520 610a 6669 726d 2068 6f6c 6420  to take a.firm hold 
+000000b4: 6f6e 206d 7920 6d69 6e64 3b20 7065 7268 6170 732c  on my mind; perhaps,
+000000c8: 2069 6620 6d79 2066 6972 7374 2069 6e74 726f 6475   if my first introdu
+000000dc: 6374 696f 6e20 746f 2068 756d 616e 6974 7920 6861  ction to humanity ha
+000000f0: 640a 6265 656e 206d 6164 6520 6279 2061 2079 6f75  d.been made by a you
+00000104: 6e67 2073 6f6c 6469 6572 2c20 6275 726e 696e 6720  ng soldier, burning 
+00000118: 666f 7220 676c 6f72 7920 616e 6420 736c 6175 6768  for glory and slaugh
+0000012c: 7465 722c 2049 2073 686f 756c 640a 6861 7665 2062  ter, I should.have b
+00000140: 6565 6e20 696d 6275 6564 2077 6974 6820 6469 6666  een imbued with diff
+00000154: 6572 656e 7420 7365 6e73 6174 696f 6e73 2e0a 0a22  erent sensations...&quot;
+00000168: 4275 7420 5061 7261 6469 7365 204c 6f73 7420 6578  But Paradise Lost ex
+0000017c: 6369 7465 6420 6469 6666 6572 656e 7420 616e 6420  cited different and 
+00000190: 6661 7220 6465 6570 6572 2065 6d6f 7469 6f6e 732e  far deeper emotions.
+000001a4: 2020 4920 7265 6164 0a69 742c 2061 7320 4920 6861    I read.it, as I ha
+000001b8: 6420 7265 6164 2074 6865 206f 7468 6572 2076 6f6c  d read the other vol
+000001cc: 756d 6573 2077 6869 6368 2068 6164 2066 616c 6c65  umes which had falle
+000001e0: 6e20 696e 746f 206d 7920 6861 6e64 732c 2061 730a  n into my hands, as.</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">;</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">"</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">k</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">x</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.006</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.006</td>
+<td style="text-align: center;">w</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.008</td>
+<td style="text-align: center;">v</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.012</td>
+<td style="text-align: center;">g</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">b</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.018</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.018</td>
+<td style="text-align: center;">,</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.018</td>
+<td style="text-align: center;">c</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.018</td>
+<td style="text-align: center;">p</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.018</td>
+<td style="text-align: center;">y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.024</td>
+<td style="text-align: center;">f</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">m</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.032</td>
+<td style="text-align: center;">l</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.032</td>
+<td style="text-align: center;">u</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.038</td>
+<td style="text-align: center;">h</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.048</td>
+<td style="text-align: center;">d</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.054</td>
+<td style="text-align: center;">n</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.054</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.054</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.056</td>
+<td style="text-align: center;">r</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.056</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">i</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.068</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.094</td>
+<td style="text-align: center;">e</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.156</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="второй">Второй</h4>
+<pre><code>
+00000000: 6174 6f72 3b20 6865 2077 6173 2061 6c6c 6f77 6564  ator; he was allowed
+00000014: 2074 6f20 636f 6e76 6572 7365 2077 6974 6820 616e   to converse with an
+00000028: 6420 6163 7175 6972 6520 6b6e 6f77 6c65 6467 6520  d acquire knowledge 
+0000003c: 6672 6f6d 0a62 6569 6e67 7320 6f66 2061 2073 7570  from.beings of a sup
+00000050: 6572 696f 7220 6e61 7475 7265 2c20 6275 7420 4920  erior nature, but I 
+00000064: 7761 7320 7772 6574 6368 6564 2c20 6865 6c70 6c65  was wretched, helple
+00000078: 7373 2c20 616e 6420 616c 6f6e 652e 0a4d 616e 7920  ss, and alone..Many 
+0000008c: 7469 6d65 7320 4920 636f 6e73 6964 6572 6564 2053  times I considered S
+000000a0: 6174 616e 2061 7320 7468 6520 6669 7474 6572 2065  atan as the fitter e
+000000b4: 6d62 6c65 6d20 6f66 206d 7920 636f 6e64 6974 696f  mblem of my conditio
+000000c8: 6e2c 2066 6f72 0a6f 6674 656e 2c20 6c69 6b65 2068  n, for.often, like h
+000000dc: 696d 2c20 7768 656e 2049 2076 6965 7765 6420 7468  im, when I viewed th
+000000f0: 6520 626c 6973 7320 6f66 206d 7920 7072 6f74 6563  e bliss of my protec
+00000104: 746f 7273 2c20 7468 6520 6269 7474 6572 0a67 616c  tors, the bitter.gal
+00000118: 6c20 6f66 2065 6e76 7920 726f 7365 2077 6974 6869  l of envy rose withi
+0000012c: 6e20 6d65 2e0a 0a22 416e 6f74 6865 7220 6369 7263  n me...&quot;Another circ
+00000140: 756d 7374 616e 6365 2073 7472 656e 6774 6865 6e65  umstance strengthene
+00000154: 6420 616e 6420 636f 6e66 6972 6d65 6420 7468 6573  d and confirmed thes
+00000168: 6520 6665 656c 696e 6773 2e20 2053 6f6f 6e0a 6166  e feelings.  Soon.af
+0000017c: 7465 7220 6d79 2061 7272 6976 616c 2069 6e20 7468  ter my arrival in th
+00000190: 6520 686f 7665 6c20 4920 6469 7363 6f76 6572 6564  e hovel I discovered
+000001a4: 2073 6f6d 6520 7061 7065 7273 2069 6e20 7468 6520   some papers in the 
+000001b8: 706f 636b 6574 206f 660a 7468 6520 6472 6573 7320  pocket of.the dress 
+000001cc: 7768 6963 6820 4920 6861 6420 7461 6b65 6e20 6672  which I had taken fr
+000001e0: 6f6d 2079 6f75 7220 6c61 626f 7261 746f 7279 2e20  om your laboratory. </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">;</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">"</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.002</td>
+<td style="text-align: center;">q</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.008</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.008</td>
+<td style="text-align: center;">k</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">g</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.012</td>
+<td style="text-align: center;">b</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.012</td>
+<td style="text-align: center;">p</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.012</td>
+<td style="text-align: center;">u</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.012</td>
+<td style="text-align: center;">v</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">,</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.016</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.02</td>
+<td style="text-align: center;">w</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.026</td>
+<td style="text-align: center;">c</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.026</td>
+<td style="text-align: center;">f</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.028</td>
+<td style="text-align: center;">m</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">l</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.032</td>
+<td style="text-align: center;">d</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">h</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.052</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.054</td>
+<td style="text-align: center;">n</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.058</td>
+<td style="text-align: center;">i</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.058</td>
+<td style="text-align: center;">r</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.064</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.066</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.112</td>
+<td style="text-align: center;">e</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.16</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="вывод-1">Вывод</h2>
+<p>Частоты в фрагментах и самом файле примерно одинаковы. Порядок символов различается из-за того, что различается точность относительных частот</p>
+
+<h2 id="полные-таблицы-частот">Полные таблицы частот</h2>
+<h3 id="относительная-таблица-частот">Относительная таблица частот</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 73%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Frankenstein, by Mary Wollstonecraft (Godwin) Shelley.txt, всего символов <em>441034</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2.2674e-06</td>
+<td style="text-align: center;">#</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2.2674e-06</td>
+<td style="text-align: center;">%</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2.2674e-06</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4.5348e-06</td>
+<td style="text-align: center;">_</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4.5348e-06</td>
+<td style="text-align: center;">@</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4.5348e-06</td>
+<td style="text-align: center;">$</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">9.0696e-06</td>
+<td style="text-align: center;">[</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">9.0696e-06</td>
+<td style="text-align: center;">]</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2.2674e-05</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2.94762e-05</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3.62784e-05</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3.85458e-05</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4.08132e-05</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4.5348e-05</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4.76154e-05</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">5.21502e-05</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">5.44176e-05</td>
+<td style="text-align: center;">/</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">5.44176e-05</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">6.34872e-05</td>
+<td style="text-align: center;">*</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">8.84286e-05</td>
+<td style="text-align: center;">(</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">8.84286e-05</td>
+<td style="text-align: center;">)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.000154183</td>
+<td style="text-align: center;">:</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.000208601</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.000498828</td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.000519234</td>
+<td style="text-align: center;">’</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.000541908</td>
+<td style="text-align: center;">!</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.000550978</td>
+<td style="text-align: center;">z</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.000734637</td>
+<td style="text-align: center;">q</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.00100899</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.00114277</td>
+<td style="text-align: center;">j</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.00153503</td>
+<td style="text-align: center;">x</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.00180485</td>
+<td style="text-align: center;">"</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.00219938</td>
+<td style="text-align: center;">;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.00397929</td>
+<td style="text-align: center;">k</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.00708335</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.00869094</td>
+<td style="text-align: center;">v</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0113959</td>
+<td style="text-align: center;">b</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0115569</td>
+<td style="text-align: center;">,</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0135454</td>
+<td style="text-align: center;">g</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0138787</td>
+<td style="text-align: center;">p</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0173184</td>
+<td style="text-align: center;">w</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0173524</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0179442</td>
+<td style="text-align: center;">y</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0197967</td>
+<td style="text-align: center;">f</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0209576</td>
+<td style="text-align: center;">c</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0235968</td>
+<td style="text-align: center;">u</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0240435</td>
+<td style="text-align: center;">m</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0288844</td>
+<td style="text-align: center;">l</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0382351</td>
+<td style="text-align: center;">d</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0447244</td>
+<td style="text-align: center;">h</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0472027</td>
+<td style="text-align: center;">r</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0479668</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0552497</td>
+<td style="text-align: center;">n</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.0558075</td>
+<td style="text-align: center;">i</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0571951</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.060637</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.0688473</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">0.104398</td>
+<td style="text-align: center;">e</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">0.168112</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="для-английских-текстов-1">Для английских текстов</h3>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 73%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Frankenstein, by Mary Wollstonecraft (Godwin) Shelley.txt, Всего символов <em>441034</em></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">%</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">_</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">@</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">$</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">[</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">]</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">/</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">*</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">(</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">39</td>
+<td style="text-align: center;">)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">:</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">92</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">220</td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">229</td>
+<td style="text-align: center;">’</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">239</td>
+<td style="text-align: center;">!</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">243</td>
+<td style="text-align: center;">z</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">324</td>
+<td style="text-align: center;">q</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">445</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">504</td>
+<td style="text-align: center;">j</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">677</td>
+<td style="text-align: center;">x</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">796</td>
+<td style="text-align: center;">"</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">970</td>
+<td style="text-align: center;">;</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1755</td>
+<td style="text-align: center;">k</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3124</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3833</td>
+<td style="text-align: center;">v</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">5026</td>
+<td style="text-align: center;">b</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">5097</td>
+<td style="text-align: center;">,</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">5974</td>
+<td style="text-align: center;">g</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">6121</td>
+<td style="text-align: center;">p</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">7638</td>
+<td style="text-align: center;">w</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">7653</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">7914</td>
+<td style="text-align: center;">y</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">8731</td>
+<td style="text-align: center;">f</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">9243</td>
+<td style="text-align: center;">c</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">10407</td>
+<td style="text-align: center;">u</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">10604</td>
+<td style="text-align: center;">m</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">12739</td>
+<td style="text-align: center;">l</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">16863</td>
+<td style="text-align: center;">d</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">19725</td>
+<td style="text-align: center;">h</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">20818</td>
+<td style="text-align: center;">r</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">21155</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">24367</td>
+<td style="text-align: center;">n</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">24613</td>
+<td style="text-align: center;">i</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">25225</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">26743</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">30364</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">46043</td>
+<td style="text-align: center;">e</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">74143</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Puck of Pook’s Hill, by Rudyard Kipling.txt, Всего символов <em>332910</em></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">&amp;</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">#</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">%</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">[</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">]</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">$</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">@</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">é</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">Æ</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">æ</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">/</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">*</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">66</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">73</td>
+<td style="text-align: center;">z</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">93</td>
+<td style="text-align: center;">(</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">93</td>
+<td style="text-align: center;">)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">122</td>
+<td style="text-align: center;">:</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">274</td>
+<td style="text-align: center;">;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">275</td>
+<td style="text-align: center;">q</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">290</td>
+<td style="text-align: center;">_</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">349</td>
+<td style="text-align: center;">j</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">370</td>
+<td style="text-align: center;">x</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">474</td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">534</td>
+<td style="text-align: center;">!</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1716</td>
+<td style="text-align: center;">"</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2027</td>
+<td style="text-align: center;">v</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2117</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2801</td>
+<td style="text-align: center;">k</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3765</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3814</td>
+<td style="text-align: center;">p</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3885</td>
+<td style="text-align: center;">’</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4041</td>
+<td style="text-align: center;">b</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4599</td>
+<td style="text-align: center;">,</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4878</td>
+<td style="text-align: center;">c</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4946</td>
+<td style="text-align: center;">y</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">5015</td>
+<td style="text-align: center;">f</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">5314</td>
+<td style="text-align: center;">g</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">6123</td>
+<td style="text-align: center;">m</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">7283</td>
+<td style="text-align: center;">w</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">7325</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">7528</td>
+<td style="text-align: center;">u</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">11191</td>
+<td style="text-align: center;">l</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">12639</td>
+<td style="text-align: center;">d</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">14130</td>
+<td style="text-align: center;">r</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">15550</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">16105</td>
+<td style="text-align: center;">i</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">16935</td>
+<td style="text-align: center;">n</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">17315</td>
+<td style="text-align: center;">h</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">18822</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">21016</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">21684</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">30952</td>
+<td style="text-align: center;">e</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">56154</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="для-русских-текстов-1">Для русских текстов</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Керниган, Ричи. Язык C.txt, Всего символов <em>461275</em></td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Ы</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">@</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">Ш</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">Г</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">Ц</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">26</td>
+<td style="text-align: center;">Q</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">Х</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">^</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">31</td>
+<td style="text-align: center;">Я</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">33</td>
+<td style="text-align: center;">Л</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">Б</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">Ч</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">62</td>
+<td style="text-align: center;">А</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">67</td>
+<td style="text-align: center;">Р</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">З</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">81</td>
+<td style="text-align: center;">J</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">96</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">112</td>
+<td style="text-align: center;">Ф</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">114</td>
+<td style="text-align: center;">Д</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">117</td>
+<td style="text-align: center;">}</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">119</td>
+<td style="text-align: center;">#</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">{</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">120</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">И</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">130</td>
+<td style="text-align: center;">М</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">142</td>
+<td style="text-align: center;">Э</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">157</td>
+<td style="text-align: center;">Z</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">159</td>
+<td style="text-align: center;">У</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">162</td>
+<td style="text-align: center;">&lt;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">162</td>
+<td style="text-align: center;">%</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">167</td>
+<td style="text-align: center;">Е</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">191</td>
+<td style="text-align: center;">К</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">192</td>
+<td style="text-align: center;">Т</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">193</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">205</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">211</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">218</td>
+<td style="text-align: center;">_</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">222</td>
+<td style="text-align: center;">Н</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">227</td>
+<td style="text-align: center;">K</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">234</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">238</td>
+<td style="text-align: center;">&amp;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">238</td>
+<td style="text-align: center;">ъ</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">252</td>
+<td style="text-align: center;">С</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">275</td>
+<td style="text-align: center;">V</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">294</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">306</td>
+<td style="text-align: center;">!</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">311</td>
+<td style="text-align: center;">&gt;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">375</td>
+<td style="text-align: center;">О</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">395</td>
+<td style="text-align: center;">П</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">420</td>
+<td style="text-align: center;">X</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">425</td>
+<td style="text-align: center;">[</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">425</td>
+<td style="text-align: center;">]</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">443</td>
+<td style="text-align: center;">:</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">457</td>
+<td style="text-align: center;">В</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">464</td>
+<td style="text-align: center;">W</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">480</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">481</td>
+<td style="text-align: center;">Y</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">557</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">568</td>
+<td style="text-align: center;">’</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">578</td>
+<td style="text-align: center;">B</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">636</td>
+<td style="text-align: center;">\</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">842</td>
+<td style="text-align: center;">g</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">854</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">862</td>
+<td style="text-align: center;">/</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">871</td>
+<td style="text-align: center;">э</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">960</td>
+<td style="text-align: center;">ш</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">991</td>
+<td style="text-align: center;">H</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1004</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1049</td>
+<td style="text-align: center;">=</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1071</td>
+<td style="text-align: center;">u</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1079</td>
+<td style="text-align: center;">"</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1219</td>
+<td style="text-align: center;">d</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1261</td>
+<td style="text-align: center;">*</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1508</td>
+<td style="text-align: center;">P</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1589</td>
+<td style="text-align: center;">щ</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1640</td>
+<td style="text-align: center;">f</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1647</td>
+<td style="text-align: center;">;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1749</td>
+<td style="text-align: center;">)</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1761</td>
+<td style="text-align: center;">(</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1790</td>
+<td style="text-align: center;">c</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1904</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1907</td>
+<td style="text-align: center;">ф</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1931</td>
+<td style="text-align: center;">L</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1934</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2140</td>
+<td style="text-align: center;">х</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2214</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2438</td>
+<td style="text-align: center;">ю</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2476</td>
+<td style="text-align: center;">R</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2607</td>
+<td style="text-align: center;">ж</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2631</td>
+<td style="text-align: center;">ц</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2951</td>
+<td style="text-align: center;">n</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3048</td>
+<td style="text-align: center;">i</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3060</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3260</td>
+<td style="text-align: center;">й</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3280</td>
+<td style="text-align: center;">г</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3705</td>
+<td style="text-align: center;">e</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4096</td>
+<td style="text-align: center;">ь</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4208</td>
+<td style="text-align: center;">б</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4339</td>
+<td style="text-align: center;">ч</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">5292</td>
+<td style="text-align: center;">з</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">5338</td>
+<td style="text-align: center;">,</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">6025</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">7021</td>
+<td style="text-align: center;">ы</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">7138</td>
+<td style="text-align: center;">д</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">7296</td>
+<td style="text-align: center;">у</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">8092</td>
+<td style="text-align: center;">я</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">9533</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">9549</td>
+<td style="text-align: center;">п</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">10188</td>
+<td style="text-align: center;">к</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">10774</td>
+<td style="text-align: center;">м</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">11229</td>
+<td style="text-align: center;">л</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">13168</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">13174</td>
+<td style="text-align: center;">в</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">14930</td>
+<td style="text-align: center;">р</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">15360</td>
+<td style="text-align: center;">с</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">19451</td>
+<td style="text-align: center;">н</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">20309</td>
+<td style="text-align: center;">т</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">24053</td>
+<td style="text-align: center;">а</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">24307</td>
+<td style="text-align: center;">и</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">27488</td>
+<td style="text-align: center;">е</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">29507</td>
+<td style="text-align: center;">о</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">70419</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 73%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Название</th>
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Рассел Сейдж. Приемы профессиональной работы в UNIX.txt, Всего символов <em>1029582</em></td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">Щ</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">Ю</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">~</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">Ш</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">q</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">57</td>
+<td style="text-align: center;">%</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">82</td>
+<td style="text-align: center;">Ь</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">86</td>
+<td style="text-align: center;">z</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">Х</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">88</td>
+<td style="text-align: center;">Ц</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">92</td>
+<td style="text-align: center;">Ж</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">93</td>
+<td style="text-align: center;">ъ</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">105</td>
+<td style="text-align: center;">@</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">129</td>
+<td style="text-align: center;">&lt;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">141</td>
+<td style="text-align: center;">Г</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">145</td>
+<td style="text-align: center;">!</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">151</td>
+<td style="text-align: center;">Б</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">152</td>
+<td style="text-align: center;">}</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">153</td>
+<td style="text-align: center;">{</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">167</td>
+<td style="text-align: center;">&amp;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">177</td>
+<td style="text-align: center;">j</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">184</td>
+<td style="text-align: center;">Й</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">205</td>
+<td style="text-align: center;">^</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">236</td>
+<td style="text-align: center;">Ф</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">251</td>
+<td style="text-align: center;">У</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">252</td>
+<td style="text-align: center;">`</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">260</td>
+<td style="text-align: center;">Ч</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">269</td>
+<td style="text-align: center;">Я</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">273</td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">295</td>
+<td style="text-align: center;">&gt;</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">308</td>
+<td style="text-align: center;">#</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">351</td>
+<td style="text-align: center;">’</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">353</td>
+<td style="text-align: center;">]</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">380</td>
+<td style="text-align: center;">[</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">382</td>
+<td style="text-align: center;">Л</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">385</td>
+<td style="text-align: center;">+</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">431</td>
+<td style="text-align: center;">Ы</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">493</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">511</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">524</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">542</td>
+<td style="text-align: center;">З</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">544</td>
+<td style="text-align: center;">=</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">597</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">608</td>
+<td style="text-align: center;">k</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">625</td>
+<td style="text-align: center;">;</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">638</td>
+<td style="text-align: center;">\</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">735</td>
+<td style="text-align: center;">Д</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">744</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">812</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">812</td>
+<td style="text-align: center;">Р</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">814</td>
+<td style="text-align: center;">Т</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">821</td>
+<td style="text-align: center;">w</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">833</td>
+<td style="text-align: center;">y</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">834</td>
+<td style="text-align: center;">_</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">849</td>
+<td style="text-align: center;">v</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">903</td>
+<td style="text-align: center;">*</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">905</td>
+<td style="text-align: center;">К</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">915</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1031</td>
+<td style="text-align: center;">b</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1061</td>
+<td style="text-align: center;">М</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1075</td>
+<td style="text-align: center;">А</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1095</td>
+<td style="text-align: center;">И</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1115</td>
+<td style="text-align: center;">$</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1222</td>
+<td style="text-align: center;">x</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1226</td>
+<td style="text-align: center;">g</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1263</td>
+<td style="text-align: center;">С</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1355</td>
+<td style="text-align: center;">:</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1407</td>
+<td style="text-align: center;">(</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1407</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1446</td>
+<td style="text-align: center;">Н</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1480</td>
+<td style="text-align: center;">П</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1523</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1606</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1621</td>
+<td style="text-align: center;">)</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1670</td>
+<td style="text-align: center;">О</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1793</td>
+<td style="text-align: center;">В</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">1999</td>
+<td style="text-align: center;">э</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2001</td>
+<td style="text-align: center;">Е</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2043</td>
+<td style="text-align: center;">f</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2172</td>
+<td style="text-align: center;">/</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2216</td>
+<td style="text-align: center;">p</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2266</td>
+<td style="text-align: center;">m</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2314</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2398</td>
+<td style="text-align: center;">h</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2624</td>
+<td style="text-align: center;">ш</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2635</td>
+<td style="text-align: center;">щ</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">2914</td>
+<td style="text-align: center;">"</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">2950</td>
+<td style="text-align: center;">d</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3104</td>
+<td style="text-align: center;">u</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3261</td>
+<td style="text-align: center;">ц</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3452</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3655</td>
+<td style="text-align: center;">l</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3818</td>
+<td style="text-align: center;">c</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">3912</td>
+<td style="text-align: center;">r</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">3992</td>
+<td style="text-align: center;">n</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4069</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4428</td>
+<td style="text-align: center;">ф</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4578</td>
+<td style="text-align: center;">ю</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4596</td>
+<td style="text-align: center;">i</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4690</td>
+<td style="text-align: center;">х</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">4745</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">4815</td>
+<td style="text-align: center;">ж</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">5036</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">6752</td>
+<td style="text-align: center;">e</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">7860</td>
+<td style="text-align: center;">г</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">8055</td>
+<td style="text-align: center;">ч</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">8321</td>
+<td style="text-align: center;">б</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">8576</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">9701</td>
+<td style="text-align: center;">,</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">10066</td>
+<td style="text-align: center;">й</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">10072</td>
+<td style="text-align: center;">з</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">10246</td>
+<td style="text-align: center;">ь</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">13840</td>
+<td style="text-align: center;">я</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">13899</td>
+<td style="text-align: center;">у</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">16019</td>
+<td style="text-align: center;">ы</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">18830</td>
+<td style="text-align: center;">д</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">18946</td>
+<td style="text-align: center;">п</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">20630</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">21422</td>
+<td style="text-align: center;">к</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">22768</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">25370</td>
+<td style="text-align: center;">л</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">26288</td>
+<td style="text-align: center;">м</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">27587</td>
+<td style="text-align: center;">в</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">29761</td>
+<td style="text-align: center;">р</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">32428</td>
+<td style="text-align: center;">с</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">38614</td>
+<td style="text-align: center;">н</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">43875</td>
+<td style="text-align: center;">и</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">45742</td>
+<td style="text-align: center;">т</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">52556</td>
+<td style="text-align: center;">а</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">54101</td>
+<td style="text-align: center;">е</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td style="text-align: center;">68833</td>
+<td style="text-align: center;">о</td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">220704</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h1 id="криптограммы">Криптограммы</h1>
+<p>Будем исследовать криптограмму <em>gold-bug-en.txt</em> ~~~ 53‡‡†305))6<em>;4826)4‡)4‡;806</em>;48‡8¶60))85;1-(;:<em>8-83(88)5</em>‡ ;46(;88<em>96</em>?;8)<em>‡(;485);5</em>†2:<em>‡(;4956</em>2(5<em>- 4)8¶8</em>;4069285); )6†8)4;1(‡9;48081;8:8‡1;48†85;4)485†528806*81(‡9;48; (88;4(‡?34;48)4‡;161;:188;‡?; ~~~</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Частота</th>
+<th style="text-align: center;">Символ</th>
+<th style="text-align: center;">Возможные символы</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.01</td>
+<td style="text-align: center;">¶</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.015</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">{v,b}</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.015</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;">{v,b}</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.02</td>
+<td style="text-align: center;">:</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.02</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.025</td>
+<td style="text-align: center;">†</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.025</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.025</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.05</td>
+<td style="text-align: center;">(</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.055</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">h</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.06</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">r</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.065</td>
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">s</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">‡</td>
+<td style="text-align: center;">i</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.075</td>
+<td style="text-align: center;">)</td>
+<td style="text-align: center;">o</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.095</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">0.13</td>
+<td style="text-align: center;">;</td>
+<td style="text-align: center;">t</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0.165</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">e</td>
+</tr>
+</tbody>
+</table>
+<pre><code>53‡‡†305))6*;4826)4‡)4‡;806*;48‡8¶60))85;1-(;:*8-83(88)5*‡
+;46(;88*96*?;8)*‡(;485);5*†2:*‡(;4956*2(5*- 4)8¶8*;4069285);
+)6†8)4;1(‡9;48081;8:8‡1;48†85;4)485†528806*81(‡9;48;
+(88;4(‡?34;48)4‡;161;:188;‡?;</code></pre>
