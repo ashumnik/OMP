@@ -31,45 +31,40 @@ struct Node{
     bool is_final = false;
     std::map<char, int> next_states;
     std::map<int, std::set<Node*>> states_to_nodes;
-    std::map<int, std::set<Node*>> determined_states;
     
     static bool doesExist(int state);
 
     std::set<Node*> GetNextState(char ch){
-        // TODO: mb change [] to at()
         try{
             return states_to_nodes.at(next_states.at(ch));
         }
         catch(std::out_of_range e){
-            return std::set<Node*>;
+            return std::set<Node*>();
         }
     }
 
     void PrintNode(char ch){
         auto next_node = GetNextState(ch);
+
         std::cout << std::setw(6) << std::setfill(' ') << "q" << state;
         std::cout << "," << ch;
-        std::cout << "=" << (next_node->is_final ? 'f' : 'q');
-        std::cout <<        next_node->state;
+        std::cout << "=";
+        std::cout << "(";
+        for(auto state : next_node){
+            std::cout << (is_final ? 'f' : 'q');
+            std::cout << state->state;
+        }
+        std::cout << ")" ;
         std::cout << std::endl;
     }
 
-    void PrintHierarhy(){
-        for(auto ref_state : next_states){
-            auto next_node = GetNextState(std::get<0>(ref_state));
-
-            std::cout << std::setw(6) << "q" << state;
-            std::cout << "," << std::get<0>(ref_state);
-            std::cout << "=" << (next_node->is_final ? 'f' : 'q');
-            std::cout <<        next_node->state;
-            std::cout << std::endl;
-        }
-    }
 
 } Root;
 
 void Determine(){
     static bool is_first_call = true;
+
+    //Шаг 1. Помещаем в очередь QQ множество, состоящее только из стартовой вершины.
     if(is_first_call){
         std::set<class Node*> node_set;
         node_set.insert(&Root);
@@ -77,16 +72,20 @@ void Determine(){
         Q_history.insert(node_set);
         is_first_call = false;
     }
-    
+
+    //Шаг 2. Затем, пока очередь не пуста выполняем следующие действия:
     while(!Q.empty()){
+        //Достаем из очереди множество, назовем его q
         auto q = Q.front();
         Q.pop();
 
         for(auto state : q){
             std::set<Node*> new_state_set;
 
+            //Для всех ch, принадлежащих E
             for(auto ch : E){
-                auto state_set = state.GetNextState(ch);
+                // посмотрим в какое состояние ведет переход по символу ch из каждого состояния в q.
+                auto state_set = state->GetNextState(ch);
                 if(state_set.empty()){
                     continue;
                 }
@@ -96,6 +95,8 @@ void Determine(){
                     }
                 }
             }
+
+            //Полученное множество состояний положим в очередь Q только если оно не лежало там раньше.
             if(!Q_history.count(new_state_set)){
                 Q.push(new_state_set);
                 Q_history.insert(new_state_set);
@@ -110,12 +111,6 @@ bool Node::doesExist(int state){
 }
 
 
-void PrintAll(){
-    for(auto state : all_states){
-        std::get<1>(state)->PrintHierarhy();
-    }
-}
-
 int main (){
     auto lines = LoadFile("test.txt");
     ParseLines(lines);
@@ -123,26 +118,32 @@ int main (){
     Root.PrintNode('a');
     std::cout << std::endl;
 
-    // PrintAll();
     Analyze("ba +c");
 }
 
 void Analyze(std::string str_to_analyze){
-    Node* current_node = &Root;
+    auto first_node = &Root;
+    std::set<Node*> current_node;
+    current_node.insert(first_node);
 
     for(auto ch : str_to_analyze){
 
-        if(current_node->next_states.count(ch) >= 1){
-            std::cout << "Correct [" << ch << "] : "; 
-            current_node->PrintNode(ch);
-            current_node = current_node->GetNextState(ch);
-        }
-        else{
-            std::cout << "Incorrect [" << ch << "]" << std::endl;
-            std::cout << "String wrong string" << std::endl;
-            break;
+        for(auto node : current_node){
+            if(node->next_states.count(ch) >= 1){
+                std::cout << "Correct [" << ch << "] : "; 
+                node->PrintNode(ch);
+                current_node = node->GetNextState(ch);
+                break;
+            }
+            else{
+                std::cout << "Incorrect [" << ch << "]" << std::endl;
+                std::cout << "String wrong string" << std::endl;
+                goto exit;
+            }
         }
     }
+exit:
+    return;
 }
 
 std::vector<std::string>* GetLines(std::istream* input){
