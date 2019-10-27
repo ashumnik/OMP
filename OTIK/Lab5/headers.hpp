@@ -4,6 +4,10 @@
 #include <string>
 #include <stdexcept>
 
+struct FileHeader{
+    std::size_t byte_freq[256];
+};
+
 struct ArchiveHeader{
     std::size_t magic = 0xBA0BAB;
     std::size_t header_size;
@@ -31,7 +35,7 @@ struct ArchiveHeader{
         this->header_size           = ptr->header_size;
         this->offset_to_next_header = ptr->offset_to_next_header;
         this->file_header           = ptr->file_header;
-        this->filename              = std::string(data + offsetof(ArchiveHeader,filename));
+        this->filename              = std::string(reinterpret_cast<char*>(data + offsetof(ArchiveHeader,filename)));
     }
 
     std::uint8_t* get_compressed_data(std::uint8_t* data){
@@ -40,8 +44,5 @@ struct ArchiveHeader{
 
 };
 
-struct FileHeader{
-    std::size_t byte_freq[256];
-};
 
 #endif
