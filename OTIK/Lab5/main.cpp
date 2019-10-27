@@ -1,7 +1,32 @@
 #include "compress.hpp"
+#include <iostream>
+#include <iomanip>
 
 int main(int argc, char* argv[]){
 
+    char example[] = "im an example";
+    std::cout << example << std::endl;
+
+    for(auto b : example){
+        std::cout << " " << std::hex << (int)b ;
+    }
+    std::cout << std::endl;
+
+    auto compressed_data = *Compress(reinterpret_cast<std::uint8_t*>(example), sizeof(example), CountFrequencies(reinterpret_cast<std::uint8_t*>(example), sizeof(example)));
+    for(auto b : compressed_data){
+        std::cout << " " << std::hex << (int)b ;
+    }
+    std::cout << std::endl;
+
+
+    auto decompressed_data = *Decompress(&compressed_data[0], compressed_data.size(), CountFrequencies(reinterpret_cast<std::uint8_t*>(example), sizeof(example)));
+    for(auto b : decompressed_data){
+        std::cout << " " << std::hex << (int)b; 
+    }
+    std::cout << std::endl;
+    std::cout << example << std::endl;
+
+    /*
     for(int i = 2; i < argc; i++){
         auto filename = argv[i];
         auto file = open(filename, O_RDONLY, 0);
@@ -24,7 +49,7 @@ int main(int argc, char* argv[]){
         }
     }
 
-
+*/
     return 0;
 }
 

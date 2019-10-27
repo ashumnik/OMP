@@ -19,9 +19,10 @@
 #include "headers.hpp"
 
 #define FREQ_MAP_TYPE FileHeader
-#define TOP INT64_MAX / 2 - 1024
+#define TOP (UINT64_MAX / 2 - 1024)
+#define BLOCK_SIZE 16
 
-
+std::tuple<std::size_t, std::size_t, std::uint8_t> get_range4decode(std::size_t encoded_n, FREQ_MAP_TYPE* frequencies);
 std::size_t SummFreq(FileHeader* file_header);
 FREQ_MAP_TYPE* CountFrequencies(std::uint8_t* data);
 FREQ_MAP_TYPE* CountFrequencies(std::uint8_t* data, std::size_t data_size);
