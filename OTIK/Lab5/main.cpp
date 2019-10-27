@@ -4,7 +4,7 @@
 
 int main(int argc, char* argv[]){
 
-    char example[] = "im an example";
+    char example[] = {0,1,2,3,4};
     std::cout << example << std::endl;
 
     for(auto b : example){

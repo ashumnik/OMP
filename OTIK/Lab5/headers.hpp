@@ -5,6 +5,7 @@
 #include <stdexcept>
 
 struct FileHeader{
+    std::size_t original_size;
     std::size_t byte_freq[256];
 };
 
