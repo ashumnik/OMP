@@ -15,10 +15,14 @@
 #include <tuple>
 #include <cstddef>
 #define BIT_AT(X) (this->container[X])
+#define STOP_SIZE sizeof(recursion_stop_type)
 
-typedef char recursion_stop_type ;
+typedef unsigned char recursion_stop_type;
 
 char recv_buffer_root [100000];
+char e_buffer [100000];
+char a_buffer [100000];
+char d_buffer [100000];
 
 template<std::size_t SIZE_IN_BYTES> class LongInt{
 
@@ -35,11 +39,10 @@ public:
 
     bool operator[](int i);
 
-
     LongInt<SIZE_IN_BYTES*2> operator*(const LongInt<SIZE_IN_BYTES>& other);
     LongInt<SIZE_IN_BYTES> operator+(const LongInt<SIZE_IN_BYTES>& other);
     LongInt<SIZE_IN_BYTES> operator-(const LongInt<SIZE_IN_BYTES>& other);
-    LongInt<SIZE_IN_BYTES> operator<<(std::size_t count);
+    LongInt<SIZE_IN_BYTES*2> operator<<(std::size_t count);
 
     std::size_t size(){
         return this->container.size();
@@ -59,22 +62,35 @@ public:
         this->container.reset();
     }
 
+    void SizeCast(const LongInt<SIZE_IN_BYTES/2>& other){
+        this->container = *(new std::bitset<SIZE_IN_BYTES*8>(other.get_container().to_string()));
+    }
+
     std::string ToString();
-    
 };
+
+template<>
+LongInt<STOP_SIZE*2> LongInt<STOP_SIZE>::operator*(const LongInt<STOP_SIZE>& other){
+    auto mult_product = this->container.to_ulong() * other.get_container().to_ulong();
+    auto proxy_bitset = std::bitset<(STOP_SIZE*2)*8>(mult_product);
+    auto result = LongInt<STOP_SIZE*2>(proxy_bitset.to_string());
+    return result;
+}
 
 template<typename std::size_t SIZE_IN_BYTES>
 std::tuple<LongInt<SIZE_IN_BYTES/2>,LongInt<SIZE_IN_BYTES/2>> LongInt<SIZE_IN_BYTES>::slice(){
 
-    LongInt<SIZE_IN_BYTES/2> higher_half, lower_half;
+    LongInt<SIZE_IN_BYTES/2>& higher_half = *new LongInt<SIZE_IN_BYTES/2>;
+    LongInt<SIZE_IN_BYTES/2>& lower_half = *new LongInt<SIZE_IN_BYTES/2>;
     auto long_int_size = this->size();
     
-    for(std::size_t i = 0; i < long_int_size; i++){
+    for(std::size_t i = 0, j = 0; i < long_int_size; i++){
         if(i < long_int_size/2){
             lower_half.get_container()[i] = this->container[i];
         }
         else{
-            higher_half.get_container()[i/long_int_size] = this->container[i];
+            higher_half.get_container()[j] = this->container[i];
+            j++;
         }
     }
 
@@ -170,8 +186,8 @@ LongInt<SIZE_IN_BYTES> LongInt<SIZE_IN_BYTES>::operator+(const LongInt<SIZE_IN_B
 };
 
 template<typename std::size_t SIZE_IN_BYTES>
-LongInt<SIZE_IN_BYTES> LongInt<SIZE_IN_BYTES>::operator<<(std::size_t count){
-    LongInt<SIZE_IN_BYTES> result(*this);
+LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator<<(std::size_t count){
+    LongInt<SIZE_IN_BYTES*2> result(this->container.to_string());
     result.get_container() <<= count;
     return result;
 };
@@ -195,11 +211,9 @@ LongInt<SIZE_IN_BYTES> LongInt<SIZE_IN_BYTES>::operator-(const LongInt<SIZE_IN_B
 template<typename std::size_t SIZE_IN_BYTES>
 LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN_BYTES>& other){
     LongInt<SIZE_IN_BYTES*2> result;
+    LongInt<SIZE_IN_BYTES*2> casting_val;
+    result.reset();
 
-    if(SIZE_IN_BYTES == sizeof(recursion_stop_type)){
-        recursion_stop_type mult_product = this->container.to_ulong() * other.get_container().to_ulong();
-        return (LongInt<SIZE_IN_BYTES*2>((recursion_stop_type)mult_product));
-    }
     // http://courses.csail.mit.edu/6.006/spring11/exams/notes3-karatsuba
 
     auto t_halves = this->slice();
@@ -214,20 +228,28 @@ LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
 
-    if(rank != 0){
-        auto a = x_h * y_h;
-        auto d = x_l * y_l;
-        auto e = (x_h + x_l) * (y_h + y_l) - a - d;
+    auto a = x_h * y_h;
+    auto d = x_l * y_l;
+    auto e = (x_h + x_l) * (y_h + y_l) - a - d;
+    
+    std::cout << "this:  " << this->ToString() << std::endl;
+    std::cout << "x_h:   " << x_h.ToString() << std::endl;
+    std::cout << "x_l:   " << x_l.ToString() << std::endl;
+    std::cout << "other: " << other.ToString() << std::endl;
+    std::cout << "y_h:   " << y_h.ToString() << std::endl;
+    std::cout << "y_l:   " << y_l.ToString() << std::endl;
+    std::cout << std::endl;
+    std::cout << "a:     " << a.ToString() << std::endl;
+    std::cout << "d:     " << d.ToString() << std::endl;
+    std::cout << "e:     " << e.ToString() << std::endl;
+    std::cout << " :     " << ((x_h + x_l)).ToString() << std::endl;
+    std::cout << " :     " << ((y_h + y_l)).ToString() << std::endl;
+    std::cout << " :     " << ((x_h + x_l) * (y_h + y_l)).ToString() << std::endl;
 
-    }
+    casting_val.SizeCast(d);
+    result = (a << SIZE_IN_BYTES*2) + (e << SIZE_IN_BYTES) + casting_val; 
+    //result.SizeCast(k_result);
 
-    if(rank == 0){
-        auto k_result = (a << SIZE_IN_BYTES*2) + (e << SIZE_IN_BYTES) + d; 
-    }
-
-    for(std::size_t i = 0; i < k_result.size(); i++){
-        result.get_container()[i] = k_result[i];
-    }
 
 
     return result;
