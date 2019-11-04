@@ -37,13 +37,11 @@ std::uint8_t get_range4decode(
         FREQ_MAP_TYPE* file_header,
         std::vector<std::uint8_t>* container,
         std::size_t* l, std::size_t* h){
-    //std::size_t l = 0;
-    //std::size_t h = TOP;
 
     for(std::uint8_t b = 1; b < 256; b++){
         std::size_t r = *h - *l + 1;                         // интервал
-        *l = *l + (r*SummFreq(file_header, b-1))/BLOCK_SIZE; // новая нижняя граница
         *h = *l + (r*SummFreq(file_header, b))/BLOCK_SIZE;   // новая верхняя граница
+        *l = *l + (r*SummFreq(file_header, b-1))/BLOCK_SIZE; // новая нижняя граница
         std::size_t number_repr_block = (*l+*h)/2;
         container->push_back(b);
 
@@ -128,9 +126,9 @@ std::vector<std::uint8_t>* Compress(std::uint8_t* data, std::size_t data_size, F
     std::size_t h                  = TOP;
 
     for(std::size_t i = 1; remaining_size > 0; i++, remaining_size--){
-        std::size_t r = h - l + 1;                                          // интервал
+        std::size_t r = h - l + 1;                               // интервал
+        h = l + (r*SummFreq(file_header, data[i]))/BLOCK_SIZE;   // новая верхняя граница
         l = l + (r*SummFreq(file_header, data[i]-1))/BLOCK_SIZE; // новая нижняя граница
-        h = l + (r*SummFreq(file_header, data[i]))/BLOCK_SIZE;  // новая верхняя граница
         number_repr_block = (l+h)/2;
 
         std::cout << i << " -- " << number_repr_block << std::endl;

@@ -1,5 +1,6 @@
 import headers
-import ctypes as c
+from decimal import *
+import functools
 
 RANGE = 30
 
@@ -12,12 +13,13 @@ def around(a,b):
 class FileOp:
     def __init__(self, file_header):
         self.file_header = file_header
+        self.sorted_freq = [(b, self.file_header.byte_freq[b]) for b in sorted(self.file_header.byte_freq, key=self.file_header.byte_freq.get, reverse=False)]
 
+    @functools.lru_cache(maxsize=256*2)
     def cum_freq(self, until_b, include=True):
-        sorted_freq = [(b, self.file_header.byte_freq[b]) for k in sorted(self.file_header.byte_freq, key=self.file_header.byte_freq.get, reverse=True)]
         sum = 0
 
-        for b,f in sorted_freq:
+        for b, f in self.sorted_freq:
             if b == until_b:
                 if include:
                     sum += f
@@ -27,38 +29,33 @@ class FileOp:
         return sum
 
     def compress(self, data):
-        l = 0
-        h = 2**64-1
-        block_size = 64
-        encoded = []
-        number_repr_block = 0
+        getcontext().prec = 999999
+        l = Decimal(0)
+        h = Decimal(1)
+        encoded = None
 
-        i = 0
         for b in data:
-            r = h - l + 1
-            h = l + (r*self.cum_freq(b))/block_size
-            l = l + (r*self.cum_freq(b,include=False))/block_size
-            number_repr_block = (l+h)/2
-            if i % block_size == 0:
-                encoded.append(number_repr_block)
-            i += 1
-        if len(encoded) == 0:
-            encoded.append(number_repr_block)
+            r = h - l
+            h = l + r*Decimal(self.cum_freq(b))
+            l = l + r*Decimal(self.cum_freq(b,include=False))
+        number_repr_block = (l+h)/2
+        encoded = number_repr_block
         return encoded
 
-    def decompress(self, n_list):
-        l = 0
-        h = 2**64-1
-        block_size = 64
+    def decompress(self, number):
+        getcontext().prec = 999999
+        l = Decimal(0)
+        h = Decimal(1)
         decoded = []
-        number_repr_block = 0
 
-        for n in n_list:
+        for i in range(0,self.file_header.original_size-1):
+            byte = None
             for b in range(0,255):
-                r = h - l + 1
-                h = l + (r*self.cum_freq(b))/block_size
-                l = l + (r*self.cum_freq(b,include=False))/block_size
-                number_repr_block = (l+h)/2
-                if around(number_repr_block, n):
-                    decoded.append(b)
+                r = h - l
+                h = l + r*Decimal(self.cum_freq(b))
+                l = l + r*Decimal(self.cum_freq(b,include=False))
+                byte = b
+                if l <= number and number < h:
+                    break
+            decoded.append(byte)
         return decoded
