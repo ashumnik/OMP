@@ -17,12 +17,12 @@
 #define BIT_AT(X) (this->container[X])
 #define STOP_SIZE sizeof(recursion_stop_type)
 
-typedef unsigned char recursion_stop_type;
+typedef unsigned int recursion_stop_type;
 
 char recv_buffer_root [100000];
-char a_buffer [100000];
-char e_buffer [100000];
-char d_buffer [100000];
+char _0_buffer [100000];
+char _1_buffer [100000];
+char _2_buffer [100000];
 MPI_Comm part_comm;
 
 template<std::size_t SIZE_IN_BYTES> class LongInt{
@@ -228,6 +228,9 @@ LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN
     if(reinterpret_cast<std::size_t>(part_comm) == 0){
         MPI_Comm_split(MPI_COMM_WORLD, color, rank, &part_comm);
     }
+    else{
+        MPI_Comm_split(part_comm, color, rank, &part_comm);
+    }
     
     // http://courses.csail.mit.edu/6.006/spring11/exams/notes3-karatsuba
 
@@ -242,34 +245,13 @@ LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN
     auto x_l = std::get<1>(t_halves);
     auto y_l = std::get<1>(o_halves);
 
-    std::cout << rank << std::endl;
-    if(rank == 0){
-        std::cout << "Recieveing"  << std::endl;
-        MPI_Recv(a_buffer,
-                 sizeof(a_buffer),
-                 MPI_BYTE,
-                 1,
-                 0,
-                 part_comm,
-                 MPI_STATUS_IGNORE);
-        MPI_Recv(d_buffer,
-                 sizeof(d_buffer),
-                 MPI_BYTE,
-                 2,
-                 0,
-                 part_comm,
-                 MPI_STATUS_IGNORE);
-
-        LongInt<SIZE_IN_BYTES> a(a_buffer);
-        LongInt<SIZE_IN_BYTES> d(d_buffer);
-        auto e = (x_h + x_l) * (y_h + y_l) - a - d;
-        result = (a << SIZE_IN_BYTES*2) + (e << SIZE_IN_BYTES) + casting_val; 
-    }
+    auto a = x_h * y_h;
+    auto d = x_l * y_l;
+    
     if(rank == 1){
-        auto a = x_h * y_h;
-        auto serialized = a.ToBitString();
-        std::cout << "Sending from " << rank << std::endl;
-        MPI_Send(("a"+serialized).c_str(),
+        auto x2 = (x_h + x_l);
+        auto serialized = x2.ToBitString();
+        MPI_Send(serialized.c_str(),
                  serialized.size(),
                  MPI_BYTE,
                  0,
@@ -277,16 +259,74 @@ LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN
                  part_comm);
     }
     if(rank == 2){
-        auto d = x_l * y_l;
-        auto serialized = d.ToBitString();
-        MPI_Send(("d"+serialized).c_str(),
+        auto x1 = (y_h + y_l);
+        auto serialized = x1.ToBitString();
+        MPI_Send(serialized.c_str(),
                  serialized.size(),
                  MPI_BYTE,
                  0,
                  0,
                  part_comm);
     }
+    if(rank == 0){
+        MPI_Recv(_0_buffer,
+                 sizeof(_0_buffer),
+                 MPI_BYTE,
+                 1,
+                 0,
+                 part_comm,
+                 MPI_STATUS_IGNORE);
+        MPI_Recv(_1_buffer,
+                 sizeof(_1_buffer),
+                 MPI_BYTE,
+                 2,
+                 0,
+                 part_comm,
+                 MPI_STATUS_IGNORE);
+    }
 
+    auto e = LongInt<SIZE_IN_BYTES/2>(_0_buffer) * LongInt<SIZE_IN_BYTES/2>(_0_buffer) - a - d;
+
+    casting_val.SizeCast(d);
+
+    if(rank == 1){
+        auto x2 = (a << SIZE_IN_BYTES*2);
+        auto serialized = x2.ToBitString();
+        MPI_Send(serialized.c_str(),
+                 serialized.size(),
+                 MPI_BYTE,
+                 0,
+                 0,
+                 part_comm);
+    }
+    if(rank == 2){
+        auto x1 = (e << SIZE_IN_BYTES);
+        auto serialized = x1.ToBitString();
+        MPI_Send(serialized.c_str(),
+                 serialized.size(),
+                 MPI_BYTE,
+                 0,
+                 0,
+                 part_comm);
+    }
+    if(rank == 0){
+        MPI_Recv(_0_buffer,
+                 sizeof(_0_buffer),
+                 MPI_BYTE,
+                 1,
+                 0,
+                 part_comm,
+                 MPI_STATUS_IGNORE);
+        MPI_Recv(_1_buffer,
+                 sizeof(_1_buffer),
+                 MPI_BYTE,
+                 2,
+                 0,
+                 part_comm,
+                 MPI_STATUS_IGNORE);
+    }
+
+    result = LongInt<SIZE_IN_BYTES*2>(_0_buffer) + LongInt<SIZE_IN_BYTES*2>(_1_buffer) + casting_val; 
     
     //std::cout << "this:  " << this->ToString() << std::endl;
     //std::cout << "x_h:   " << x_h.ToString() << std::endl;
