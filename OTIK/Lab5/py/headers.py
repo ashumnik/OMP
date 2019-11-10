@@ -42,10 +42,9 @@ def process_raw_file(filename):
     with open(filename, 'rb') as file:
         byte_list = []
         b = file.read(1)
-        byte_list.append(b)
         while b:
-            b = file.read(1)
             byte_list.append(b)
+            b = file.read(1)
     return (ArchiveHeader(byte_list, filename), byte_list)
 
 def process_archive(filename):

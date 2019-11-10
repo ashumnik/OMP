@@ -24,7 +24,7 @@ if args.zip:
         process_files.append(header_and_data)
     for pf in process_files:
         f_op = compress.FileOp(pf[0].file_header)
-        pf[0].compressed_data = f_op.compress(pf[1])
+        pf[0].compressed_data = int(str(f_op.compress(pf[1]))[2:])
         pf[0].dump(args.out)
 
 if args.unzip:
@@ -32,7 +32,7 @@ if args.unzip:
         arch_header = headers.process_archive(filename)
         f_op = compress.FileOp(arch_header.file_header)
         with open(arch_header.filename, 'wb') as out:
-            out.write(bytes(f_op.decompress(arch_header.compressed_data)))
+            out.write(b''.join(f_op.decompress(arch_header.compressed_data)))
 
 
 if args.test:

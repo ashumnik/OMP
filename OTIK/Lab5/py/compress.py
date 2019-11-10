@@ -43,6 +43,11 @@ class FileOp:
         return encoded
 
     def decompress(self, number):
+        number = '0.'+str(int(number))
+        number = Decimal(number)
+        orig_number = number
+        print(orig_number)
+
         getcontext().prec = 999999
         l = Decimal(0)
         h = Decimal(1)
@@ -50,12 +55,21 @@ class FileOp:
 
         for i in range(0,self.file_header.original_size-1):
             byte = None
+            real_h = Decimal(h)
+            real_l = Decimal(l)
             for b in range(0,255):
+                b = bytes([b])
                 r = h - l
                 h = l + r*Decimal(self.cum_freq(b))
                 l = l + r*Decimal(self.cum_freq(b,include=False))
                 byte = b
+
                 if l <= number and number < h:
+                    r = h - l
+                    number = (number - l)/r
                     break
+                else:
+                    h = real_h
+                    l = real_l
             decoded.append(byte)
         return decoded
