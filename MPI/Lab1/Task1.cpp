@@ -10,7 +10,7 @@
 #include "ring.hpp"
 
 int main(int argc, char *argv[]){
-    std::string message("Message to root");
+    std::string message("Message to the world");
 
     ring(message);
 

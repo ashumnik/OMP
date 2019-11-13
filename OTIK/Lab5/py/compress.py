@@ -1,4 +1,5 @@
 import headers
+import pprint
 from decimal import *
 import functools
 
@@ -13,7 +14,7 @@ def around(a,b):
 class FileOp:
     def __init__(self, file_header):
         self.file_header = file_header
-        self.sorted_freq = [(b, self.file_header.byte_freq[b]) for b in sorted(self.file_header.byte_freq, key=self.file_header.byte_freq.get, reverse=False)]
+        self.sorted_freq = [(b, self.file_header.byte_freq[b]) for b in sorted(self.file_header.byte_freq, key=self.file_header.byte_freq.get, reverse=True)]
 
     @functools.lru_cache(maxsize=256*2)
     def cum_freq(self, until_b, include=True):
@@ -29,7 +30,7 @@ class FileOp:
         return sum
 
     def compress(self, data):
-        getcontext().prec = 999999
+        getcontext().prec = 99999999
         l = Decimal(0)
         h = Decimal(1)
         encoded = None
@@ -46,14 +47,13 @@ class FileOp:
         number = '0.'+str(int(number))
         number = Decimal(number)
         orig_number = number
-        print(orig_number)
 
-        getcontext().prec = 999999
+        getcontext().prec = 99999999
         l = Decimal(0)
         h = Decimal(1)
         decoded = []
 
-        for i in range(0,self.file_header.original_size-1):
+        for i in range(0,self.file_header.original_size):
             byte = None
             real_h = Decimal(h)
             real_l = Decimal(l)
@@ -65,8 +65,6 @@ class FileOp:
                 byte = b
 
                 if l <= number and number < h:
-                    r = h - l
-                    number = (number - l)/r
                     break
                 else:
                     h = real_h

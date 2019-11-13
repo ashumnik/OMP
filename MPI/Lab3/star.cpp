@@ -7,7 +7,7 @@
 #include "star.hpp"
 
 #define D(X) (std::cout << X << std::endl)
-#define SEND_RECIEVE_BYTES (5)
+#define SEND_RECIEVE_BYTES (10)
 
 void star(std::string message_to_root, std::string message_to_edges){
     
@@ -28,8 +28,6 @@ void star(std::string message_to_root, std::string message_to_edges){
         std::cout << "world size is: " << world_size << std::endl;
     }
 
-    int next_proc = rank+1;
-    
     for(int round = M; round > 0; round--){
         std::cout << std::setfill('-') << std::setw(40) << "Current round is " << round << " in [" << rank << "]" << std::endl;
 

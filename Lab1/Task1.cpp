@@ -8,7 +8,7 @@
 #include <cstdlib>
 #include <ctime>
 #define OUTPUT          // Глушилка для вывода
-#define M 10000      
+#define M 10000
 #define N 10000
 #define N_h N/2         // N_h(alf), размер массива для пар 
 

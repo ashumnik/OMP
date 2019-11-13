@@ -2,7 +2,6 @@
 #define HPP_LONG_INT
 #include "mpi.h"
 #include <iostream>
-#include <algorithm>
 #include <iomanip>
 #include <string>
 #include <sstream>
@@ -15,8 +14,6 @@
 #include <cstddef>
 #define BIT_AT(X) (this->container[X])
 
-char recv_buffer_root [100000];
-
 template<std::size_t SIZE_IN_BYTES> class LongInt{
 
     std::bitset<SIZE_IN_BYTES*8> container;
@@ -24,7 +21,7 @@ template<std::size_t SIZE_IN_BYTES> class LongInt{
 public:
     LongInt();
     LongInt(int seed);
-    LongInt(std::string serialized);
+    LongInt(std::string debug);
     LongInt(const LongInt& ln); 
 
     LongInt<SIZE_IN_BYTES>& operator=(const LongInt<SIZE_IN_BYTES>& other);
@@ -53,7 +50,7 @@ public:
 template<typename std::size_t SIZE_IN_BYTES>
 LongInt<SIZE_IN_BYTES>::LongInt(){
     std::srand(1);
-    for(std::size_t i = 0; i < this->size(); i++ ){
+    for(std::size_t i = 0; i < this->container.size(); i++ ){
         BIT_AT(i) = std::rand()%2;
     }
 };
@@ -61,14 +58,14 @@ LongInt<SIZE_IN_BYTES>::LongInt(){
 template<typename std::size_t SIZE_IN_BYTES>
 LongInt<SIZE_IN_BYTES>::LongInt(int seed){
     std::srand(seed);
-    for(std::size_t i = 0; i < this->size(); i++ ){
+    for(std::size_t i = 0; i < this->container.size(); i++ ){
         BIT_AT(i) = std::rand()%2;
     }
 };
 
 template<typename std::size_t SIZE_IN_BYTES>
-LongInt<SIZE_IN_BYTES>::LongInt(std::string serialized){
-    this->container = std::bitset<SIZE_IN_BYTES*8> (serialized);
+LongInt<SIZE_IN_BYTES>::LongInt(std::string debug){
+    this->container.set();
 };
 
 template<typename std::size_t SIZE_IN_BYTES>
@@ -96,18 +93,19 @@ template<typename std::size_t SIZE_IN_BYTES>
 std::string LongInt<SIZE_IN_BYTES>::ToString(){
     
     std::stringstream out_stream;
+    std::size_t proxy_int = 0;
+    decltype(proxy_int) bit_count = SIZE_IN_BYTES*8;
 
-    std::string binary_repr = this->container.to_string();
+    std::size_t index = 0;
+    for(;index < this->size(); index++){
+        proxy_int ^= (static_cast<decltype(proxy_int)>
+                        (this->container[index]) << index % bit_count);
 
-    char one_chunk = 0;
-    std::size_t chunk_bit_count = sizeof(one_chunk)*8;
-
-    for(std::size_t i = 0; i < binary_repr.size(); i += chunk_bit_count){
-        auto str_chunk = binary_repr.substr(i, chunk_bit_count);
-        out_stream << std::hex << std::stoll(str_chunk, nullptr, 2);
+        if(index % (bit_count-1) == 0 && index != 0){
+            out_stream << std::hex << proxy_int;
+            proxy_int = 0;
+        }
     }
-
-    
 
     return out_stream.str();
 };
@@ -149,74 +147,62 @@ LongInt<SIZE_IN_BYTES*2> LongInt<SIZE_IN_BYTES>::operator*(const LongInt<SIZE_IN
 
     /*ANDing*/
     std::size_t int_size = this->get_container().size();
-    
-    for(std::size_t i = 0;i < int_size; i++){
-        auto tbit = this->container[i];
 
+    for(std::size_t i = 0, index = 0 ;i < int_size; i++){
+        auto tbit = this->container[i];
         LongInt<SIZE_IN_BYTES*2> intermediate;
         intermediate.reset();
-        for(std::size_t j = 0 ;j < int_size; j++){
-            auto obit = other.get_container()[j];
-            intermediate.get_container()[j] = tbit & obit;
+        for(std::size_t j ;j < int_size; j++){
+            auto obit = this->container[j];
+            intermediate.get_container()[i++] = tbit & obit;
         }
-        intermediate.get_container() <<= i;
-
         intermediate_ints.push_back(intermediate);
+        std::cout << std::endl;
+        std::cout << intermediate.get_container().to_string() << "|" << std::endl;
     }
 
+
+    LongInt<SIZE_IN_BYTES*2> recv_buffer [200];
+
     std::size_t inter_ints_byte_size = intermediate_ints.size()*sizeof(result);
+    //std::cout << result.get_container().size() << std::endl;
 
 
     int rank, comm_size;
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &comm_size);
 
-    std::size_t size_to_send = inter_ints_byte_size/comm_size;
-    std::size_t count_to_process = intermediate_ints.size()/comm_size;
-
-    /*
     MPI_Scatter(
             reinterpret_cast<void*>(&intermediate_ints[0]),
-            size_to_send,
-            MPI_BYTE,
-            reinterpret_cast<void*>(recv_buffer_other),
-            size_to_send,
-            MPI_BYTE,
+            inter_ints_byte_size/comm_size,
+            MPI_CHAR,
+            reinterpret_cast<void*>(recv_buffer),
+            inter_ints_byte_size/comm_size,
+            MPI_CHAR,
             0,
             MPI_COMM_WORLD
             );
-            */
 
-    for(std::size_t i = 0; i < count_to_process; i++){
-        //std::cout << intermediate_ints[rank*count_to_process + i].ToString() << std::endl;
-        result = result + intermediate_ints[rank*count_to_process + i];
+    if(rank != 0){
+        for(std::size_t i = 0; i < intermediate_ints.size()/comm_size; i++){
+            result = result + recv_buffer[i];
+        }
     }
 
-    MPI_Barrier(MPI_COMM_WORLD);
-
-    auto bitstring = result.get_container().to_string();
-    auto bitstring_size = result.get_container().to_string().size();
-
     MPI_Gather(
-            reinterpret_cast<void*>(const_cast<char*>(bitstring.c_str())),
-            bitstring_size + 1,
+            reinterpret_cast<void*>(&result),
+            sizeof(result),
             MPI_CHAR,
-            reinterpret_cast<void*>(recv_buffer_root),
-            bitstring_size + 1,
+            reinterpret_cast<void*>(recv_buffer),
+            sizeof(result),
             MPI_CHAR,
             0,
             MPI_COMM_WORLD
             );
 
     if(rank == 0){
-
-        std::size_t serialized_size = 0;
-
-        for(std::size_t i = 0; i < comm_size-1; i++){
-            serialized_size += std::strlen(recv_buffer_root)+1;
-            LongInt<SIZE_IN_BYTES*2> deserialized(&recv_buffer_root[serialized_size]);
-
-            result = result + deserialized;
+        for(std::size_t i = 0; i < comm_size; i++){
+            result = result + recv_buffer[i];
         }
     }
 

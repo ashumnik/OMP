@@ -1,4 +1,5 @@
 import pickle
+from decimal import *
 
 class FileHeader:
     def __init__(self, data):
@@ -17,7 +18,6 @@ class FileHeader:
             frequencies[byte] /= size
         return frequencies
 
-
 class ArchiveHeader:
     magic = int('0xBA0BAB',16)
 
@@ -35,8 +35,6 @@ class ArchiveHeader:
         self.offset_to_n_header = len(pickle.dumps(self))
         with open(filename, 'ab') as archive:
             pickle.dump(self, archive)
-
-
 
 def process_raw_file(filename):
     with open(filename, 'rb') as file:
