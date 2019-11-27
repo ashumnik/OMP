@@ -44,8 +44,8 @@ class FileOp:
         return encoded
 
     def decompress(self, number):
-        number = '0.'+str(int(number))
-        number = Decimal(number)
+        #number = '0.'+str(int(number))
+        #number = Decimal(number)
         orig_number = number
 
         getcontext().prec = 99999999

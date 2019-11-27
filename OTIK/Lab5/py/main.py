@@ -24,7 +24,7 @@ if args.zip:
         process_files.append(header_and_data)
     for pf in process_files:
         f_op = compress.FileOp(pf[0].file_header)
-        pf[0].compressed_data = int(str(f_op.compress(pf[1]))[2:])
+        pf[0].compressed_data = f_op.compress(pf[1])#[2:])
         pf[0].dump(args.out)
 
 if args.unzip:
