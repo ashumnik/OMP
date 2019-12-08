@@ -9,7 +9,7 @@
 
 ### Лабораторная 3
 
-~~~
+```C++
 int main(){
 
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
@@ -29,11 +29,11 @@ int main(){
     auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
     std::cout << elapsed << " microseconds" << std::endl;
 }
-~~~
+```
 
 ### Лабораторная 4
 
-~~~
+```C++
 int main(){
 
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
@@ -49,7 +49,7 @@ int main(){
     std::cout << elapsed << " microseconds" << std::endl;
 
 }
-~~~
+```
 
 ## Замеры времени:
 
