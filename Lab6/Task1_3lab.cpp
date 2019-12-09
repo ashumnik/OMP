@@ -1,5 +1,5 @@
-//#include <omp.h>
-//
+#include <omp.h>
+
 #include <iostream>
 #include <iomanip>
 #include <bitset>
@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 #define OUTPUT
-#define N 4
+#define N 1000000
 #define DESIRED_LF 20
 
 #if N < DESIRED_LF
@@ -108,6 +108,9 @@ long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
 
 int main(){
 
+    std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
+    start = std::chrono::high_resolution_clock::now();
+
     #pragma omp parallel sections
     {
         #pragma omp section
@@ -115,25 +118,11 @@ int main(){
         #pragma omp section
         { init(B); }
     }
-    std::cout << std::setw(3) << "";
-    std::cout << "vvvvv A vvvvv" << std::endl;
-
-    print_matrix(A);
-
-    std::cout << std::setw(3) << "";
-    std::cout << "vvvvv B vvvvv" << std::endl;
-
-    print_matrix(B);
-    
-    std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
-    start = std::chrono::high_resolution_clock::now();
-
     auto result = CHOOSE_VAR(1);
 
     end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
     std::cout << elapsed << " microseconds" << std::endl;
-    std::cout << "result: " << result << std::endl;
 
 }
 

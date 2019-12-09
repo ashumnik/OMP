@@ -1,5 +1,5 @@
-//#include <omp.h>
-//
+#include <omp.h>
+
 #include <iostream>
 #include <iomanip>
 #include <bitset>
@@ -9,7 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 #define OUTPUT
-#define N 40
+#define N 1000
 #define DESIRED_LF 20
 
 #if N < DESIRED_LF
@@ -66,7 +66,7 @@ void print_matrix(int matrix[N]){
 void init(int matrix[N]){
     std::srand(unsigned(std::time(0)));
 
-    #pragma omp parallel for
+    //#pragma omp parallel for
     for(int i = 0; i < N; i++){
         matrix[i] = std::rand()%N+1;
     }
@@ -91,38 +91,31 @@ long long calculate(int (*op)(int,int), void (*final_calc)(long long*, int)){
         C[i] = op(A[i],B[i]);
     }
     
+    omp_lock_t lock;
+    omp_init_lock(&lock);
     // Изменить операцию над result на свой вариант
     #pragma omp parallel for 
     for(int i = 0; i < N; i++){
-        #pragma omp atomic
-        result *= final_calc(&partial result, C[i]);
+            final_calc(&partial_result, C[i]);
+            result *= partial_result;
     }
+    omp_destroy_lock(&lock);
     return result;
 }
 
 int main(){
-    init(A);
-    init(B);
-
-    std::cout << std::setw(3) << "";
-    std::cout << "vvvvv A vvvvv" << std::endl;
-
-    print_matrix(A);
-
-    std::cout << std::setw(3) << "";
-    std::cout << "vvvvv B vvvvv" << std::endl;
-
-    print_matrix(B);
 
     std::chrono::time_point<std::chrono::high_resolution_clock> start, end;
     start = std::chrono::high_resolution_clock::now();
+
+    init(A); 
+    init(B); 
 
     auto result = CHOOSE_VAR(1);
 
     end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>( end - start ).count();
     std::cout << elapsed << " microseconds" << std::endl;
-    std::cout << "result: " << result << std::endl;
 
 }
 
